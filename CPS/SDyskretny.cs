@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace CPS
 {
-    class SCiagly: Sygnal
+    class SDyskretny:Sygnal
     {
-
     }
 }
