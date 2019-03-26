@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace CPS
 {
-    class SDyskretny:Sygnal
+    class SDyskretny : Sygnal
     {
+        public SDyskretny(int A, double T) : base(A, T)
+        {
+        }
     }
 }

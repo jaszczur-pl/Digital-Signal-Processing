@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace CPS
 {
-    class SCiagly: Sygnal
+    class SCiagly : Sygnal
     {
-
+        public SCiagly(int A, double T) : base(A, T)
+        {
+        }
     }
 }
