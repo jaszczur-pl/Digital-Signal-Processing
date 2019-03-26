@@ -2,14 +2,13 @@
 {
     public class Sygnal
     {
-        public int A { get => A; set => A = value; }
-        public int t1 { get => t1; set => t1 = value; }
-        public int d { get => d; set => d = value; }
-        public int n { get => n; set => n = value; }
-        public double T { get => t; set => t = value; }
+        public int A { get; set; }
+        public static int t1 = 0;
+        public static int d = 1;
+        public int n { get; set; }
+        public static double T { get; set; }
 
         int t2 = t1 + d; //czas koncowy
-        int n; //numer probki
         double f = 1 / T; // czestotliwosc
 
     }
