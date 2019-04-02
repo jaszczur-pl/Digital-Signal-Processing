@@ -8,8 +8,9 @@ namespace CPS
 {
     class SCiagly : Sygnal
     {
-        public SCiagly(int A, double T) : base(A, T)
+        public SCiagly(int A, int T): base(A, T)
         {
+
         }
     }
 }

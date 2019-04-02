@@ -8,8 +8,14 @@ namespace CPS
 {
     class SDyskretny : Sygnal
     {
-        public SDyskretny(int A, double T) : base(A, T)
+        SDyskretny(int A, int T) :base(A, T)
         {
         }
+
+
+        public double Srednia(int t1, int t2)
+        {
+            return 0;
+         }
     }
 }
