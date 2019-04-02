@@ -8,13 +8,13 @@ namespace CPS
 {
     class SzumJednostajny : SCiagly
     {
-        double y;
+        float y;
         public SzumJednostajny(int A, int T) : base(A, T)
         {
 
         }
 
-        public double Generuj(int A)
+        public float Generuj(int A)
         {
             int Amin = (A * -1);
             int Amax = A;
