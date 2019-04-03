@@ -14,9 +14,10 @@ namespace CPS
 
         }
 
-        public double FSin(int A, double T)
+        public double FSin( double T, int i)
         {
-            double x = A * Math.Sin((2*Math.PI)/T*(t1-t2));
+            double t = i * k;
+            double x = Math.Sin((2*Math.PI)/T*(t-t1));
             return x;
         }
 
@@ -24,7 +25,7 @@ namespace CPS
         {
             for (int i = 0; i < n; i++)
             {
-                y = FSin(A,T);
+                y = A*FSin(T,i);
                 this.wartosciSygnaluY.Add(y);
             }
         }
