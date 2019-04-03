@@ -9,6 +9,7 @@ namespace CPS
     class SzumJednostajny : SCiagly
     {
         float y;
+
         public SzumJednostajny(int A, int T) : base(A, T)
         {
 
@@ -18,7 +19,8 @@ namespace CPS
         {
             int Amin = (A * -1);
             int Amax = A;
-            Random r = new Random();
+            
+            Random r = new Random(System.DateTime.Now.Millisecond);
             float x = (r.Next(Amin * 10000, Amax * 10000)) / 10000;
             return x;
         }
