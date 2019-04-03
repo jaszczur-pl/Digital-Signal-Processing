@@ -9,7 +9,7 @@ namespace CPS
     class SygnalSinWyprostowanyDwuPolowkowo:SygnalSin
     {
         double y;
-        public SygnalSinWyprostowanyDwuPolowkowo(int A, int T) : base(A, T)
+        public SygnalSinWyprostowanyDwuPolowkowo(int A, double T, double kw) : base(A, T, kw)
         {
 
         }

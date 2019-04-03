@@ -10,7 +10,7 @@ namespace CPS
     {
         float y;
 
-        public SzumJednostajny(int A, int T) : base(A, T)
+        public SzumJednostajny(int A, int T, double kw) : base(A, T, kw)
         {
 
         }

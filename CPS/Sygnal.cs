@@ -12,13 +12,15 @@ namespace CPS
         public double T { get; set; } //okres
         public const double k = d / n; //krok
         public List<double> wartosciSygnaluY = new List<double>();
+        public double kw { get; set; }// wspolczynnik wypelnienia
 
         public int t2 = t1 + d; //czas koncowy
 
-        public Sygnal(int A, double T)
+        public Sygnal(int A, double T, double kw)
         {
             this.A = A;
             this.T = T;
+            this.kw = kw;
         }
 
     }

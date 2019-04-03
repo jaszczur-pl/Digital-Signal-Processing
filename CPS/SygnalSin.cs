@@ -9,7 +9,7 @@ namespace CPS
     class SygnalSin:SCiagly
     {
         double y;
-        public SygnalSin(int A, int T) : base(A, T)
+        public SygnalSin(int A, double T, double kw) : base(A, T, kw)
         {
 
         }

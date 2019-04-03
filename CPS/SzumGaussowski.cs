@@ -10,7 +10,7 @@ namespace CPS
     class SzumGaussowski: SCiagly
     {
         double y;
-        public SzumGaussowski(int A, int T) : base(A, T)
+        public SzumGaussowski(int A, int T, double kw) : base(A, T, kw)
         {
 
         }

@@ -8,7 +8,7 @@ namespace CPS
 {
     class SDyskretny : Sygnal
     {
-        SDyskretny(int A, int T) :base(A, T)
+        SDyskretny(int A, int T, double kw) :base(A, T, kw)
         {
         }
 
