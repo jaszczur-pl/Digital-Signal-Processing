@@ -30,9 +30,13 @@ namespace CPS
                 double v1, v2, s;
                 do
                 {
+
+                    int Amin = (A/2 * -1);
+                    int Amax = A/2;
+
                     Random r = new Random();
-                    v1 = 2 * r.NextDouble() - 1;   // between -1.0 and 1.0
-                    v2 = 2 * r.NextDouble() - 1;   // between -1.0 and 1.0
+                    v1 = 2 * r.Next(Amin * 10000, Amax * 10000) / 10000;   // pomiedzy -A i A
+                    v2 = 2 * r.Next(Amin * 10000, Amax * 10000) / 10000;   
                     s = v1 * v1 + v2 * v2;
                 } while (s >= 1 || s == 0);
                 double multiplier = Math.Sqrt(-2 * Math.Log(s) / s);

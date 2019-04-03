@@ -17,8 +17,8 @@ namespace CPS
 
         public float Generuj(int A)
         {
-            int Amin = (A * -1);
-            int Amax = A;
+            int Amin = (A/2 * -1);
+            int Amax = A/2;
             
             Random r = new Random(System.DateTime.Now.Millisecond);
             float x = (r.Next(Amin * 10000, Amax * 10000)) / 10000;

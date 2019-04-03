@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace CPS
 {
-    class SCiagly : Sygnal
+    class SygnalSin:SCiagly
     {
-    
-        public SCiagly(int A, int T): base(A, T)
+        public SygnalSin(int A, int T) : base(A, T)
         {
 
         }
