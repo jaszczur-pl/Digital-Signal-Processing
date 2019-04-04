@@ -65,9 +65,11 @@
     <Compile Include="SDyskretny.cs" />
     <Compile Include="Sygnal.cs" />
     <Compile Include="SygnalProstokatny.cs" />
+    <Compile Include="SygnalProstokatnySymetryczny.cs" />
     <Compile Include="SygnalSin.cs" />
     <Compile Include="SygnalSinWyprostowanyDwuPolowkowo.cs" />
     <Compile Include="SygnalSinWyprostowanyJednoPolowkowo.cs" />
+    <Compile Include="SygnalTrojkatny.cs" />
     <Compile Include="SzumGaussowski.cs" />
     <Compile Include="SzumJednostajny.cs" />
     <EmbeddedResource Include="Form1.resx">

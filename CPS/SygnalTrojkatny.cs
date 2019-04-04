@@ -6,11 +6,11 @@ using System.Text;
 
 namespace CPS
 {
-    class SygnalProstokatny:SCiagly
+    class SygnalTrojkatny:SCiagly
     {
         double y;
         double t;
-        public SygnalProstokatny(int A, double T, double kw) : base(A, T, kw)
+        public SygnalTrojkatny(int A, double T, double kw) : base(A, T, kw)
         {
 
         }
@@ -20,17 +20,16 @@ namespace CPS
             for (int i = 0; i < n; i++)
             {
                 t = i * k;
-                if (t>=k*T+t1 || t<kw*T+k*T+t1) // czy k to krok we wzorze??
+                if(t>=k*T+t1 || t < kw * T + k * T + t1)
                 {
-                    y = A;
+                    y = A / (kw * T) * (t - k * T - t1);
                 }
-                else
+                else if (t>=kw*T+t1+k*T || t<T+k*T+t1)
                 {
-                    y = 0;
+                    y = -1 * A / (T * (1 - kw)) * (t - k * T - t1) + (A / (1 - kw));
                 }
                 this.wartosciSygnaluY.Add(y);
             }
         }
-
     }
 }
