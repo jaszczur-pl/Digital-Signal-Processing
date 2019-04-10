@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CPS
 {
-    public class Sygnal
+    public abstract class Sygnal
     {
         public int A { get; set; } // amplituda
         public const int t1 = 0; // czas poczatkowy
@@ -23,6 +23,12 @@ namespace CPS
             this.T = T;
             this.kw = kw;
         }
+
+        public abstract double wartoscSrednia(List<double> lista);
+        public abstract double wartośćSredniaBezwzgledna(List<double> lista);
+        public abstract double mocSrednia(List<double> lista);
+        public abstract double wariancja(List<double> lista);
+        public abstract double wartoscSkuteczna(List<double> lista);
 
     }
 }
