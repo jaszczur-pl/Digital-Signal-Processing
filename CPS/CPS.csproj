@@ -59,6 +59,7 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImpulsJednostkowy.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SCiagly.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="SygnalSinWyprostowanyJednoPolowkowo.cs" />
     <Compile Include="SygnalTrojkatny.cs" />
     <Compile Include="SzumGaussowski.cs" />
+    <Compile Include="SzumImpulsowy.cs" />
     <Compile Include="SzumJednostajny.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
