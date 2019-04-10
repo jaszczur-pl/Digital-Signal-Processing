@@ -17,9 +17,9 @@ namespace CPS
         public override double mocSrednia(List<double> lista)
         {
             double mS=0;
-            for(int i=t1; i*k<t2; i++)
+            for(int i=t1; i<lista.Count; i++)
             {
-                mS = mS + (lista[i]*k);
+                mS = mS + Math.Pow(lista[i],2);
             }
             mS = 1 / (t2 - t1) * mS;
             return mS;
@@ -27,23 +27,46 @@ namespace CPS
 
         public override double wariancja(List<double> lista)
         {
-
-            return 0;
+            double wariancja=0;
+            for (int i=0; i<lista.Count; i++)
+            {
+                wariancja = wariancja + Math.Pow(lista[i]-wartoscSrednia(lista),2);
+            }
+            wariancja = 1 / (t2 - t1) * wariancja;
+            return wariancja;
         }
 
         public override double wartoscSkuteczna(List<double> lista)
         {
-            throw new NotImplementedException();
+            double wSkuteczna=0;
+            for(int i = 0; i < lista.Count; i++)
+            {
+                wSkuteczna = wSkuteczna + Math.Pow(lista[i], 2);
+            }
+            wSkuteczna = Math.Sqrt(1 / (t2 - t1) * wSkuteczna);
+            return wSkuteczna;
         }
 
         public override double wartoscSrednia(List<double> lista)
         {
-            throw new NotImplementedException();
+            double srednia =0;
+            for(int i=0; i<lista.Count; i++)
+            {
+                srednia = srednia + lista[i];
+            }
+            srednia = srednia / lista.Count;
+            return srednia;
         }
 
         public override double wartośćSredniaBezwzgledna(List<double> lista)
         {
-            throw new NotImplementedException();
+            double srednia = 0;
+            for (int i = 0; i < lista.Count; i++)
+            {
+                srednia = srednia + Math.Abs(lista[i]);
+            }
+            srednia = srednia / lista.Count;
+            return srednia;
         }
     }
 }
