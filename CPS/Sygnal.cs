@@ -8,9 +8,10 @@ namespace CPS
         public int A { get; set; } // amplituda
         public const int t1 = 0; // czas poczatkowy
         public const int d = 10; // czas trwania
-        public const int n = 1000; // liczba probek
+        public const int n1 = 1; //pierwsza probka
+        public const int n2 = 1000; // liczba probek
         public double T { get; set; } //okres
-        public const double k = d / n; //krok
+        public const double k = d / n2; //krok
         public List<double> wartosciSygnaluY = new List<double>();
         public double kw { get; set; }// wspolczynnik wypelnienia
         public const double ts = t1 + d / 2;
