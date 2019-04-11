@@ -26,6 +26,7 @@ namespace CPS
             this.kw = kw;
         }
 
+        public abstract void PoliczWartoscY();
         public abstract double wartoscSrednia(List<double> lista);
         public abstract double wartośćSredniaBezwzgledna(List<double> lista);
         public abstract double mocSrednia(List<double> lista);
@@ -81,18 +82,22 @@ namespace CPS
             double[,] hist = new double[2, iloscPrzedzialowHistogramu];
             lista.Sort();
             double przedzialHistogramu = A / iloscPrzedzialowHistogramu;
-            for(int i =0; i < iloscPrzedzialowHistogramu; i++)
+            int j = 0;
+            for (int i =0; i < iloscPrzedzialowHistogramu; i++)
             {
-                hist[0, i] = przedzialHistogramu + i * przedzialHistogramu;
+                hist[0, i] =i * przedzialHistogramu;
                 int ilosc = 0;
-                int j = 0;
+                
                 while(lista[j]>=hist[0,i] && lista[j]<hist[0,i]+przedzialHistogramu)
                 {
                     ilosc++;
+                    j++;
                 }
-                j++;
+                hist[1, i] = ilosc;
             }
         }
+
+
 
     }
 }

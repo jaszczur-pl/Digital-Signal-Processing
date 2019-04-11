@@ -25,7 +25,7 @@ namespace CPS
             return x;
         }
         public void PoliczWartoscY() {
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < n2; i++)
             {
                 y = Generuj(A);
                 this.wartosciSygnaluY.Add(y);

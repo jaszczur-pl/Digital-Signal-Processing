@@ -89,5 +89,10 @@ namespace CPS
             srednia = srednia / lista.Count;
             return srednia;
         }
+
+        public override void PoliczWartoscY()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

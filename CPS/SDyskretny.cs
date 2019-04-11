@@ -24,6 +24,11 @@ namespace CPS
             return mS;
         }
 
+        public override void PoliczWartoscY()
+        {
+            throw new NotImplementedException();
+        }
+
         public override double wariancja(List<double> lista)
         {
             double wariancja = 0;

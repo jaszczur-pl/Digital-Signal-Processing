@@ -17,7 +17,7 @@ namespace CPS
 
         public void ObliczWartoscY()
         {
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < n2; i++)
             {
                 t = i * k;
                 if (t >= k * T + t1 || t < kw * T + k * T + t1) // czy k to krok we wzorze??

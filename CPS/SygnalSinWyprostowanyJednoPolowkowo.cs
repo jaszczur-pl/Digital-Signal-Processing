@@ -16,7 +16,7 @@ namespace CPS
 
         public new void PoliczWartoscY()
         {
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < n2; i++)
             {
                 if (FSin(T, i) < 0)
                 {

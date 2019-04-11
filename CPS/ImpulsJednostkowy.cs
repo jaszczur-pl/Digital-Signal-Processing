@@ -16,7 +16,7 @@ namespace CPS
         {
             double t;
             int y;
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < n2; i++)
             {
                 t = i * k;
                 if (t== 0)
