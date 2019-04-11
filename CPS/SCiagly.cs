@@ -14,8 +14,25 @@ namespace CPS
 
         }
 
+        public void PelneOkresy(List<double> lista)
+        {   if (T != 0)
+            {
+                if (d % T != 0)
+                {
+                    double tPelnychOkresow = (int)(d / T) * T;
+                    int nPelnychOkresow = (int)(tPelnychOkresow / k);
+                    lista.RemoveRange(nPelnychOkresow, lista.Count - nPelnychOkresow);
+                    /*while (lista.Count > nPelnychOkresow)
+                    {
+                        lista.RemoveAt(lista.Count-1);
+                    }*/
+                }
+            }
+        }
+
         public override double mocSrednia(List<double> lista)
         {
+            PelneOkresy(lista);
             double mS=0;
             for(int i=0; i<lista.Count; i++)
             {
@@ -27,6 +44,7 @@ namespace CPS
 
         public override double wariancja(List<double> lista)
         {
+            PelneOkresy(lista);
             double wariancja=0;
             for (int i=0; i<lista.Count; i++)
             {
@@ -38,6 +56,7 @@ namespace CPS
 
         public override double wartoscSkuteczna(List<double> lista)
         {
+            PelneOkresy(lista);
             double wSkuteczna=0;
             for(int i = 0; i < lista.Count; i++)
             {
@@ -49,6 +68,7 @@ namespace CPS
 
         public override double wartoscSrednia(List<double> lista)
         {
+            PelneOkresy(lista);
             double srednia =0;
             for(int i=0; i<lista.Count; i++)
             {
@@ -60,6 +80,7 @@ namespace CPS
 
         public override double wartośćSredniaBezwzgledna(List<double> lista)
         {
+            PelneOkresy(lista);
             double srednia = 0;
             for (int i = 0; i < lista.Count; i++)
             {
