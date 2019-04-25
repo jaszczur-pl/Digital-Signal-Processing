@@ -98,5 +98,9 @@ namespace CPS
                 textBoxns.ReadOnly = true;
             }
         }
+
+        private void btnAddSignal1_Click(object sender, EventArgs e) {
+
+        }
     }
 }
