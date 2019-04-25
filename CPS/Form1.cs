@@ -10,58 +10,93 @@ using System.Windows.Forms;
 
 namespace CPS
 {
-    public partial class Form1 : Form
+    public partial class btnDoubleSingals : Form
     {
-        public Form1() {
+        public btnDoubleSingals() {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e) {
+        private void comboBoxSignal_SelectedIndexChanged(object sender, EventArgs e) {
 
-        }
+            if (comboBoxSignal.SelectedIndex == 0 || comboBoxSignal.SelectedIndex == 1) {
+                textBoxA.ReadOnly = false;
+                textBoxt1.ReadOnly = false;
+                textBoxd.ReadOnly = false;
+                textBoxT.ReadOnly = true;
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) {
+                textBoxkw.ReadOnly = true;
+                textBoxts.ReadOnly = true;
+                textBoxn1.ReadOnly = true;
+                textBoxns.ReadOnly = true;
+                textBoxf.ReadOnly = true;
+                textBoxp.ReadOnly = true;
+            }
+            else if (comboBoxSignal.SelectedIndex == 2 || comboBoxSignal.SelectedIndex == 3 || comboBoxSignal.SelectedIndex == 4) {
+                textBoxA.ReadOnly = false;
+                textBoxt1.ReadOnly = false;
+                textBoxd.ReadOnly = false;
+                textBoxT.ReadOnly = false;
 
-        }
+                textBoxkw.ReadOnly = true;
+                textBoxts.ReadOnly = true;
+                textBoxn1.ReadOnly = true;
+                textBoxns.ReadOnly = true;
+                textBoxf.ReadOnly = true;
+                textBoxp.ReadOnly = true;
+            }
+            else if (comboBoxSignal.SelectedIndex == 5 || comboBoxSignal.SelectedIndex == 6 || comboBoxSignal.SelectedIndex == 7) {
+                textBoxA.ReadOnly = false;
+                textBoxt1.ReadOnly = false;
+                textBoxd.ReadOnly = false;
+                textBoxT.ReadOnly = false;
+                textBoxkw.ReadOnly = false;
 
-        private void label1_Click(object sender, EventArgs e) {
+                textBoxts.ReadOnly = true;
+                textBoxn1.ReadOnly = true;
+                textBoxns.ReadOnly = true;
+                textBoxf.ReadOnly = true;
+                textBoxp.ReadOnly = true;
+            }
+            else if (comboBoxSignal.SelectedIndex == 8) {
+                textBoxA.ReadOnly = false;
+                textBoxt1.ReadOnly = false;
+                textBoxd.ReadOnly = false;
+                textBoxts.ReadOnly = false;
 
-        }
+                textBoxT.ReadOnly = true;
+                textBoxkw.ReadOnly = true;
+                textBoxn1.ReadOnly = true;
+                textBoxns.ReadOnly = true;
+                textBoxf.ReadOnly = true;
+                textBoxp.ReadOnly = true;
 
-        private void button1_Click(object sender, EventArgs e) {
+            }
+            else if (comboBoxSignal.SelectedIndex == 9) {
+                textBoxA.ReadOnly = false;
+                textBoxns.ReadOnly = false;
+                textBoxn1.ReadOnly = false;
+                textBoxd.ReadOnly = false;
+                textBoxf.ReadOnly = false;
 
-        }
+                textBoxt1.ReadOnly = true;
+                textBoxT.ReadOnly = true;
+                textBoxkw.ReadOnly = true;
+                textBoxts.ReadOnly = true;
+                textBoxp.ReadOnly = true;
+            }
+            else if (comboBoxSignal.SelectedIndex == 10) {
+                textBoxA.ReadOnly = false;
+                textBoxt1.ReadOnly = false;
+                textBoxd.ReadOnly = false;
+                textBoxf.ReadOnly = false;
+                textBoxp.ReadOnly = false;
 
-        private void button3_Click(object sender, EventArgs e) {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e) {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e) {
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e) {
-
-        }
-
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e) {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e) {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e) {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e) {
-
+                textBoxT.ReadOnly = true;
+                textBoxkw.ReadOnly = true;
+                textBoxts.ReadOnly = true;
+                textBoxn1.ReadOnly = true;
+                textBoxns.ReadOnly = true;
+            }
         }
     }
 }
