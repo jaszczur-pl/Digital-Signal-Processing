@@ -53,22 +53,22 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="ImpulsJednostkowy.cs" />
+    <Compile Include="Signals\ImpulsJednostkowy.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SCiagly.cs" />
     <Compile Include="SDyskretny.cs" />
-    <Compile Include="SkokJednostkowy.cs" />
-    <Compile Include="Sygnal.cs" />
-    <Compile Include="SygnalProstokatny.cs" />
-    <Compile Include="SygnalProstokatnySymetryczny.cs" />
-    <Compile Include="SygnalSin.cs" />
-    <Compile Include="SygnalSinWyprostowanyDwuPolowkowo.cs" />
-    <Compile Include="SygnalSinWyprostowanyJednoPolowkowo.cs" />
-    <Compile Include="SygnalTrojkatny.cs" />
-    <Compile Include="SzumGaussowski.cs" />
-    <Compile Include="SzumImpulsowy.cs" />
-    <Compile Include="SzumJednostajny.cs" />
+    <Compile Include="Signals\SkokJednostkowy.cs" />
+    <Compile Include="Signals\Sygnal.cs" />
+    <Compile Include="Signals\SygnalProstokatny.cs" />
+    <Compile Include="Signals\SygnalProstokatnySymetryczny.cs" />
+    <Compile Include="Signals\SygnalSin.cs" />
+    <Compile Include="Signals\SygnalSinWyprostowanyDwuPolowkowo.cs" />
+    <Compile Include="Signals\SygnalSinWyprostowanyJednoPolowkowo.cs" />
+    <Compile Include="Signals\SygnalTrojkatny.cs" />
+    <Compile Include="Signals\SzumGaussowski.cs" />
+    <Compile Include="Signals\SzumImpulsowy.cs" />
+    <Compile Include="Signals\SzumJednostajny.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

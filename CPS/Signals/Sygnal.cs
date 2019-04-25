@@ -5,33 +5,25 @@ namespace CPS
 {
     public abstract class Sygnal
     {
-        public int A { get; set; } // amplituda
-        public const int t1 = 0; // czas poczatkowy
-        public const int d = 10; // czas trwania
-        public const int n1 = 1; //pierwsza probka
-        public const int n2 = 1000; // liczba probek
-        public double T { get; set; } //okres
-        public const double k = d / n2; //krok
+        public double A { get; set; }
+        public double t1 { get; set; }
+        public double d { get; set; }
+        public double T { get; set; } 
+        public double kw { get; set; }
         public List<double> wartosciSygnaluY = new List<double>();
-        public double kw { get; set; }// wspolczynnik wypelnienia
-        public const double ts = t1 + d / 2;
+        public double ts { get; set; }
+        public double n1 { get; set; }
+        public double ns { get; set; }
+        public double f { get; set; }
+        public double p { get; set; }
         public int iloscPrzedzialowHistogramu { get; set; }
 
-        public int t2 = t1 + d; //czas koncowy
-
-        public Sygnal(int A, double T, double kw)
-        {
-            this.A = A;
-            this.T = T;
-            this.kw = kw;
-        }
-
-        public abstract void PoliczWartoscY();
-        public abstract double wartoscSrednia(List<double> lista);
-        public abstract double wartośćSredniaBezwzgledna(List<double> lista);
-        public abstract double mocSrednia(List<double> lista);
-        public abstract double wariancja(List<double> lista);
-        public abstract double wartoscSkuteczna(List<double> lista);
+        //public abstract void PoliczWartoscY();
+        //public abstract double wartoscSrednia(List<double> lista);
+        //public abstract double wartośćSredniaBezwzgledna(List<double> lista);
+        //public abstract double mocSrednia(List<double> lista);
+        //public abstract double wariancja(List<double> lista);
+        //public abstract double wartoscSkuteczna(List<double> lista);
 
         public List<double> Dodawanie(List<double> lista1, List<double> lista2)
         {

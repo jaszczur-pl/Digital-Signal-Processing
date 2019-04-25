@@ -22,8 +22,8 @@ namespace CPS
                 textBoxA.ReadOnly = false;
                 textBoxt1.ReadOnly = false;
                 textBoxd.ReadOnly = false;
-                textBoxT.ReadOnly = true;
 
+                textBoxT.ReadOnly = true;
                 textBoxkw.ReadOnly = true;
                 textBoxts.ReadOnly = true;
                 textBoxn1.ReadOnly = true;
