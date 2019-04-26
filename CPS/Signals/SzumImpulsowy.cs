@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CPS
 {
+    [Serializable]
     class SzumImpulsowy: Sygnal
     {
         public SzumImpulsowy(double A, double t1, double d, double f , double p)

@@ -6,6 +6,7 @@ using System.Text;
 
 namespace CPS
 {
+    [Serializable]
     class SygnalSin: Sygnal
     {
         public SygnalSin(double A, double T, double t1, double d)

@@ -4,9 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-
 namespace CPS
 {
+    [Serializable]
     class SzumGaussowski: Sygnal
     {
         public SzumGaussowski(double A, double t1, double d)

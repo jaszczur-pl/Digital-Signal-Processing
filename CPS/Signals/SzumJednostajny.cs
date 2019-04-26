@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CPS
 {
+    [Serializable]
     class SzumJednostajny : Sygnal
     {
         public SzumJednostajny(double A, double t1, double d)

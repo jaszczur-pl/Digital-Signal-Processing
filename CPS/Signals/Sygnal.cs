@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace CPS
 {
+    [Serializable]
     public class Sygnal {
 
         public Sygnal() {

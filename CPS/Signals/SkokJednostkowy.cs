@@ -6,6 +6,7 @@ using System.Text;
 
 namespace CPS
 {
+    [Serializable]
     class SkokJednostkowy: Sygnal
     {
         public SkokJednostkowy(double A, double t1, double d, double ts)

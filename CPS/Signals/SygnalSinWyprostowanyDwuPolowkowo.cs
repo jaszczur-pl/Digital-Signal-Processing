@@ -6,6 +6,7 @@ using System.Text;
 
 namespace CPS
 {
+    [Serializable]
     class SygnalSinWyprostowanyDwuPolowkowo: Sygnal
     {
         public SygnalSinWyprostowanyDwuPolowkowo(double A, double T, double t1, double d)

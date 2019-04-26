@@ -6,6 +6,7 @@ using System.Text;
 
 namespace CPS
 {
+    [Serializable]
     class SygnalTrojkatny: Sygnal
     {
         public SygnalTrojkatny(double A, double T, double kw, double d, double t1)

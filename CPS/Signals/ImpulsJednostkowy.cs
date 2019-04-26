@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CPS
 {
+    [Serializable]
     class ImpulsJednostkowy: Sygnal
     {
         public ImpulsJednostkowy(double A, double n1, double ns, double d, double f)
