@@ -18,7 +18,17 @@ namespace CPS
         }
 
         public override void CalculateXYPoints() {
-            throw new NotImplementedException();
+            Random randomValue = new Random();
+
+            for (double i = t1; i < (d + t1); i = i + (d / (numberOfSamples / 100))) {
+                axisX.Add(i);
+                double temp = A / 3;
+                double u1 = 1.0 - randomValue.NextDouble();
+                double u2 = 1.0 - randomValue.NextDouble();
+                double formula = Math.Sqrt(-2.0 * Math.Log(u1)) * Math.Sin(2.0 * Math.PI * u2);
+
+                axisY.Add(formula * temp);
+            }
         }
 
         //private double nextNextGaussian;

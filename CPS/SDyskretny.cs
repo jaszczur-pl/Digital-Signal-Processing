@@ -8,6 +8,9 @@ namespace CPS
 {
     class SDyskretny : Sygnal
     {
+        public override void CalculateXYPoints() {
+            throw new NotImplementedException();
+        }
 
         //public override double mocSrednia(List<double> lista)
         //{

@@ -8,6 +8,10 @@ namespace CPS
 {
     class SCiagly : Sygnal
     {
+        public override void CalculateXYPoints() {
+            throw new NotImplementedException();
+        }
+
         //public void PelneOkresy(List<double> lista)
         //{   if (T != 0)
         //    {

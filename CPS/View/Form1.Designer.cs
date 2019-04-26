@@ -33,8 +33,8 @@
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.comboBoxSignal = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSaveFile = new System.Windows.Forms.Button();
-            this.btnLoadFile = new System.Windows.Forms.Button();
+            this.btnSaveFile1 = new System.Windows.Forms.Button();
+            this.btnLoadFile1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -73,10 +73,15 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.btnAddSignal2 = new System.Windows.Forms.Button();
-            this.btnPrintSingleSignal = new System.Windows.Forms.Button();
             this.btnPrintDoubleSingals = new System.Windows.Forms.Button();
+            this.btnLoadFile2 = new System.Windows.Forms.Button();
+            this.btnSaveFile2 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboBoxSignal
@@ -110,23 +115,23 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Rodzaj sygnału / szumu";
             // 
-            // btnSaveFile
+            // btnSaveFile1
             // 
-            this.btnSaveFile.Location = new System.Drawing.Point(12, 493);
-            this.btnSaveFile.Name = "btnSaveFile";
-            this.btnSaveFile.Size = new System.Drawing.Size(146, 23);
-            this.btnSaveFile.TabIndex = 4;
-            this.btnSaveFile.Text = "Zapisz do pliku";
-            this.btnSaveFile.UseVisualStyleBackColor = true;
+            this.btnSaveFile1.Location = new System.Drawing.Point(6, 59);
+            this.btnSaveFile1.Name = "btnSaveFile1";
+            this.btnSaveFile1.Size = new System.Drawing.Size(121, 23);
+            this.btnSaveFile1.TabIndex = 4;
+            this.btnSaveFile1.Text = "Zapisz do pliku";
+            this.btnSaveFile1.UseVisualStyleBackColor = true;
             // 
-            // btnLoadFile
+            // btnLoadFile1
             // 
-            this.btnLoadFile.Location = new System.Drawing.Point(12, 534);
-            this.btnLoadFile.Name = "btnLoadFile";
-            this.btnLoadFile.Size = new System.Drawing.Size(146, 23);
-            this.btnLoadFile.TabIndex = 5;
-            this.btnLoadFile.Text = "Odczytaj z pliku";
-            this.btnLoadFile.UseVisualStyleBackColor = true;
+            this.btnLoadFile1.Location = new System.Drawing.Point(6, 100);
+            this.btnLoadFile1.Name = "btnLoadFile1";
+            this.btnLoadFile1.Size = new System.Drawing.Size(121, 23);
+            this.btnLoadFile1.TabIndex = 5;
+            this.btnLoadFile1.Text = "Odczytaj z pliku";
+            this.btnLoadFile1.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -222,15 +227,22 @@
             // 
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
+            this.chart1.Cursor = System.Windows.Forms.Cursors.No;
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(347, 25);
+            this.chart1.Location = new System.Drawing.Point(348, 25);
             this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
+            this.chart1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.IsVisibleInLegend = false;
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
+            series1.Name = "signal";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(300, 300);
+            this.chart1.Size = new System.Drawing.Size(363, 380);
             this.chart1.TabIndex = 30;
             this.chart1.Text = "chart1";
             // 
@@ -240,13 +252,13 @@
             this.chart2.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chart2.Legends.Add(legend2);
-            this.chart2.Location = new System.Drawing.Point(693, 25);
+            this.chart2.Location = new System.Drawing.Point(765, 26);
             this.chart2.Name = "chart2";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.chart2.Series.Add(series2);
-            this.chart2.Size = new System.Drawing.Size(300, 300);
+            this.chart2.Size = new System.Drawing.Size(363, 380);
             this.chart2.TabIndex = 31;
             this.chart2.Text = "chart2";
             // 
@@ -333,7 +345,7 @@
             // 
             // btnAddSignal1
             // 
-            this.btnAddSignal1.Location = new System.Drawing.Point(187, 449);
+            this.btnAddSignal1.Location = new System.Drawing.Point(6, 19);
             this.btnAddSignal1.Name = "btnAddSignal1";
             this.btnAddSignal1.Size = new System.Drawing.Size(121, 23);
             this.btnAddSignal1.TabIndex = 42;
@@ -349,7 +361,7 @@
             "Odejmowanie",
             "Mnożenie",
             "Dzielenie"});
-            this.comboBoxMathOperation.Location = new System.Drawing.Point(402, 451);
+            this.comboBoxMathOperation.Location = new System.Drawing.Point(396, 440);
             this.comboBoxMathOperation.Name = "comboBoxMathOperation";
             this.comboBoxMathOperation.Size = new System.Drawing.Size(121, 21);
             this.comboBoxMathOperation.TabIndex = 43;
@@ -357,7 +369,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(402, 435);
+            this.label2.Location = new System.Drawing.Point(396, 424);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(121, 13);
             this.label2.TabIndex = 44;
@@ -365,7 +377,7 @@
             // 
             // textBoxMs
             // 
-            this.textBoxMs.Location = new System.Drawing.Point(922, 498);
+            this.textBoxMs.Location = new System.Drawing.Point(947, 567);
             this.textBoxMs.Name = "textBoxMs";
             this.textBoxMs.ReadOnly = true;
             this.textBoxMs.Size = new System.Drawing.Size(71, 20);
@@ -373,7 +385,7 @@
             // 
             // textBoxWar
             // 
-            this.textBoxWar.Location = new System.Drawing.Point(922, 460);
+            this.textBoxWar.Location = new System.Drawing.Point(947, 529);
             this.textBoxWar.Name = "textBoxWar";
             this.textBoxWar.ReadOnly = true;
             this.textBoxWar.Size = new System.Drawing.Size(71, 20);
@@ -381,7 +393,7 @@
             // 
             // textBoxWsk
             // 
-            this.textBoxWsk.Location = new System.Drawing.Point(922, 424);
+            this.textBoxWsk.Location = new System.Drawing.Point(947, 493);
             this.textBoxWsk.Name = "textBoxWsk";
             this.textBoxWsk.ReadOnly = true;
             this.textBoxWsk.Size = new System.Drawing.Size(71, 20);
@@ -389,7 +401,7 @@
             // 
             // textBoxWsb
             // 
-            this.textBoxWsb.Location = new System.Drawing.Point(922, 388);
+            this.textBoxWsb.Location = new System.Drawing.Point(947, 457);
             this.textBoxWsb.Name = "textBoxWsb";
             this.textBoxWsb.ReadOnly = true;
             this.textBoxWsb.Size = new System.Drawing.Size(71, 20);
@@ -397,7 +409,7 @@
             // 
             // textBoxWsr
             // 
-            this.textBoxWsr.Location = new System.Drawing.Point(922, 355);
+            this.textBoxWsr.Location = new System.Drawing.Point(947, 424);
             this.textBoxWsr.Name = "textBoxWsr";
             this.textBoxWsr.ReadOnly = true;
             this.textBoxWsr.Size = new System.Drawing.Size(71, 20);
@@ -406,7 +418,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(737, 427);
+            this.label13.Location = new System.Drawing.Point(762, 496);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(99, 13);
             this.label13.TabIndex = 49;
@@ -415,7 +427,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(737, 463);
+            this.label14.Location = new System.Drawing.Point(762, 532);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(55, 13);
             this.label14.TabIndex = 48;
@@ -424,7 +436,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(737, 501);
+            this.label15.Location = new System.Drawing.Point(762, 570);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(65, 13);
             this.label15.TabIndex = 47;
@@ -433,7 +445,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(737, 391);
+            this.label16.Location = new System.Drawing.Point(762, 460);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(149, 13);
             this.label16.TabIndex = 46;
@@ -442,7 +454,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(737, 358);
+            this.label17.Location = new System.Drawing.Point(762, 427);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(84, 13);
             this.label17.TabIndex = 45;
@@ -452,27 +464,27 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Enabled = false;
-            this.checkBox1.Location = new System.Drawing.Point(315, 455);
+            this.checkBox1.Location = new System.Drawing.Point(6, 153);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(69, 17);
+            this.checkBox1.Size = new System.Drawing.Size(63, 17);
             this.checkBox1.TabIndex = 55;
-            this.checkBox1.Text = "Sygnał 1";
+            this.checkBox1.Text = "Dodany";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
             this.checkBox2.Enabled = false;
-            this.checkBox2.Location = new System.Drawing.Point(315, 499);
+            this.checkBox2.Location = new System.Drawing.Point(6, 153);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(69, 17);
+            this.checkBox2.Size = new System.Drawing.Size(63, 17);
             this.checkBox2.TabIndex = 57;
-            this.checkBox2.Text = "Sygnał 2";
+            this.checkBox2.Text = "Dodany";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // btnAddSignal2
             // 
-            this.btnAddSignal2.Location = new System.Drawing.Point(188, 493);
+            this.btnAddSignal2.Location = new System.Drawing.Point(6, 19);
             this.btnAddSignal2.Name = "btnAddSignal2";
             this.btnAddSignal2.Size = new System.Drawing.Size(121, 23);
             this.btnAddSignal2.TabIndex = 56;
@@ -480,35 +492,67 @@
             this.btnAddSignal2.UseVisualStyleBackColor = true;
             this.btnAddSignal2.Click += new System.EventHandler(this.btnAddSignal2_Click);
             // 
-            // btnPrintSingleSignal
-            // 
-            this.btnPrintSingleSignal.Location = new System.Drawing.Point(12, 449);
-            this.btnPrintSingleSignal.Name = "btnPrintSingleSignal";
-            this.btnPrintSingleSignal.Size = new System.Drawing.Size(146, 23);
-            this.btnPrintSingleSignal.TabIndex = 58;
-            this.btnPrintSingleSignal.Text = "Rysuj pojedynczy sygnał";
-            this.btnPrintSingleSignal.UseVisualStyleBackColor = true;
-            this.btnPrintSingleSignal.Click += new System.EventHandler(this.btnPrintSingleSignal_Click);
-            // 
             // btnPrintDoubleSingals
             // 
-            this.btnPrintDoubleSingals.Location = new System.Drawing.Point(402, 493);
+            this.btnPrintDoubleSingals.Location = new System.Drawing.Point(396, 482);
             this.btnPrintDoubleSingals.Name = "btnPrintDoubleSingals";
             this.btnPrintDoubleSingals.Size = new System.Drawing.Size(121, 23);
             this.btnPrintDoubleSingals.TabIndex = 59;
             this.btnPrintDoubleSingals.Text = "Rysuj sygnały";
             this.btnPrintDoubleSingals.UseVisualStyleBackColor = true;
             // 
+            // btnLoadFile2
+            // 
+            this.btnLoadFile2.Location = new System.Drawing.Point(6, 100);
+            this.btnLoadFile2.Name = "btnLoadFile2";
+            this.btnLoadFile2.Size = new System.Drawing.Size(121, 23);
+            this.btnLoadFile2.TabIndex = 61;
+            this.btnLoadFile2.Text = "Odczytaj z pliku";
+            this.btnLoadFile2.UseVisualStyleBackColor = true;
+            // 
+            // btnSaveFile2
+            // 
+            this.btnSaveFile2.Location = new System.Drawing.Point(6, 59);
+            this.btnSaveFile2.Name = "btnSaveFile2";
+            this.btnSaveFile2.Size = new System.Drawing.Size(121, 23);
+            this.btnSaveFile2.TabIndex = 60;
+            this.btnSaveFile2.Text = "Zapisz do pliku";
+            this.btnSaveFile2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnAddSignal1);
+            this.groupBox1.Controls.Add(this.btnSaveFile1);
+            this.groupBox1.Controls.Add(this.btnLoadFile1);
+            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 424);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(158, 176);
+            this.groupBox1.TabIndex = 62;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Sygnal 1";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnAddSignal2);
+            this.groupBox2.Controls.Add(this.checkBox2);
+            this.groupBox2.Controls.Add(this.btnLoadFile2);
+            this.groupBox2.Controls.Add(this.btnSaveFile2);
+            this.groupBox2.Location = new System.Drawing.Point(187, 424);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(162, 176);
+            this.groupBox2.TabIndex = 63;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Sygnal 2";
+            // 
             // btnDoubleSingals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1275, 612);
+            this.ClientSize = new System.Drawing.Size(1148, 612);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnPrintDoubleSingals);
-            this.Controls.Add(this.btnPrintSingleSignal);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.btnAddSignal2);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.textBoxMs);
             this.Controls.Add(this.textBoxWar);
             this.Controls.Add(this.textBoxWsk);
@@ -521,7 +565,6 @@
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBoxMathOperation);
-            this.Controls.Add(this.btnAddSignal1);
             this.Controls.Add(this.textBoxp);
             this.Controls.Add(this.textBoxf);
             this.Controls.Add(this.textBoxts);
@@ -544,8 +587,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.btnLoadFile);
-            this.Controls.Add(this.btnSaveFile);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxSignal);
             this.Name = "btnDoubleSingals";
@@ -553,6 +594,10 @@
             this.Load += new System.EventHandler(this.btnDoubleSingals_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -560,8 +605,8 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnSaveFile;
-        private System.Windows.Forms.Button btnLoadFile;
+        private System.Windows.Forms.Button btnSaveFile1;
+        private System.Windows.Forms.Button btnLoadFile1;
         protected System.Windows.Forms.ComboBox comboBoxSignal;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -601,8 +646,11 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Button btnAddSignal2;
-        private System.Windows.Forms.Button btnPrintSingleSignal;
         private System.Windows.Forms.Button btnPrintDoubleSingals;
+        private System.Windows.Forms.Button btnLoadFile2;
+        private System.Windows.Forms.Button btnSaveFile2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
 

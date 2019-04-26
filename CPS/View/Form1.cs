@@ -235,11 +235,16 @@ namespace CPS
         }
 
         private void PrintPlot(Sygnal signal) {
+            
+            chart1.ChartAreas[0].AxisX.IsMarginVisible = false;
+            chart1.Series[0].Points.Clear();
+            chart1.Titles.Clear();
+
             chart1.Titles.Add(signal.signalName);
             chart1.ChartAreas[0].AxisY.Minimum = signal.axisY.Min();
             chart1.ChartAreas[0].AxisY.Maximum = signal.axisY.Max();
             chart1.Series[0].Points.DataBindXY(signal.axisX, signal.axisY);
-            chart1.Series[0].MarkerSize = 1;
+            chart1.Series[0].MarkerSize = 3;
         }
     }
 }
