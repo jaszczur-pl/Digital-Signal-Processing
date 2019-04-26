@@ -478,6 +478,7 @@
             this.btnAddSignal2.TabIndex = 56;
             this.btnAddSignal2.Text = "Dodaj sygnał 2";
             this.btnAddSignal2.UseVisualStyleBackColor = true;
+            this.btnAddSignal2.Click += new System.EventHandler(this.btnAddSignal2_Click);
             // 
             // btnPrintSingleSignal
             // 
@@ -548,6 +549,7 @@
             this.Controls.Add(this.comboBoxSignal);
             this.Name = "btnDoubleSingals";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.btnDoubleSingals_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);

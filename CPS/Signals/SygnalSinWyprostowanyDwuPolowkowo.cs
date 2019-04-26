@@ -10,11 +10,11 @@ namespace CPS
     {
         double y;
 
-        public SygnalSinWyprostowanyDwuPolowkowo(double A, double T, double kw, double d)
+        public SygnalSinWyprostowanyDwuPolowkowo(double A, double T, double t1, double d)
         {
                 this.A = A;
                 this.T = T;
-                this.kw = kw;
+                this.t1 = t1;
                 this.d = d;
         }
 

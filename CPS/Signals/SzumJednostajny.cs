@@ -10,11 +10,11 @@ namespace CPS
     {
         double y;
 
-        public SzumJednostajny(double A, double T, double kw)
+        public SzumJednostajny(double A, double t1, double d)
         {
             this.A = A;
-            this.T = T;
-            this.kw = kw;
+            this.t1 = t1;
+            this.d = d;
         }
 
         public double Generuj(double A)

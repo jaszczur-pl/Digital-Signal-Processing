@@ -11,11 +11,11 @@ namespace CPS
     {
         double y;
 
-        public SzumGaussowski(double A, double T, double kw)
+        public SzumGaussowski(double A, double t1, double d)
         {
             this.A = A;
-            this.T = T;
-            this.kw = kw;
+            this.t1 = t1;
+            this.d = d;
         }
 
         private double nextNextGaussian;

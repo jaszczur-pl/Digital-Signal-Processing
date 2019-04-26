@@ -12,6 +12,9 @@ namespace CPS
 {
     public partial class btnDoubleSingals : Form
     {
+
+        private Operator operat = new Operator();
+
         public btnDoubleSingals() {
             InitializeComponent();
         }
@@ -100,20 +103,120 @@ namespace CPS
         }
 
         private void btnAddSignal1_Click(object sender, EventArgs e) {
-            //double A = Convert.ToDouble(textBoxA.Text);
-            //double t1 = Convert.ToDouble(textBoxt1.Text);
-            //double d = Convert.ToDouble(textBoxd.Text);
-            //double T = Convert.ToDouble(textBoxT.Text);
-            //double kw = Convert.ToDouble(textBoxkw.Text);
-            //double ts = Convert.ToDouble(textBoxts.Text);
-            //double n1 = Convert.ToDouble(textBoxn1.Text);
-            //double ns = Convert.ToDouble(textBoxns.Text);
-            //double f = Convert.ToDouble(textBoxf.Text);
-            //double p = Convert.ToDouble(textBoxp.Text);
 
-            int singalNumer = comboBoxSignal.SelectedIndex;
+            Sygnal signal;
+
+            switch (comboBoxSignal.SelectedIndex) {
+                case 0:
+                    signal = new SzumJednostajny(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxt1.Text), Convert.ToDouble(textBoxd.Text));
+                    break;
+                case 1:
+                    signal = new SzumGaussowski(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxt1.Text), Convert.ToDouble(textBoxd.Text));
+                    break;
+                case 2:
+                    signal = new SygnalSin(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxT.Text), Convert.ToDouble(textBoxt1.Text), 
+                        Convert.ToDouble(textBoxd.Text));
+                    break;
+                case 3:
+                    signal = new SygnalSinWyprostowanyJednoPolowkowo(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxT.Text), Convert.ToDouble(textBoxt1.Text),
+                        Convert.ToDouble(textBoxd.Text));
+                    break;
+                case 4:
+                    signal = new SygnalSinWyprostowanyDwuPolowkowo(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxT.Text), Convert.ToDouble(textBoxt1.Text),
+                        Convert.ToDouble(textBoxd.Text));
+                    break;
+                case 5:
+                    signal = new SygnalProstokatny(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxT.Text), Convert.ToDouble(textBoxkw.Text),
+                        Convert.ToDouble(textBoxd.Text), Convert.ToDouble(textBoxt1.Text));
+                    break;
+                case 6:
+                    signal = new SygnalProstokatnySymetryczny(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxT.Text), Convert.ToDouble(textBoxkw.Text),
+                        Convert.ToDouble(textBoxt1.Text), Convert.ToDouble(textBoxd.Text));
+                    break;
+                case 7:
+                    signal = new SygnalTrojkatny(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxT.Text), Convert.ToDouble(textBoxkw.Text),
+                        Convert.ToDouble(textBoxd.Text), Convert.ToDouble(textBoxt1.Text));
+                    break;
+                case 8:
+                    signal = new SkokJednostkowy(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxt1.Text), Convert.ToDouble(textBoxd.Text),
+                        Convert.ToDouble(textBoxts.Text));
+                    break;
+                case 9:
+                    signal = new ImpulsJednostkowy(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxn1.Text), Convert.ToDouble(textBoxns.Text),
+                        Convert.ToDouble(textBoxd.Text), Convert.ToDouble(textBoxf.Text));
+                    break;
+                case 10:
+                    signal = new ImpulsJednostkowy(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxt1.Text), Convert.ToDouble(textBoxd.Text),
+                        Convert.ToDouble(textBoxf.Text), Convert.ToDouble(textBoxp.Text));
+                    break;
+                default:
+                    signal = new SzumJednostajny(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxt1.Text), Convert.ToDouble(textBoxd.Text));
+                    break;
+            }
+
+            operat.Signal1 = signal;
 
             checkBox1.Checked = true;
+        }
+
+        private void btnAddSignal2_Click(object sender, EventArgs e) {
+            Sygnal signal;
+
+            switch (comboBoxSignal.SelectedIndex) {
+                case 0:
+                    signal = new SzumJednostajny(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxt1.Text), Convert.ToDouble(textBoxd.Text));
+                    break;
+                case 1:
+                    signal = new SzumGaussowski(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxt1.Text), Convert.ToDouble(textBoxd.Text));
+                    break;
+                case 2:
+                    signal = new SygnalSin(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxT.Text), Convert.ToDouble(textBoxt1.Text),
+                        Convert.ToDouble(textBoxd.Text));
+                    break;
+                case 3:
+                    signal = new SygnalSinWyprostowanyJednoPolowkowo(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxT.Text), Convert.ToDouble(textBoxt1.Text),
+                        Convert.ToDouble(textBoxd.Text));
+                    break;
+                case 4:
+                    signal = new SygnalSinWyprostowanyDwuPolowkowo(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxT.Text), Convert.ToDouble(textBoxt1.Text),
+                        Convert.ToDouble(textBoxd.Text));
+                    break;
+                case 5:
+                    signal = new SygnalProstokatny(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxT.Text), Convert.ToDouble(textBoxkw.Text),
+                        Convert.ToDouble(textBoxd.Text), Convert.ToDouble(textBoxt1.Text));
+                    break;
+                case 6:
+                    signal = new SygnalProstokatnySymetryczny(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxT.Text), Convert.ToDouble(textBoxkw.Text),
+                        Convert.ToDouble(textBoxt1.Text), Convert.ToDouble(textBoxd.Text));
+                    break;
+                case 7:
+                    signal = new SygnalTrojkatny(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxT.Text), Convert.ToDouble(textBoxkw.Text),
+                        Convert.ToDouble(textBoxd.Text), Convert.ToDouble(textBoxt1.Text));
+                    break;
+                case 8:
+                    signal = new SkokJednostkowy(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxt1.Text), Convert.ToDouble(textBoxd.Text),
+                        Convert.ToDouble(textBoxts.Text));
+                    break;
+                case 9:
+                    signal = new ImpulsJednostkowy(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxn1.Text), Convert.ToDouble(textBoxns.Text),
+                        Convert.ToDouble(textBoxd.Text), Convert.ToDouble(textBoxf.Text));
+                    break;
+                case 10:
+                    signal = new ImpulsJednostkowy(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxt1.Text), Convert.ToDouble(textBoxd.Text),
+                        Convert.ToDouble(textBoxf.Text), Convert.ToDouble(textBoxp.Text));
+                    break;
+                default:
+                    signal = new SzumJednostajny(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxt1.Text), Convert.ToDouble(textBoxd.Text));
+                    break;
+            }
+
+            operat.Signal2 = signal;
+
+            checkBox2.Checked = true;
+        }
+
+        private void btnDoubleSingals_Load(object sender, EventArgs e) {
+
         }
     }
 }
