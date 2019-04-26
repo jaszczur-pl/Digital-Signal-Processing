@@ -58,8 +58,6 @@
     <Compile Include="Signals\ImpulsJednostkowy.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SCiagly.cs" />
-    <Compile Include="SDyskretny.cs" />
     <Compile Include="Signals\SkokJednostkowy.cs" />
     <Compile Include="Signals\Sygnal.cs" />
     <Compile Include="Signals\SygnalProstokatny.cs" />
