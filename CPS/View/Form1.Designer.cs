@@ -78,6 +78,9 @@
             this.btnSaveFile2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBoxHistogram = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.btnPrintHistogram = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -255,9 +258,13 @@
             this.chart2.Legends.Add(legend2);
             this.chart2.Location = new System.Drawing.Point(765, 26);
             this.chart2.Name = "chart2";
+            this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
             series2.ChartArea = "ChartArea1";
+            series2.IsVisibleInLegend = false;
             series2.Legend = "Legend1";
             series2.Name = "Series1";
+            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
             this.chart2.Series.Add(series2);
             this.chart2.Size = new System.Drawing.Size(363, 380);
             this.chart2.TabIndex = 31;
@@ -501,6 +508,7 @@
             this.btnPrintDoubleSingals.TabIndex = 59;
             this.btnPrintDoubleSingals.Text = "Rysuj sygnały";
             this.btnPrintDoubleSingals.UseVisualStyleBackColor = true;
+            this.btnPrintDoubleSingals.Click += new System.EventHandler(this.btnPrintDoubleSingals_Click);
             // 
             // btnLoadFile2
             // 
@@ -546,11 +554,40 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sygnal 2";
             // 
+            // textBoxHistogram
+            // 
+            this.textBoxHistogram.Location = new System.Drawing.Point(570, 440);
+            this.textBoxHistogram.Name = "textBoxHistogram";
+            this.textBoxHistogram.Size = new System.Drawing.Size(121, 20);
+            this.textBoxHistogram.TabIndex = 64;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(567, 424);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(110, 13);
+            this.label18.TabIndex = 65;
+            this.label18.Text = "Przedziały histogramu";
+            // 
+            // btnPrintHistogram
+            // 
+            this.btnPrintHistogram.Location = new System.Drawing.Point(570, 482);
+            this.btnPrintHistogram.Name = "btnPrintHistogram";
+            this.btnPrintHistogram.Size = new System.Drawing.Size(121, 23);
+            this.btnPrintHistogram.TabIndex = 66;
+            this.btnPrintHistogram.Text = "Rysuj histogram";
+            this.btnPrintHistogram.UseVisualStyleBackColor = true;
+            this.btnPrintHistogram.Click += new System.EventHandler(this.btnPrintHistogram_Click);
+            // 
             // btnDoubleSingals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1148, 612);
+            this.Controls.Add(this.btnPrintHistogram);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.textBoxHistogram);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnPrintDoubleSingals);
@@ -652,6 +689,9 @@
         private System.Windows.Forms.Button btnSaveFile2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox textBoxHistogram;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button btnPrintHistogram;
     }
 }
 

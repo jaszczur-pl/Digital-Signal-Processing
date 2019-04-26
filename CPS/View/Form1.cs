@@ -14,6 +14,7 @@ namespace CPS
     {
 
         private Operator operat = new Operator();
+        private Sygnal lastAffectedSignal;
 
         public btnDoubleSingals() {
             InitializeComponent();
@@ -159,6 +160,7 @@ namespace CPS
             operat.Signal1 = signal;
             signal.CalculateXYPoints();
             PrintPlot(signal);
+            lastAffectedSignal = signal;
 
             checkBox1.Checked = true;
         }
@@ -219,6 +221,7 @@ namespace CPS
             operat.Signal2 = signal;
             signal.CalculateXYPoints();
             PrintPlot(signal);
+            lastAffectedSignal = signal;
 
             checkBox2.Checked = true;
         }
@@ -249,6 +252,52 @@ namespace CPS
             chart1.ChartAreas[0].AxisY.Maximum = signal.axisY.Max();
             chart1.Series[0].Points.DataBindXY(signal.axisX, signal.axisY);
             chart1.Series[0].MarkerSize = 3;
+        }
+
+        private void PrintHistogram(Sygnal signal) {
+            chart2.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+            chart2.ChartAreas[0].AxisX.IsMarginVisible = false;
+            chart2.Series[0].Points.Clear();
+            chart2.Titles.Clear();
+
+            chart2.ChartAreas[0].AxisY.Minimum = 0;
+            chart2.ChartAreas[0].AxisY.Maximum = signal.axisY.Max();
+            chart2.ChartAreas[0].AxisX.Maximum = signal.axisX.Max() + operat.partOfRange * 0.5;
+            chart2.Series[0].Points.DataBindXY(signal.axisX, signal.axisY);
+        }
+
+        private void btnPrintDoubleSingals_Click(object sender, EventArgs e) {
+
+            Sygnal signal = new Sygnal();
+
+            if (comboBoxMathOperation.SelectedIndex == 0) {
+                signal = operat.AddSignals();
+                PrintPlot(signal);
+            }
+            else if (comboBoxMathOperation.SelectedIndex == 1) {
+                signal = operat.SubtractSignals();
+                PrintPlot(signal);
+            }
+            else if (comboBoxMathOperation.SelectedIndex == 2) {
+                signal = operat.MultiplySignals();
+                PrintPlot(signal);
+            }
+            else if (comboBoxMathOperation.SelectedIndex == 3) {
+                signal = operat.DivideSignals();
+                PrintPlot(signal);
+            }
+
+            lastAffectedSignal = signal;
+        }
+
+        private void btnPrintHistogram_Click(object sender, EventArgs e) {
+
+            int histValue = Convert.ToInt32(textBoxHistogram.Text);
+
+            Sygnal signal = new Sygnal();
+
+            signal = operat.CalculateHistogram(lastAffectedSignal, histValue);
+            PrintHistogram(signal);
         }
     }
 }
