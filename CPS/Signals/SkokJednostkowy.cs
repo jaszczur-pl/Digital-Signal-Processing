@@ -18,28 +18,20 @@ namespace CPS
         }
 
         public override void CalculateXYPoints() {
-            throw new NotImplementedException();
-        }
 
-        //public void CalculateXYPoints()
-        //{
-        //    for (int i = 0; i < n2; i++)
-        //    {
-        //        t = i * k;
-        //        if (t > ts)
-        //        {
-        //            y = A;
-        //        }
-        //        else if (t == ts)
-        //        {
-        //            y = A / 2;
-        //        }
-        //        else if (t < ts)
-        //        {
-        //            y = 0;
-        //        }
-        //        this.axisY.Add(y);
-        //    }
-        //}
+            for (double i = t1; i < (d + t1); i = i + (d / numberOfSamples)) {
+                axisX.Add(i);
+
+                if (i > ts) {
+                    axisY.Add(A);
+                }
+                else if (i == ts) {
+                    axisY.Add(A / 2);
+                }
+                else if (i < ts) {
+                    axisY.Add(0);
+                }
+            }
+        }
     }
 }

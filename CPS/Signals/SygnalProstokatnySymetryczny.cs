@@ -19,24 +19,23 @@ namespace CPS
         }
 
         public override void CalculateXYPoints() {
-            throw new NotImplementedException();
-        }
 
-        //public void CalculateXYPoints()
-        //{
-        //    for (int i = 0; i < n2; i++)
-        //    {
-        //        t = i * k;
-        //        if (t >= k * T + t1 || t < kw * T + k * T + t1) // czy k to krok we wzorze??
-        //        {
-        //            y = A;
-        //        }
-        //        else
-        //        {
-        //            y = -1*A;
-        //        }
-        //        this.axisY.Add(y);
-        //    }
-        //}
+            int z = 0;
+            double tempStartTime = t1;
+
+            for (double i = t1; i < (d + t1); i = i + (d / numberOfSamples)) {
+                if (i >= tempStartTime + T) {
+                    z++;
+                    tempStartTime = i;
+                }
+                axisX.Add(i);
+                if (i >= (z * T + t1) && i < (kw * T + z * T + t1)) {
+                    axisY.Add(A);
+                }
+                else {
+                    axisY.Add(-1 * A);
+                }
+            }
+        }
     }
 }

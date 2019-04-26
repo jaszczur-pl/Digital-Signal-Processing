@@ -3,12 +3,11 @@ using System.Collections.Generic;
 
 namespace CPS
 {
-    public abstract class Sygnal
-    {
+    public abstract class Sygnal {
         public double A { get; set; }
         public double t1 { get; set; }
         public double d { get; set; }
-        public double T { get; set; } 
+        public double T { get; set; }
         public double kw { get; set; }
         public double ts { get; set; }
         public double n1 { get; set; }
@@ -22,7 +21,7 @@ namespace CPS
         public List<double> axisY = new List<double>();
         public List<double> axisX = new List<double>();
         protected const int numberOfSamples = 10000;
-
+        public bool IsDiscreteSignal {get; set;}
 
         public abstract void CalculateXYPoints();
         //public abstract double wartoscSrednia(List<double> lista);

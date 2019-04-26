@@ -144,10 +144,12 @@ namespace CPS
                 case 9:
                     signal = new ImpulsJednostkowy(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxn1.Text), Convert.ToDouble(textBoxns.Text),
                         Convert.ToDouble(textBoxd.Text), Convert.ToDouble(textBoxf.Text));
+                    chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
                     break;
                 case 10:
                     signal = new ImpulsJednostkowy(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxt1.Text), Convert.ToDouble(textBoxd.Text),
                         Convert.ToDouble(textBoxf.Text), Convert.ToDouble(textBoxp.Text));
+                    chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
                     break;
                 default:
                     signal = new SzumJednostajny(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxt1.Text), Convert.ToDouble(textBoxd.Text));
@@ -202,10 +204,12 @@ namespace CPS
                 case 9:
                     signal = new ImpulsJednostkowy(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxn1.Text), Convert.ToDouble(textBoxns.Text),
                         Convert.ToDouble(textBoxd.Text), Convert.ToDouble(textBoxf.Text));
+                    chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
                     break;
                 case 10:
                     signal = new ImpulsJednostkowy(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxt1.Text), Convert.ToDouble(textBoxd.Text),
                         Convert.ToDouble(textBoxf.Text), Convert.ToDouble(textBoxp.Text));
+                    chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
                     break;
                 default:
                     signal = new SzumJednostajny(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxt1.Text), Convert.ToDouble(textBoxd.Text));

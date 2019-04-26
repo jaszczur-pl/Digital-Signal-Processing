@@ -13,38 +13,27 @@ namespace CPS
             this.A = A;
             this.t1 = t1;
             this.d = d;
-            this.f = f;
+            this.f = (int)f;
             this.p = p;
             signalName = "Szum impulsowy";
         }
 
         public override void CalculateXYPoints() {
-            throw new NotImplementedException();
+
+            Random r = new Random();
+
+            for (double i = t1; i < (d + t1); i = i + (d / f)) {
+                int randomValue = r.Next(1, 1001);
+                int probability = (int)(p * 1000);
+
+                axisX.Add(i);
+                if (randomValue <= probability) {
+                    axisY.Add(A);
+                }
+                else {
+                    axisY.Add(0);
+                }
+            }
         }
-
-        //public float Generuj()
-        //{
-        //    Random r = new Random(System.DateTime.Now.Millisecond);
-        //    float x = (r.Next(0, 1000000)) / 1000000;
-        //    return x;
-        //}
-
-        //public void CalculateXYPoints()
-        //{
-        //    for (int i = 0; i < n2; i++)
-        //    {
-        //        p = Generuj();
-        //        if (p >= P)
-        //        {
-        //            y = A;
-        //        }
-        //        else
-        //        {
-        //            y = 0;
-        //        }
-        //        this.axisY.Add(y);
-        //    }
-        //}
-
     }
 }

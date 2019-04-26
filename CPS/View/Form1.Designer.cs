@@ -231,19 +231,20 @@
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(348, 25);
+            this.chart1.Margin = new System.Windows.Forms.Padding(0);
             this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            this.chart1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
             series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.EmptyPointStyle.MarkerSize = 200;
             series1.IsVisibleInLegend = false;
             series1.Legend = "Legend1";
             series1.Name = "signal";
-            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
             this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(363, 380);
-            this.chart1.TabIndex = 30;
+            this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
             // chart2
