@@ -488,6 +488,7 @@
             this.btnPrintSingleSignal.TabIndex = 58;
             this.btnPrintSingleSignal.Text = "Rysuj pojedynczy sygnał";
             this.btnPrintSingleSignal.UseVisualStyleBackColor = true;
+            this.btnPrintSingleSignal.Click += new System.EventHandler(this.btnPrintSingleSignal_Click);
             // 
             // btnPrintDoubleSingals
             // 

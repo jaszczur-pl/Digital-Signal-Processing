@@ -40,7 +40,7 @@ namespace CPS
         //        {
         //            y = 0;
         //        }
-        //        this.wartosciSygnaluY.Add(y);
+        //        this.axisY.Add(y);
         //    }
         //}
 

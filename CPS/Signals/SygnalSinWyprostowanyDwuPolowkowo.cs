@@ -30,7 +30,7 @@ namespace CPS
         //        {
         //            y = A*FSin(T, i);
         //        }
-        //        this.wartosciSygnaluY.Add(y);
+        //        this.axisY.Add(y);
         //    }
         //}
     }

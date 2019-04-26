@@ -55,7 +55,7 @@ namespace CPS
         //    for (int i = 0; i < n2; i++)
         //    {
         //        y = nextGaussian();
-        //        this.wartosciSygnaluY.Add(y);
+        //        this.axisY.Add(y);
         //    }
         //}
     }

@@ -218,5 +218,16 @@ namespace CPS
         private void btnDoubleSingals_Load(object sender, EventArgs e) {
 
         }
+
+        private void btnPrintSingleSignal_Click(object sender, EventArgs e) {
+
+            string chartName;
+            
+
+            if (comboBoxSignal.SelectedIndex == 0) {
+                chartName = "Szum Jednostajny";
+
+            }
+        }
     }
 }

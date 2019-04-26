@@ -33,7 +33,7 @@ namespace CPS
         //        {
         //            y = -1*A;
         //        }
-        //        this.wartosciSygnaluY.Add(y);
+        //        this.axisY.Add(y);
         //    }
         //}
     }

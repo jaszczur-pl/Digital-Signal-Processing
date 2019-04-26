@@ -15,26 +15,28 @@ namespace CPS
             this.A = A;
             this.t1 = t1;
             this.d = d;
+            p = 0.5;
         }
 
-        public double Generuj(double A)
-        {
-            double Amin = (A/2 * -1);
-            double Amax = A/2;
-            
-            Random r = new Random(System.DateTime.Now.Millisecond);
-            double x = (double)(r.Next((int)Amin * 10000, (int)Amax * 10000)) / 10000;
-            return x;
+        public void PoliczWartoscY() {
+
+            Random r = new Random();
+
+            for (double i = t1; i < (d + t1); i = i + (d / (numberOfSamples / 100))) {
+                int randomNumber = r.Next(1, 11);
+                int probability = (int)(p * 10);
+
+                axisX.Add(i);
+
+                if (randomNumber <= probability) {
+                    axisY.Add(A);
+                }
+                else {
+                    axisY.Add(-A);
+                }
+            }
         }
 
-        //public void PoliczWartoscY() {
-        //    for (int i = 0; i < n2; i++)
-        //    {
-        //        y = Generuj(A);
-        //        this.wartosciSygnaluY.Add(y);
-        //    }
-        //} 
-        
 
     }
 }
