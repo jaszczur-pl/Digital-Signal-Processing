@@ -271,11 +271,13 @@ namespace CPS
         }
 
         private void PrintHistogram(Sygnal signal) {
+            
             chart2.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
             chart2.ChartAreas[0].AxisX.IsMarginVisible = false;
             chart2.Series[0].Points.Clear();
             chart2.Titles.Clear();
 
+            chart2.Titles.Add("Histogram");
             chart2.ChartAreas[0].AxisY.Minimum = 0;
             chart2.ChartAreas[0].AxisY.Maximum = signal.axisY.Max();
             chart2.ChartAreas[0].AxisX.Maximum = signal.axisX.Max() + operat.partOfRange * 0.5;
@@ -325,9 +327,75 @@ namespace CPS
         }
 
         private void btnSaveFile1_Click(object sender, EventArgs e) {
-            FileHandler fileHandler = new FileHandler();
-            fileHandler.Serialize(operat.Signal1);
-            MessageBox.Show("Sygnał został zapisany!", "OK");
+
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.InitialDirectory = @"e:\";
+            sfd.Filter = "bin files (*.bin)|*.bin";
+            sfd.RestoreDirectory = true;
+
+            if (sfd.ShowDialog() == DialogResult.OK) {
+                FileHandler fileHandler = new FileHandler();
+                fileHandler.Serialize(operat.Signal1, sfd.FileName);
+                MessageBox.Show("Sygnał został zapisany!", "OK");
+            }
+        }
+
+        private void btnSaveFile2_Click(object sender, EventArgs e) {
+
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.InitialDirectory = @"e:\";
+            sfd.Filter = "bin files (*.bin)|*.bin";
+            sfd.RestoreDirectory = true;
+
+            if (sfd.ShowDialog() == DialogResult.OK) {
+                FileHandler fileHandler = new FileHandler();
+                fileHandler.Serialize(operat.Signal2, sfd.FileName);
+                MessageBox.Show("Sygnał został zapisany!", "OK");
+            }
+        }
+
+        private void btnLoadFile1_Click(object sender, EventArgs e) {
+
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.InitialDirectory = @"e:\";
+            ofd.Filter = "bin files (*.bin)|*.bin";
+            ofd.RestoreDirectory = true;
+
+            if (ofd.ShowDialog() == DialogResult.OK) {
+
+                FileHandler fileHandler = new FileHandler();
+                Sygnal signal = fileHandler.Deserialize(ofd.FileName);
+
+                operat.Signal1 = signal;
+                PrintStats(signal);
+                PrintPlot(signal);
+                lastAffectedSignal = signal;
+
+                checkBox1.Checked = true;
+                btnSaveFile1.Enabled = true;
+            }
+        }
+
+        private void btnLoadFile2_Click(object sender, EventArgs e) {
+
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.InitialDirectory = @"e:\";
+            ofd.Filter = "bin files (*.bin)|*.bin";
+            ofd.RestoreDirectory = true;
+
+            if (ofd.ShowDialog() == DialogResult.OK) {
+
+                FileHandler fileHandler = new FileHandler();
+                Sygnal signal = fileHandler.Deserialize(ofd.FileName);
+
+                operat.Signal2 = signal;
+                PrintStats(signal);
+                PrintPlot(signal);
+                lastAffectedSignal = signal;
+
+                checkBox1.Checked = true;
+                btnSaveFile1.Enabled = true;
+            }
         }
     }
 }

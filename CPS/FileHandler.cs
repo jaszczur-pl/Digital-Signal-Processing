@@ -10,9 +10,9 @@ namespace CPS
 {
     class FileHandler
     {
-        public void Serialize(object o) {
+        public void Serialize(object o, string path) {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream fsout = new FileStream(@"E:\new.bin", FileMode.Create, FileAccess.Write, FileShare.None);
+            FileStream fsout = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None);
 
             try {
                 using (fsout) {
@@ -25,6 +25,27 @@ namespace CPS
             finally {
                 fsout.Dispose();
             }
+        }
+
+        public Sygnal Deserialize(string path) {
+
+            Sygnal signal = new Sygnal();
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream fsin = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.None);
+
+            try {
+                using (fsin) {
+                    signal = (Sygnal)bf.Deserialize(fsin);        
+                }
+            }
+            catch (Exception e) {
+                Console.WriteLine(e.StackTrace);
+            }
+            finally {
+                fsin.Dispose();
+            }
+
+            return signal;
         }
     }
 }

@@ -25,12 +25,12 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.comboBoxSignal = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSaveFile1 = new System.Windows.Forms.Button();
@@ -137,6 +137,7 @@
             this.btnLoadFile1.TabIndex = 5;
             this.btnLoadFile1.Text = "Odczytaj z pliku";
             this.btnLoadFile1.UseVisualStyleBackColor = true;
+            this.btnLoadFile1.Click += new System.EventHandler(this.btnLoadFile1_Click);
             // 
             // label4
             // 
@@ -230,44 +231,44 @@
             // 
             // chart1
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
+            chartArea9.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea9);
             this.chart1.Cursor = System.Windows.Forms.Cursors.No;
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
+            legend9.Name = "Legend1";
+            this.chart1.Legends.Add(legend9);
             this.chart1.Location = new System.Drawing.Point(348, 25);
             this.chart1.Margin = new System.Windows.Forms.Padding(0);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.EmptyPointStyle.MarkerSize = 200;
-            series3.IsVisibleInLegend = false;
-            series3.Legend = "Legend1";
-            series3.Name = "signal";
-            series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            this.chart1.Series.Add(series3);
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series9.EmptyPointStyle.MarkerSize = 200;
+            series9.IsVisibleInLegend = false;
+            series9.Legend = "Legend1";
+            series9.Name = "signal";
+            series9.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series9.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            this.chart1.Series.Add(series9);
             this.chart1.Size = new System.Drawing.Size(363, 380);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
             // chart2
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chart2.Legends.Add(legend4);
+            chartArea10.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea10);
+            legend10.Name = "Legend1";
+            this.chart2.Legends.Add(legend10);
             this.chart2.Location = new System.Drawing.Point(765, 26);
             this.chart2.Name = "chart2";
             this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series4.ChartArea = "ChartArea1";
-            series4.IsVisibleInLegend = false;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            series4.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            series4.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            this.chart2.Series.Add(series4);
+            series10.ChartArea = "ChartArea1";
+            series10.IsVisibleInLegend = false;
+            series10.Legend = "Legend1";
+            series10.Name = "Series1";
+            series10.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            series10.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            this.chart2.Series.Add(series10);
             this.chart2.Size = new System.Drawing.Size(363, 380);
             this.chart2.TabIndex = 31;
             this.chart2.Text = "chart2";
@@ -520,6 +521,7 @@
             this.btnLoadFile2.TabIndex = 61;
             this.btnLoadFile2.Text = "Odczytaj z pliku";
             this.btnLoadFile2.UseVisualStyleBackColor = true;
+            this.btnLoadFile2.Click += new System.EventHandler(this.btnLoadFile2_Click);
             // 
             // btnSaveFile2
             // 
@@ -530,6 +532,7 @@
             this.btnSaveFile2.TabIndex = 60;
             this.btnSaveFile2.Text = "Zapisz do pliku";
             this.btnSaveFile2.UseVisualStyleBackColor = true;
+            this.btnSaveFile2.Click += new System.EventHandler(this.btnSaveFile2_Click);
             // 
             // groupBox1
             // 
