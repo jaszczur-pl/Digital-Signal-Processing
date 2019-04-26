@@ -20,7 +20,7 @@ namespace CPS
         //    return mS;
         //}
 
-        //public override void PoliczWartoscY()
+        //public override void CalculateXYPoints()
         //{
         //    throw new NotImplementedException();
         //}

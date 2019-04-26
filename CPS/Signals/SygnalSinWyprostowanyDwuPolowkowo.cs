@@ -19,7 +19,7 @@ namespace CPS
             signalName = "Sygnał sinusoidalny wyprostowany dwupołówkowo";
         }
 
-        //public new void PoliczWartoscY()
+        //public new void CalculateXYPoints()
         //{
         //    for (int i = 0; i < n2; i++)
         //    {

@@ -19,7 +19,7 @@ namespace CPS
             signalName = "Szum jednostajny";
         }
 
-        public void PoliczWartoscY() {
+        public new void PoliczWartoscY() {
 
             Random r = new Random();
 

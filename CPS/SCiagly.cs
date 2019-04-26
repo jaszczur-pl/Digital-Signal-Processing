@@ -80,7 +80,7 @@ namespace CPS
         //    return srednia;
         //}
 
-        //public override void PoliczWartoscY()
+        //public override void CalculateXYPoints()
         //{
         //    throw new NotImplementedException();
         //}

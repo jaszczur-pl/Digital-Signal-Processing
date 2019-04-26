@@ -211,6 +211,7 @@ namespace CPS
             }
 
             operat.Signal2 = signal;
+            signal.CalculateXYPoints();
 
             checkBox2.Checked = true;
         }
