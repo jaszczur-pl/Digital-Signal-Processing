@@ -60,11 +60,11 @@
             this.btnAddSignal1 = new System.Windows.Forms.Button();
             this.comboBoxMathOperation = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxMs = new System.Windows.Forms.TextBox();
-            this.textBoxWar = new System.Windows.Forms.TextBox();
-            this.textBoxWsk = new System.Windows.Forms.TextBox();
-            this.textBoxWsb = new System.Windows.Forms.TextBox();
-            this.textBoxWsr = new System.Windows.Forms.TextBox();
+            this.textBoxAvgPow = new System.Windows.Forms.TextBox();
+            this.textBoxVar = new System.Windows.Forms.TextBox();
+            this.textBoxRMS = new System.Windows.Forms.TextBox();
+            this.textBoxAbsAvg = new System.Windows.Forms.TextBox();
+            this.textBoxAvg = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -383,45 +383,45 @@
             this.label2.TabIndex = 44;
             this.label2.Text = "Operacja matematyczna";
             // 
-            // textBoxMs
+            // textBoxAvgPow
             // 
-            this.textBoxMs.Location = new System.Drawing.Point(947, 567);
-            this.textBoxMs.Name = "textBoxMs";
-            this.textBoxMs.ReadOnly = true;
-            this.textBoxMs.Size = new System.Drawing.Size(71, 20);
-            this.textBoxMs.TabIndex = 54;
+            this.textBoxAvgPow.Location = new System.Drawing.Point(947, 567);
+            this.textBoxAvgPow.Name = "textBoxAvgPow";
+            this.textBoxAvgPow.ReadOnly = true;
+            this.textBoxAvgPow.Size = new System.Drawing.Size(71, 20);
+            this.textBoxAvgPow.TabIndex = 54;
             // 
-            // textBoxWar
+            // textBoxVar
             // 
-            this.textBoxWar.Location = new System.Drawing.Point(947, 529);
-            this.textBoxWar.Name = "textBoxWar";
-            this.textBoxWar.ReadOnly = true;
-            this.textBoxWar.Size = new System.Drawing.Size(71, 20);
-            this.textBoxWar.TabIndex = 53;
+            this.textBoxVar.Location = new System.Drawing.Point(947, 529);
+            this.textBoxVar.Name = "textBoxVar";
+            this.textBoxVar.ReadOnly = true;
+            this.textBoxVar.Size = new System.Drawing.Size(71, 20);
+            this.textBoxVar.TabIndex = 53;
             // 
-            // textBoxWsk
+            // textBoxRMS
             // 
-            this.textBoxWsk.Location = new System.Drawing.Point(947, 493);
-            this.textBoxWsk.Name = "textBoxWsk";
-            this.textBoxWsk.ReadOnly = true;
-            this.textBoxWsk.Size = new System.Drawing.Size(71, 20);
-            this.textBoxWsk.TabIndex = 52;
+            this.textBoxRMS.Location = new System.Drawing.Point(947, 493);
+            this.textBoxRMS.Name = "textBoxRMS";
+            this.textBoxRMS.ReadOnly = true;
+            this.textBoxRMS.Size = new System.Drawing.Size(71, 20);
+            this.textBoxRMS.TabIndex = 52;
             // 
-            // textBoxWsb
+            // textBoxAbsAvg
             // 
-            this.textBoxWsb.Location = new System.Drawing.Point(947, 457);
-            this.textBoxWsb.Name = "textBoxWsb";
-            this.textBoxWsb.ReadOnly = true;
-            this.textBoxWsb.Size = new System.Drawing.Size(71, 20);
-            this.textBoxWsb.TabIndex = 51;
+            this.textBoxAbsAvg.Location = new System.Drawing.Point(947, 457);
+            this.textBoxAbsAvg.Name = "textBoxAbsAvg";
+            this.textBoxAbsAvg.ReadOnly = true;
+            this.textBoxAbsAvg.Size = new System.Drawing.Size(71, 20);
+            this.textBoxAbsAvg.TabIndex = 51;
             // 
-            // textBoxWsr
+            // textBoxAvg
             // 
-            this.textBoxWsr.Location = new System.Drawing.Point(947, 424);
-            this.textBoxWsr.Name = "textBoxWsr";
-            this.textBoxWsr.ReadOnly = true;
-            this.textBoxWsr.Size = new System.Drawing.Size(71, 20);
-            this.textBoxWsr.TabIndex = 50;
+            this.textBoxAvg.Location = new System.Drawing.Point(947, 424);
+            this.textBoxAvg.Name = "textBoxAvg";
+            this.textBoxAvg.ReadOnly = true;
+            this.textBoxAvg.Size = new System.Drawing.Size(71, 20);
+            this.textBoxAvg.TabIndex = 50;
             // 
             // label13
             // 
@@ -591,11 +591,11 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnPrintDoubleSingals);
-            this.Controls.Add(this.textBoxMs);
-            this.Controls.Add(this.textBoxWar);
-            this.Controls.Add(this.textBoxWsk);
-            this.Controls.Add(this.textBoxWsb);
-            this.Controls.Add(this.textBoxWsr);
+            this.Controls.Add(this.textBoxAvgPow);
+            this.Controls.Add(this.textBoxVar);
+            this.Controls.Add(this.textBoxRMS);
+            this.Controls.Add(this.textBoxAbsAvg);
+            this.Controls.Add(this.textBoxAvg);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label15);
@@ -671,11 +671,11 @@
         private System.Windows.Forms.Button btnAddSignal1;
         private System.Windows.Forms.ComboBox comboBoxMathOperation;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxMs;
-        private System.Windows.Forms.TextBox textBoxWar;
-        private System.Windows.Forms.TextBox textBoxWsk;
-        private System.Windows.Forms.TextBox textBoxWsb;
-        private System.Windows.Forms.TextBox textBoxWsr;
+        private System.Windows.Forms.TextBox textBoxAvgPow;
+        private System.Windows.Forms.TextBox textBoxVar;
+        private System.Windows.Forms.TextBox textBoxRMS;
+        private System.Windows.Forms.TextBox textBoxAbsAvg;
+        private System.Windows.Forms.TextBox textBoxAvg;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;

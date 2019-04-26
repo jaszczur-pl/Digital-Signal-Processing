@@ -159,6 +159,13 @@ namespace CPS
 
             operat.Signal1 = signal;
             signal.CalculateXYPoints();
+            signal.AverageValue = operat.CalculateAverageValue(signal);
+            signal.AbsAverageValue = operat.CalculateAbsAverage(signal);
+            signal.AveragePower = operat.CalculateAveragePower(signal);
+            signal.Variance = operat.CalculateVariance(signal);
+            signal.RMS = operat.CalculateRMS(signal);
+
+            PrintStats(signal);
             PrintPlot(signal);
             lastAffectedSignal = signal;
 
@@ -220,6 +227,13 @@ namespace CPS
 
             operat.Signal2 = signal;
             signal.CalculateXYPoints();
+            signal.AverageValue = operat.CalculateAverageValue(signal);
+            signal.AbsAverageValue = operat.CalculateAbsAverage(signal);
+            signal.AveragePower = operat.CalculateAveragePower(signal);
+            signal.Variance = operat.CalculateVariance(signal);
+            signal.RMS = operat.CalculateRMS(signal);
+
+            PrintStats(signal);
             PrintPlot(signal);
             lastAffectedSignal = signal;
 
@@ -264,6 +278,14 @@ namespace CPS
             chart2.ChartAreas[0].AxisY.Maximum = signal.axisY.Max();
             chart2.ChartAreas[0].AxisX.Maximum = signal.axisX.Max() + operat.partOfRange * 0.5;
             chart2.Series[0].Points.DataBindXY(signal.axisX, signal.axisY);
+        }
+
+        private void PrintStats(Sygnal signal) {
+            textBoxAvg.Text = signal.AverageValue.ToString();
+            textBoxAbsAvg.Text = signal.AbsAverageValue.ToString();
+            textBoxAvgPow.Text = signal.AveragePower.ToString();
+            textBoxVar.Text = signal.Variance.ToString();
+            textBoxRMS.Text = signal.RMS.ToString();
         }
 
         private void btnPrintDoubleSingals_Click(object sender, EventArgs e) {

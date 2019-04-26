@@ -149,6 +149,141 @@ namespace CPS
         }
 
 
+        public double CalculateAbsAverage(Sygnal signal) {
+            
+            List<double> tempAxisY = new List<double>();
+            double duration = 0;
+            double averageAbsValue = 0;
+
+            if (!signal.IsDiscreteSignal) {
+                if (signal is SzumGaussowski || signal is SkokJednostkowy || signal is SzumJednostajny) {
+                    duration = signal.d;
+                }
+                else {
+                    if (signal.d % signal.T == 0) {
+                        duration = signal.d;
+                    }
+                    else {
+                        duration = (int)(signal.d / signal.T) * signal.T;
+                    }
+                }
+                for (int i = 0; i < signal.axisY.Count; ++i) {
+                    if (duration + signal.axisX[0] >= signal.axisX[i]) {
+                        tempAxisY.Add(Math.Abs(signal.axisY[i]));
+                    }
+                    else {
+                        break;
+                    }
+                }
+            }
+            else {
+                for (int i = 0; i < signal.axisY.Count; ++i) {
+                    tempAxisY.Add(Math.Abs(signal.axisY[i]));
+                }
+            }
+
+            if (!signal.IsDiscreteSignal) {
+                averageAbsValue = (1.0 / duration) * CalculateIntegral(tempAxisY, duration);
+            }
+            else {
+                averageAbsValue = (1.0 / signal.axisY.Count) * CalculateSum(tempAxisY);
+            }
+
+            return Math.Round(averageAbsValue, 2);
+        }
+
+        public double CalculateAveragePower(Sygnal signal) {
+            
+            List<double> tempAxisY = new List<double>();
+            double duration = 0;
+            double averagePowerValue;
+
+            if (!signal.IsDiscreteSignal) {
+                if (signal is SzumGaussowski || signal is SkokJednostkowy || signal is SzumJednostajny) {
+                    duration = signal.d;
+                }
+                else {
+                    if (signal.d % signal.T == 0) {
+                        duration = signal.d;
+                    }
+                    else {
+                        duration = (int)(signal.d / signal.T) * signal.T;
+                    }
+                }
+                for (int i = 0; i < signal.axisY.Count; ++i) {
+                    if (duration + signal.axisX[0] >= signal.axisX[i]) {
+                        tempAxisY.Add(Math.Pow(signal.axisY[i], 2));
+                    }
+                    else {
+                        break;
+                    }
+                }
+            }
+            else {
+                for (int i = 0; i < signal.axisY.Count; ++i) {
+                    tempAxisY.Add(Math.Pow(signal.axisY[i], 2));
+                }
+            }
+
+            if (!signal.IsDiscreteSignal) {
+                averagePowerValue = (1.0 / duration) * CalculateIntegral(tempAxisY, duration);
+            }
+            else {
+                averagePowerValue = (1.0 / signal.axisY.Count) * CalculateSum(tempAxisY);
+            }
+
+            return Math.Round(averagePowerValue, 2);
+        }
+
+        public double CalculateVariance(Sygnal signal) {
+
+            List<double> tempAxisY = new List<double>();
+            double duration = 0;
+            double varianceValue;
+
+            if (!signal.IsDiscreteSignal) {
+                if (signal is SzumGaussowski || signal is SkokJednostkowy || signal is SzumJednostajny) {
+                    duration = signal.d;
+                }
+                else {
+                    if (signal.d % signal.T == 0) {
+                        duration = signal.d;
+                    }
+                    else {
+                        duration = (int)(signal.d / signal.T) * signal.T;
+                    }
+                }
+                for (int i = 0; i < signal.axisY.Count; ++i) {
+                    if (duration + signal.axisX[0] >= signal.axisX[i]) {
+                        tempAxisY.Add(Math.Pow(signal.axisY[i] - signal.AverageValue, 2));
+                    }
+                    else {
+                        break;
+                    }
+                }
+            }
+            else {
+                for (int i = 0; i < signal.axisY.Count; ++i) {
+                    tempAxisY.Add(Math.Pow(signal.axisY[i] - signal.AverageValue, 2));
+                }
+            }
+            if (!signal.IsDiscreteSignal) {
+                varianceValue = (1.0 / duration) * CalculateIntegral(tempAxisY, duration);
+            }
+            else {
+                varianceValue = (1.0 / signal.axisY.Count) * CalculateSum(tempAxisY);
+            }
+
+            return Math.Round(varianceValue, 2);
+        }
+
+        public double CalculateRMS(Sygnal signal) {
+
+            double rms = Math.Sqrt(signal.AveragePower);
+            return Math.Round(rms, 2);
+
+        }
+
         private double CalculateIntegral(List<double> axisY, double duration) {
 
             double integralValue = 0;
@@ -159,7 +294,7 @@ namespace CPS
 
             integralValue *= duration / axisY.Count;
             return integralValue;
-        }
+         }
 
         private double CalculateSum(List<double> axisY) {
 
