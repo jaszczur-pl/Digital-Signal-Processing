@@ -104,5 +104,72 @@ namespace CPS
 
             return signal;
         }
+
+        public double CalculateAverageValue(Sygnal signal) {
+
+            List<double> tempAxisY = new List<double>();
+            double duration = 0;
+            double averageValue = 0;
+
+            if (!signal.IsDiscreteSignal) {
+                if (signal is SzumGaussowski || signal is SkokJednostkowy || signal is SzumJednostajny) {
+                    duration = signal.d;
+                }
+                else {
+                    if (signal.d % signal.T == 0) {
+                        duration = signal.d;
+                    }
+                    else {
+                        duration = (int)(signal.d / signal.T) * signal.T;
+                    }
+                }
+                for (int i = 0; i < signal.axisY.Count; ++i) {
+                    if (duration + signal.axisX[0] >= signal.axisX[i]) {
+                        tempAxisY.Add(signal.axisY[i]);
+                    }
+                    else {
+                        break;
+                    }
+                }
+            }
+            else {
+                for (int i = 0; i < signal.axisY.Count; ++i) {
+                    tempAxisY.Add(signal.axisY[i]);
+                }
+            }
+
+            if (!signal.IsDiscreteSignal) {
+                averageValue = (1.0 / duration) * CalculateIntegral(tempAxisY, duration);
+            }
+            else {
+                averageValue = (1.0 / signal.axisY.Count) * CalculateSum(tempAxisY);
+            }
+
+            return Math.Round(averageValue, 2);
+        }
+
+
+        private double CalculateIntegral(List<double> axisY, double duration) {
+
+            double integralValue = 0;
+
+            for (int i = 0; i < axisY.Count; ++i) {
+                integralValue += axisY[i];
+            }
+
+            integralValue *= duration / axisY.Count;
+            return integralValue;
+        }
+
+        private double CalculateSum(List<double> axisY) {
+
+            double sum = 0;
+
+            for (int i = 0; i < axisY.Count; ++i) {
+                sum += axisY[i];
+            }
+
+            return sum;
+        }
     }
 }

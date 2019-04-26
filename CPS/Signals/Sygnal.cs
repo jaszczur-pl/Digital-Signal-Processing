@@ -21,18 +21,22 @@ namespace CPS
         public int iloscPrzedzialowHistogramu { get; set; }
 
         public string signalName { get; set; }
+        public bool IsDiscreteSignal { get; set; }
 
         public List<double> axisY = new List<double>();
         public List<double> axisX = new List<double>();
 
+        public double AverageValue { get; set; }
+        public double AbsAverageValue { get; set; }
+        public double RMS { get; set; }
+        public double Variance { get; set; }
+        public double AveragePower { get; set; }
+
         protected const int numberOfSamples = 10000;
-        public bool IsDiscreteSignal {get; set;}
+        
+
+
 
         public virtual void CalculateXYPoints() { }
-        //public abstract double wartoscSrednia(List<double> lista);
-        //public abstract double wartośćSredniaBezwzgledna(List<double> lista);
-        //public abstract double mocSrednia(List<double> lista);
-        //public abstract double wariancja(List<double> lista);
-        //public abstract double wartoscSkuteczna(List<double> lista);
     }
 }
