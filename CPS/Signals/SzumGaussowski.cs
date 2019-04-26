@@ -16,6 +16,7 @@ namespace CPS
             this.A = A;
             this.t1 = t1;
             this.d = d;
+            signalName = "Sygnał Gaussowski";
         }
 
         private double nextNextGaussian;

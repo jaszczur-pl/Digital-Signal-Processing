@@ -12,10 +12,11 @@ namespace CPS
 
         public SygnalSinWyprostowanyDwuPolowkowo(double A, double T, double t1, double d)
         {
-                this.A = A;
-                this.T = T;
-                this.t1 = t1;
-                this.d = d;
+            this.A = A;
+            this.T = T;
+            this.t1 = t1;
+            this.d = d;
+            signalName = "Sygnał sinusoidalny wyprostowany dwupołówkowo";
         }
 
         //public new void PoliczWartoscY()

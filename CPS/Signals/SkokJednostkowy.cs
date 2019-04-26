@@ -17,6 +17,7 @@ namespace CPS
             this.t1 = t1;
             this.d = d;
             this.ts = ts;
+            signalName = "Skok jednostkowy";
         }
 
         //public void ObliczWartoscY()

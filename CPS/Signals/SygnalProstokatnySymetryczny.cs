@@ -18,6 +18,7 @@ namespace CPS
             this.T = T;
             this.kw = kw;
             this.d = d;
+            signalName = "Sygnał prostokątny symetryczny";
         }
 
         //public void ObliczWartoscY()

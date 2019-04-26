@@ -16,6 +16,7 @@ namespace CPS
             this.t1 = t1;
             this.d = d;
             p = 0.5;
+            signalName = "Szum jednostajny";
         }
 
         public void PoliczWartoscY() {

@@ -15,6 +15,7 @@ namespace CPS
             this.ns = ns;
             this.d = d;
             this.f = f;
+            signalName = "Impuls jednostkowy";
         }
 
         //public void ObliczWartoscY()

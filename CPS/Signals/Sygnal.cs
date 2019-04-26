@@ -15,12 +15,14 @@ namespace CPS
         public double ns { get; set; }
         public double f { get; set; }
         public double p { get; set; }
-
         public int iloscPrzedzialowHistogramu { get; set; }
+
+        public string signalName { get; set; }
 
         public List<double> axisY = new List<double>();
         public List<double> axisX = new List<double>();
         protected const int numberOfSamples = 10000;
+        
 
         //public abstract void PoliczWartoscY();
         //public abstract double wartoscSrednia(List<double> lista);

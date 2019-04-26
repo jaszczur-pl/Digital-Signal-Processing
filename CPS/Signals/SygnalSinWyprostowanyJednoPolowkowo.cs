@@ -15,6 +15,7 @@ namespace CPS
             this.T = T;
             this.t1 = t1;
             this.d = d;
+            signalName = "Sygnał sinusoidalny wyprostowany jednopołówkowo";
         }
 
         //public new void PoliczWartoscY()

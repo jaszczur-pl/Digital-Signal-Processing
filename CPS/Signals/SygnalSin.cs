@@ -16,6 +16,7 @@ namespace CPS
             this.T = T;
             this.t1 = t1;
             this.d = d;
+            signalName = "Sygnał sinusoidalny";
         }
 
         //public double FSin( double T, int i)

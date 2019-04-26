@@ -18,6 +18,7 @@ namespace CPS
             this.d = d;
             this.f = f;
             this.p = p;
+            signalName = "Szum impulsowy";
         }
 
         //public float Generuj()
