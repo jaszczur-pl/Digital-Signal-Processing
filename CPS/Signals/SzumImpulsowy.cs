@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace CPS
 {
-    class SzumImpulsowy:SDyskretny
+    class SzumImpulsowy: Sygnal
     {
-        double y;
-        double p;
-
         public SzumImpulsowy(double A, double t1, double d, double f , double p)
         {
             this.A = A;

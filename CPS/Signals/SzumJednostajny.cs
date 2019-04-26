@@ -8,8 +8,6 @@ namespace CPS
 {
     class SzumJednostajny : Sygnal
     {
-        double y;
-
         public SzumJednostajny(double A, double t1, double d)
         {
             this.A = A;
@@ -19,7 +17,7 @@ namespace CPS
             signalName = "Szum jednostajny";
         }
 
-        public new void PoliczWartoscY() {
+        public new void CalculateXYPoints() {
 
             Random r = new Random();
 

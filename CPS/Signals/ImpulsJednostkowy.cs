@@ -18,19 +18,15 @@ namespace CPS
             signalName = "Impuls jednostkowy";
         }
 
-        //public void ObliczWartoscY()
-        //{
+        //public void CalculateXYPoints() {
         //    double t;
         //    int y;
-        //    for (int i = 0; i < n2; i++)
-        //    {
+        //    for (int i = 0; i < n2; i++) {
         //        t = i * k;
-        //        if (t== 0)
-        //        {
+        //        if (t == 0) {
         //            y = A;
         //        }
-        //        else
-        //        {
+        //        else {
         //            y = 0;
         //        }
         //        this.axisY.Add(y);

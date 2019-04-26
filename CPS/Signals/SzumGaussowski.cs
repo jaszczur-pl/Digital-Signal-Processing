@@ -9,8 +9,6 @@ namespace CPS
 {
     class SzumGaussowski: Sygnal
     {
-        double y;
-
         public SzumGaussowski(double A, double t1, double d)
         {
             this.A = A;

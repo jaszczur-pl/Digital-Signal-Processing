@@ -8,8 +8,6 @@ namespace CPS
 {
     class SygnalSin: Sygnal
     {
-        double y;
-
         public SygnalSin(double A, double T, double t1, double d)
         {
             this.A = A;

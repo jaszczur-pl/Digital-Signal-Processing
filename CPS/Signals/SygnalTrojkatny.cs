@@ -8,9 +8,6 @@ namespace CPS
 {
     class SygnalTrojkatny: Sygnal
     {
-        double y;
-        double t;
-
         public SygnalTrojkatny(double A, double T, double kw, double d, double t1)
         {
             this.A = A;
@@ -21,7 +18,7 @@ namespace CPS
             signalName = "Sygnał trójkątny";
         }
 
-        //public void ObliczWartoscY()
+        //public void CalculateXYPoints()
         //{
         //    for (int i = 0; i < n2; i++)
         //    {

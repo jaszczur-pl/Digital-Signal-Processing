@@ -155,6 +155,8 @@ namespace CPS
             }
 
             operat.Signal1 = signal;
+            signal.CalculateXYPoints();
+            PrintPlot(signal);
 
             checkBox1.Checked = true;
         }
@@ -212,6 +214,7 @@ namespace CPS
 
             operat.Signal2 = signal;
             signal.CalculateXYPoints();
+            PrintPlot(signal);
 
             checkBox2.Checked = true;
         }
@@ -229,6 +232,14 @@ namespace CPS
                 chartName = "Szum Jednostajny";
 
             }
+        }
+
+        private void PrintPlot(Sygnal signal) {
+            chart1.Titles.Add(signal.signalName);
+            chart1.ChartAreas[0].AxisY.Minimum = signal.axisY.Min();
+            chart1.ChartAreas[0].AxisY.Maximum = signal.axisY.Max();
+            chart1.Series[0].Points.DataBindXY(signal.axisX, signal.axisY);
+            chart1.Series[0].MarkerSize = 1;
         }
     }
 }

@@ -8,9 +8,6 @@ namespace CPS
 {
     class SygnalProstokatnySymetryczny: Sygnal
     {
-        double y;
-        double t;
-
         public SygnalProstokatnySymetryczny(double A, double T, double kw, double t1, double d)
         {
             this.A = A;
@@ -21,7 +18,7 @@ namespace CPS
             signalName = "Sygnał prostokątny symetryczny";
         }
 
-        //public void ObliczWartoscY()
+        //public void CalculateXYPoints()
         //{
         //    for (int i = 0; i < n2; i++)
         //    {

@@ -8,9 +8,6 @@ namespace CPS
 {
     class SkokJednostkowy: Sygnal
     {
-        double t;
-        double y;
-
         public SkokJednostkowy(double A, double t1, double d, double ts)
         {
             this.A = A;
@@ -20,7 +17,7 @@ namespace CPS
             signalName = "Skok jednostkowy";
         }
 
-        //public void ObliczWartoscY()
+        //public void CalculateXYPoints()
         //{
         //    for (int i = 0; i < n2; i++)
         //    {

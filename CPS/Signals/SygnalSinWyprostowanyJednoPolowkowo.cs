@@ -8,7 +8,6 @@ namespace CPS
 {
     class SygnalSinWyprostowanyJednoPolowkowo: Sygnal
     {
-        double y;
         public SygnalSinWyprostowanyJednoPolowkowo(double A, double T, double t1, double d) 
         {
             this.A = A;
