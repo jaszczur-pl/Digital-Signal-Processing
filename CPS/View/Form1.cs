@@ -170,6 +170,7 @@ namespace CPS
             lastAffectedSignal = signal;
 
             checkBox1.Checked = true;
+            btnSaveFile1.Enabled = true;
         }
 
         private void btnAddSignal2_Click(object sender, EventArgs e) {
@@ -238,6 +239,7 @@ namespace CPS
             lastAffectedSignal = signal;
 
             checkBox2.Checked = true;
+            btnSaveFile2.Enabled = true;
         }
 
         private void btnDoubleSingals_Load(object sender, EventArgs e) {
@@ -324,7 +326,8 @@ namespace CPS
 
         private void btnSaveFile1_Click(object sender, EventArgs e) {
             FileHandler fileHandler = new FileHandler();
-
+            fileHandler.Serialize(operat.Signal1);
+            MessageBox.Show("Sygnał został zapisany!", "OK");
         }
     }
 }
