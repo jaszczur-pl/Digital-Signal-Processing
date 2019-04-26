@@ -100,7 +100,20 @@ namespace CPS
         }
 
         private void btnAddSignal1_Click(object sender, EventArgs e) {
+            //double A = Convert.ToDouble(textBoxA.Text);
+            //double t1 = Convert.ToDouble(textBoxt1.Text);
+            //double d = Convert.ToDouble(textBoxd.Text);
+            //double T = Convert.ToDouble(textBoxT.Text);
+            //double kw = Convert.ToDouble(textBoxkw.Text);
+            //double ts = Convert.ToDouble(textBoxts.Text);
+            //double n1 = Convert.ToDouble(textBoxn1.Text);
+            //double ns = Convert.ToDouble(textBoxns.Text);
+            //double f = Convert.ToDouble(textBoxf.Text);
+            //double p = Convert.ToDouble(textBoxp.Text);
 
+            int singalNumer = comboBoxSignal.SelectedIndex;
+
+            checkBox1.Checked = true;
         }
     }
 }

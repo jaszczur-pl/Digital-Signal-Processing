@@ -98,6 +98,7 @@
             this.comboBoxSignal.Name = "comboBoxSignal";
             this.comboBoxSignal.Size = new System.Drawing.Size(253, 21);
             this.comboBoxSignal.TabIndex = 0;
+            this.comboBoxSignal.Tag = "1";
             this.comboBoxSignal.SelectedIndexChanged += new System.EventHandler(this.comboBoxSignal_SelectedIndexChanged);
             // 
             // label1
@@ -450,6 +451,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
+            this.checkBox1.Enabled = false;
             this.checkBox1.Location = new System.Drawing.Point(315, 455);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(69, 17);
@@ -460,6 +462,7 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
+            this.checkBox2.Enabled = false;
             this.checkBox2.Location = new System.Drawing.Point(315, 499);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(69, 17);
