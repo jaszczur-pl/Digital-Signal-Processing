@@ -4,6 +4,10 @@ using System.Collections.Generic;
 namespace CPS
 {
     public class Sygnal {
+
+        public Sygnal() {
+            IsDiscreteSignal = false;
+        }
         public double A { get; set; }
         public double t1 { get; set; }
         public double d { get; set; }
@@ -20,6 +24,7 @@ namespace CPS
 
         public List<double> axisY = new List<double>();
         public List<double> axisX = new List<double>();
+
         protected const int numberOfSamples = 10000;
         public bool IsDiscreteSignal {get; set;}
 

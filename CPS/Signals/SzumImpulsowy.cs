@@ -16,6 +16,7 @@ namespace CPS
             this.f = (int)f;
             this.p = p;
             signalName = "Szum impulsowy";
+            IsDiscreteSignal = true;
         }
 
         public override void CalculateXYPoints() {

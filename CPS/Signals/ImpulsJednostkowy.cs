@@ -16,6 +16,7 @@ namespace CPS
             this.d = d;
             this.f = f;
             signalName = "Impuls jednostkowy";
+            IsDiscreteSignal = true;
         }
 
         public override void CalculateXYPoints() {

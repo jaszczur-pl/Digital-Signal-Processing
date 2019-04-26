@@ -16,6 +16,7 @@ namespace CPS
             this.kw = kw;
             this.d = d;
             signalName = "Sygnał prostokątny symetryczny";
+            IsDiscreteSignal = false;
         }
 
         public override void CalculateXYPoints() {

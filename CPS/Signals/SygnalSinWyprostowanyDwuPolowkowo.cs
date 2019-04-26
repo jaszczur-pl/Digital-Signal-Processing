@@ -15,6 +15,7 @@ namespace CPS
             this.t1 = t1;
             this.d = d;
             signalName = "Sygnał sinusoidalny wyprostowany dwupołówkowo";
+            IsDiscreteSignal = false;
         }
 
         public override void CalculateXYPoints() {

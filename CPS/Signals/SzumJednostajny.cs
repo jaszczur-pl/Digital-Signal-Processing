@@ -15,6 +15,7 @@ namespace CPS
             this.d = d;
             p = 0.5;
             signalName = "Szum jednostajny";
+            IsDiscreteSignal = false;
         }
 
         public override void CalculateXYPoints() {

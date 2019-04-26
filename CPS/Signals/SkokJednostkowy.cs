@@ -15,6 +15,7 @@ namespace CPS
             this.d = d;
             this.ts = ts;
             signalName = "Skok jednostkowy";
+            IsDiscreteSignal = false;
         }
 
         public override void CalculateXYPoints() {
