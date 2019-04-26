@@ -17,8 +17,12 @@ namespace CPS
             signalName = "Sygnał Gaussowski";
         }
 
-        private double nextNextGaussian;
-        private bool haveNextNextGaussian = false;
+        public override void CalculateXYPoints() {
+            throw new NotImplementedException();
+        }
+
+        //private double nextNextGaussian;
+        //private bool haveNextNextGaussian = false;
 
         //public double nextGaussian()
         //{

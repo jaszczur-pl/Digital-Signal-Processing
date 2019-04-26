@@ -17,6 +17,10 @@ namespace CPS
             signalName = "Sygnał sinusoidalny wyprostowany dwupołówkowo";
         }
 
+        public override void CalculateXYPoints() {
+            throw new NotImplementedException();
+        }
+
         //public new void CalculateXYPoints()
         //{
         //    for (int i = 0; i < n2; i++)

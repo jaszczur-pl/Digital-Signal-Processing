@@ -17,7 +17,7 @@ namespace CPS
             signalName = "Szum jednostajny";
         }
 
-        public new void CalculateXYPoints() {
+        public override void CalculateXYPoints() {
 
             Random r = new Random();
 

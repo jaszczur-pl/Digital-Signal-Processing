@@ -17,6 +17,10 @@ namespace CPS
             signalName = "Skok jednostkowy";
         }
 
+        public override void CalculateXYPoints() {
+            throw new NotImplementedException();
+        }
+
         //public void CalculateXYPoints()
         //{
         //    for (int i = 0; i < n2; i++)

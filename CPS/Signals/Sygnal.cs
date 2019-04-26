@@ -24,7 +24,7 @@ namespace CPS
         protected const int numberOfSamples = 10000;
 
 
-        public void CalculateXYPoints() { }
+        public abstract void CalculateXYPoints();
         //public abstract double wartoscSrednia(List<double> lista);
         //public abstract double wartośćSredniaBezwzgledna(List<double> lista);
         //public abstract double mocSrednia(List<double> lista);

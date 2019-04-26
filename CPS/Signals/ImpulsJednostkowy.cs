@@ -18,6 +18,10 @@ namespace CPS
             signalName = "Impuls jednostkowy";
         }
 
+        public override void CalculateXYPoints() {
+            throw new NotImplementedException();
+        }
+
         //public void CalculateXYPoints() {
         //    double t;
         //    int y;

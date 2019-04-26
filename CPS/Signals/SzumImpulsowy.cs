@@ -18,6 +18,10 @@ namespace CPS
             signalName = "Szum impulsowy";
         }
 
+        public override void CalculateXYPoints() {
+            throw new NotImplementedException();
+        }
+
         //public float Generuj()
         //{
         //    Random r = new Random(System.DateTime.Now.Millisecond);

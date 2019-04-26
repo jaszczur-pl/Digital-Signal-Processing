@@ -17,6 +17,10 @@ namespace CPS
             signalName = "Sygnał sinusoidalny";
         }
 
+        public override void CalculateXYPoints() {
+            throw new NotImplementedException();
+        }
+
         //public double FSin( double T, int i)
         //{
         //    double t = i * k;
