@@ -321,5 +321,10 @@ namespace CPS
             signal = operat.CalculateHistogram(lastAffectedSignal, histValue);
             PrintHistogram(signal);
         }
+
+        private void btnSaveFile1_Click(object sender, EventArgs e) {
+            FileHandler fileHandler = new FileHandler();
+
+        }
     }
 }

@@ -8,5 +8,8 @@ namespace CPS
 {
     class FileHandler
     {
+        public void Serialize(Sygnal signal) {
+
+        }
     }
 }

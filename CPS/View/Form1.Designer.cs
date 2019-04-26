@@ -126,6 +126,7 @@
             this.btnSaveFile1.TabIndex = 4;
             this.btnSaveFile1.Text = "Zapisz do pliku";
             this.btnSaveFile1.UseVisualStyleBackColor = true;
+            this.btnSaveFile1.Click += new System.EventHandler(this.btnSaveFile1_Click);
             // 
             // btnLoadFile1
             // 
