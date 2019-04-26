@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Const.cs" />
+    <Compile Include="FileHandler.cs" />
     <Compile Include="Operator.cs" />
     <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>
