@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CPS.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -415,11 +416,13 @@ namespace CPS
         }
 
         private void btnAC_Click(object sender, EventArgs e) {
-
+            Form acPopup = new ACPopup();
+            acPopup.Show();
         }
 
         private void btnCA_Click(object sender, EventArgs e) {
-
+            Form caPopup = new CAPopup();
+            caPopup.Show();
         }
     }
 }
