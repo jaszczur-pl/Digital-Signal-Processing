@@ -14,7 +14,7 @@ namespace CPS
             this.A = A;
             this.t1 = t1;
             this.d = d;
-            this.f = (int)f;
+            this.f = f;
             this.p = p;
             signalName = "Szum impulsowy";
             IsDiscreteSignal = true;
@@ -25,11 +25,12 @@ namespace CPS
             Random r = new Random();
 
             for (double i = t1; i < (d + t1); i = i + (d / f)) {
-                int randomValue = r.Next(1, 1001);
-                int probability = (int)(p * 1000);
+                int rand = r.Next(0, 100);
+                double randomValue = ((double)rand / 100.0);
+                double probability = p ;
 
                 axisX.Add(i);
-                if (randomValue <= probability) {
+                if (randomValue < probability) {
                     axisY.Add(A);
                 }
                 else {

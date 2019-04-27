@@ -24,12 +24,11 @@ namespace CPS
             Random r = new Random();
 
             for (double i = t1; i < (d + t1); i = i + (d / (numberOfSamples / 100))) {
-                int randomNumber = r.Next(1, 11);
+                int randomNumber = r.Next(0, 10);
                 int probability = (int)(p * 10);
-
                 axisX.Add(i);
 
-                if (randomNumber <= probability) {
+                if (randomNumber < probability) {
                     axisY.Add(A);
                 }
                 else {

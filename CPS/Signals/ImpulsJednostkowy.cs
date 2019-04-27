@@ -31,8 +31,9 @@ namespace CPS
                 else {
                     axisY.Add(0);
                 }
-                ++counter;
+                counter++;
             }
         }
+
     }
 }

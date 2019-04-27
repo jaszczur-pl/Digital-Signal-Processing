@@ -104,64 +104,85 @@ namespace CPS
         }
 
         private void btnAddSignal1_Click(object sender, EventArgs e) {
-
-            GenerateSignal(sender);
+            try {
+                GenerateSignal(sender);
+            } catch(ArgumentOutOfRangeException) {
+                MessageBox.Show("Niepoprawne dane, musza być spełnione warunki: \n f >= ns \n ns >= n1", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void btnAddSignal2_Click(object sender, EventArgs e) {
-            GenerateSignal(sender);
+            try {
+                GenerateSignal(sender);
+            }
+            catch (ArgumentOutOfRangeException) {
+                MessageBox.Show("Niepoprawne dane, musza być spełnione warunki: \n f >= ns \n ns >= n1", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void GenerateSignal(object sender) {
-            Sygnal signal;
+            Sygnal signal = new Sygnal();
 
             switch (comboBoxSignal.SelectedIndex) {
                 case 0:
                     signal = new SzumJednostajny(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxt1.Text), Convert.ToDouble(textBoxd.Text));
                     break;
+
                 case 1:
                     signal = new SzumGaussowski(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxt1.Text), Convert.ToDouble(textBoxd.Text));
                     break;
+
                 case 2:
                     signal = new SygnalSin(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxT.Text), Convert.ToDouble(textBoxt1.Text),
                         Convert.ToDouble(textBoxd.Text));
                     break;
+
                 case 3:
                     signal = new SygnalSinWyprostowanyJednoPolowkowo(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxT.Text), Convert.ToDouble(textBoxt1.Text),
                         Convert.ToDouble(textBoxd.Text));
                     break;
+
                 case 4:
                     signal = new SygnalSinWyprostowanyDwuPolowkowo(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxT.Text), Convert.ToDouble(textBoxt1.Text),
                         Convert.ToDouble(textBoxd.Text));
                     break;
+
                 case 5:
                     signal = new SygnalProstokatny(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxT.Text), Convert.ToDouble(textBoxkw.Text),
                         Convert.ToDouble(textBoxd.Text), Convert.ToDouble(textBoxt1.Text));
                     break;
+
                 case 6:
                     signal = new SygnalProstokatnySymetryczny(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxT.Text), Convert.ToDouble(textBoxkw.Text),
                         Convert.ToDouble(textBoxt1.Text), Convert.ToDouble(textBoxd.Text));
                     break;
+
                 case 7:
                     signal = new SygnalTrojkatny(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxT.Text), Convert.ToDouble(textBoxkw.Text),
                         Convert.ToDouble(textBoxd.Text), Convert.ToDouble(textBoxt1.Text));
                     break;
+
                 case 8:
                     signal = new SkokJednostkowy(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxt1.Text), Convert.ToDouble(textBoxd.Text),
                         Convert.ToDouble(textBoxts.Text));
                     break;
+
                 case 9:
                     signal = new ImpulsJednostkowy(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxn1.Text), Convert.ToDouble(textBoxns.Text),
                         Convert.ToDouble(textBoxd.Text), Convert.ToDouble(textBoxf.Text));
+
+                    if ( signal.f < signal.ns || signal.ns < signal.n1) {
+                        throw new ArgumentOutOfRangeException();
+                    } 
+
                     chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
                     break;
+
                 case 10:
-                    signal = new ImpulsJednostkowy(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxt1.Text), Convert.ToDouble(textBoxd.Text),
+                    signal = new SzumImpulsowy(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxt1.Text), Convert.ToDouble(textBoxd.Text),
                         Convert.ToDouble(textBoxf.Text), Convert.ToDouble(textBoxp.Text));
                     chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-                    break;
-                default:
-                    signal = new SzumJednostajny(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxt1.Text), Convert.ToDouble(textBoxd.Text));
                     break;
             }
 
