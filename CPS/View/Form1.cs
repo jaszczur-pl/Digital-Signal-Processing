@@ -251,12 +251,19 @@ namespace CPS
 
         private void btnPrintHistogram_Click(object sender, EventArgs e) {
 
-            int histValue = Convert.ToInt32(textBoxHistogram.Text);
+            if (IsTextBoxHistogramValid()) {
+                int histValue = Convert.ToInt32(textBoxHistogram.Text);
 
-            Sygnal signal = new Sygnal();
+                Sygnal signal = new Sygnal();
 
-            signal = operat.CalculateHistogram(lastAffectedSignal, histValue);
-            PrintHistogram(signal);
+                signal = operat.CalculateHistogram(lastAffectedSignal, histValue);
+                PrintHistogram(signal);
+            }
+            else {
+                MessageBox.Show("Dopuszczalne wartości przedziałów dla histogramu: 5-20");
+            }
+
+
         }
 
         private void btnSaveFile1_Click(object sender, EventArgs e) {
@@ -336,12 +343,29 @@ namespace CPS
             }
         }
 
+        private bool IsTextBoxHistogramValid() {
+            int value = Convert.ToInt32(textBoxHistogram.Text);
+
+            if (value < 5 || value > 20) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+
         private void comboBoxMathOperation_SelectedIndexChanged(object sender, EventArgs e) {
             CheckBtnPrintDoubleSignals();
         }
 
         private void textBoxHistogram_TextChanged(object sender, EventArgs e) {
             CheckBtnPrintHistogram();
+        }
+
+        private void textBoxHistogram_KeyPress(object sender, KeyPressEventArgs e) {
+            if(e.KeyChar < '0' || e.KeyChar > '9') {
+                e.Handled = true;
+            }
         }
     }
 }
