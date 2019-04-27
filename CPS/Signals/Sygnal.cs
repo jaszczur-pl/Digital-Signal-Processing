@@ -6,23 +6,20 @@ namespace CPS
     [Serializable]
     public class Sygnal {
 
-        public Sygnal() {
-            IsDiscreteSignal = false;
-        }
-        public double A { get; set; }
-        public double t1 { get; set; }
-        public double d { get; set; }
-        public double T { get; set; }
-        public double kw { get; set; }
-        public double ts { get; set; }
-        public double n1 { get; set; }
-        public double ns { get; set; }
-        public double f { get; set; }
-        public double p { get; set; }
+        public double A { get; set; } = 0;
+        public double t1 { get; set; } = 0;
+        public double d { get; set; } = 0;
+        public double T { get; set; } = 0;
+        public double kw { get; set; } = 0;
+        public double ts { get; set; } = 0;
+        public double n1 { get; set; } = 0;
+        public double ns { get; set; } = 0;
+        public double f { get; set; } = 0;
+        public double p { get; set; } = 0;
         public int iloscPrzedzialowHistogramu { get; set; }
 
         public string signalName { get; set; }
-        public bool IsDiscreteSignal { get; set; }
+        public bool IsDiscreteSignal { get; set; } = false;
 
         public List<double> axisY = new List<double>();
         public List<double> axisX = new List<double>();
@@ -35,9 +32,6 @@ namespace CPS
 
         protected const int numberOfSamples = 10000;
         
-
-
-
         public virtual void CalculateXYPoints() { }
     }
 }

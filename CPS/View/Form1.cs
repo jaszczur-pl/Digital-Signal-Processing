@@ -246,7 +246,16 @@ namespace CPS
                 PrintPlot(signal);
             }
 
+            signal.AverageValue = operat.CalculateAverageValue(signal);
+            signal.AbsAverageValue = operat.CalculateAbsAverage(signal);
+            signal.AveragePower = operat.CalculateAveragePower(signal);
+            signal.Variance = operat.CalculateVariance(signal);
+            signal.RMS = operat.CalculateRMS(signal);
+
+            PrintStats(signal);
+
             lastAffectedSignal = signal;
+            btnSaveCalculatedSignal.Enabled = true;
         }
 
         private void btnPrintHistogram_Click(object sender, EventArgs e) {
@@ -274,6 +283,10 @@ namespace CPS
             SaveFile(sender);
         }
 
+        private void btnSaveCalculatedSignal_Click(object sender, EventArgs e) {
+            SaveFile(sender);
+        }
+
         private void SaveFile(object sender) {
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.InitialDirectory = @"e:\";
@@ -287,6 +300,8 @@ namespace CPS
                     fileHandler.Serialize(operat.Signal1, sfd.FileName);
                 } else if (sender.Equals(btnSaveFile2)) {
                     fileHandler.Serialize(operat.Signal2, sfd.FileName);
+                } else if (sender.Equals(btnSaveCalculatedSignal)) {
+                    fileHandler.Serialize(operat.CalculatedSignal, sfd.FileName);
                 }
                 
                 MessageBox.Show("Sygnał został zapisany!", "OK");
@@ -367,5 +382,7 @@ namespace CPS
                 e.Handled = true;
             }
         }
+
+
     }
 }

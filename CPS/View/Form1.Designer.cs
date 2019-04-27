@@ -81,6 +81,7 @@
             this.textBoxHistogram = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.btnPrintHistogram = new System.Windows.Forms.Button();
+            this.btnSaveCalculatedSignal = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -378,7 +379,7 @@
             "Dzielenie"});
             this.comboBoxMathOperation.Location = new System.Drawing.Point(396, 440);
             this.comboBoxMathOperation.Name = "comboBoxMathOperation";
-            this.comboBoxMathOperation.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxMathOperation.Size = new System.Drawing.Size(133, 21);
             this.comboBoxMathOperation.TabIndex = 43;
             this.comboBoxMathOperation.SelectedIndexChanged += new System.EventHandler(this.comboBoxMathOperation_SelectedIndexChanged);
             // 
@@ -513,9 +514,9 @@
             this.btnPrintDoubleSingals.Enabled = false;
             this.btnPrintDoubleSingals.Location = new System.Drawing.Point(396, 482);
             this.btnPrintDoubleSingals.Name = "btnPrintDoubleSingals";
-            this.btnPrintDoubleSingals.Size = new System.Drawing.Size(121, 23);
+            this.btnPrintDoubleSingals.Size = new System.Drawing.Size(133, 23);
             this.btnPrintDoubleSingals.TabIndex = 59;
-            this.btnPrintDoubleSingals.Text = "Rysuj sygnały";
+            this.btnPrintDoubleSingals.Text = "Rysuj obliczony sygnał";
             this.btnPrintDoubleSingals.UseVisualStyleBackColor = true;
             this.btnPrintDoubleSingals.Click += new System.EventHandler(this.btnPrintDoubleSingals_Click);
             // 
@@ -595,11 +596,23 @@
             this.btnPrintHistogram.UseVisualStyleBackColor = true;
             this.btnPrintHistogram.Click += new System.EventHandler(this.btnPrintHistogram_Click);
             // 
+            // btnSaveCalculatedSignal
+            // 
+            this.btnSaveCalculatedSignal.Enabled = false;
+            this.btnSaveCalculatedSignal.Location = new System.Drawing.Point(396, 524);
+            this.btnSaveCalculatedSignal.Name = "btnSaveCalculatedSignal";
+            this.btnSaveCalculatedSignal.Size = new System.Drawing.Size(133, 23);
+            this.btnSaveCalculatedSignal.TabIndex = 67;
+            this.btnSaveCalculatedSignal.Text = "Zapisz obliczony sygnał";
+            this.btnSaveCalculatedSignal.UseVisualStyleBackColor = true;
+            this.btnSaveCalculatedSignal.Click += new System.EventHandler(this.btnSaveCalculatedSignal_Click);
+            // 
             // btnDoubleSingals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1148, 612);
+            this.Controls.Add(this.btnSaveCalculatedSignal);
             this.Controls.Add(this.btnPrintHistogram);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.textBoxHistogram);
@@ -706,6 +719,7 @@
         private System.Windows.Forms.TextBox textBoxHistogram;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button btnPrintHistogram;
+        private System.Windows.Forms.Button btnSaveCalculatedSignal;
     }
 }
 

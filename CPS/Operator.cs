@@ -10,68 +10,97 @@ namespace CPS
     {
         public Sygnal Signal1 { get; set; }
         public Sygnal Signal2 { get; set; }
+        public Sygnal CalculatedSignal { get; set; }
         public double partOfRange { get; set; }
 
         public Sygnal AddSignals() {
 
-            Sygnal signal = new Sygnal();
-            signal.signalName = "Dodawanie sygnałów";
+            CalculatedSignal = new Sygnal();
+            CalculatedSignal.signalName = "Dodawanie sygnałów";
 
             int xNumber = Signal1.axisX.Count;
 
             for (int i = 0; i < xNumber; ++i) {
-                signal.axisX.Add(Signal1.axisX[i]);
-                signal.axisY.Add(Signal1.axisY[i] + Signal2.axisY[i]);
+                CalculatedSignal.axisX.Add(Signal1.axisX[i]);
+                CalculatedSignal.axisY.Add(Signal1.axisY[i] + Signal2.axisY[i]);
             }
 
-            return signal;
+            CalculatedSignal.d = CalculatedSignal.axisX.Last() - CalculatedSignal.axisX.First();
+            CalculatedSignal.T = 1;
+
+            if (Signal1.IsDiscreteSignal && Signal2.IsDiscreteSignal) {
+                CalculatedSignal.IsDiscreteSignal = true;
+            }
+
+            return CalculatedSignal;
         }
 
         public Sygnal SubtractSignals() {
 
-            Sygnal signal = new Sygnal();
-            signal.signalName = "Odejmowanie sygnałów";
+            CalculatedSignal = new Sygnal();
+            CalculatedSignal.signalName = "Odejmowanie sygnałów";
 
             int xNumber = Signal1.axisX.Count;
 
             for (int i = 0; i < xNumber; ++i) {
-                signal.axisX.Add(Signal1.axisX[i]);
-                signal.axisY.Add(Signal1.axisY[i] - Signal2.axisY[i]);
+                CalculatedSignal.axisX.Add(Signal1.axisX[i]);
+                CalculatedSignal.axisY.Add(Signal1.axisY[i] - Signal2.axisY[i]);
             }
 
-            return signal;
+            CalculatedSignal.d = CalculatedSignal.axisX.Last() - CalculatedSignal.axisX.First();
+            CalculatedSignal.T = 1;
+
+            if (Signal1.IsDiscreteSignal && Signal2.IsDiscreteSignal) {
+                CalculatedSignal.IsDiscreteSignal = true;
+            }
+
+            return CalculatedSignal;
         }
 
         public Sygnal MultiplySignals() {
 
-            Sygnal signal = new Sygnal();
-            signal.signalName = "Mnożenie sygnałów";
+            CalculatedSignal = new Sygnal();
+            CalculatedSignal.signalName = "Mnożenie sygnałów";
 
             int xNumber = Signal1.axisX.Count;
 
             for (int i = 0; i < xNumber; ++i) {
-                signal.axisX.Add(Signal1.axisX[i]);
-                signal.axisY.Add(Signal1.axisY[i] * Signal2.axisY[i]);
+                CalculatedSignal.axisX.Add(Signal1.axisX[i]);
+                CalculatedSignal.axisY.Add(Signal1.axisY[i] * Signal2.axisY[i]);
             }
 
-            return signal;
+            CalculatedSignal.d = CalculatedSignal.axisX.Last() - CalculatedSignal.axisX.First();
+            CalculatedSignal.T = 1;
+
+            if (Signal1.IsDiscreteSignal && Signal2.IsDiscreteSignal) {
+                CalculatedSignal.IsDiscreteSignal = true;
+            }
+
+            return CalculatedSignal;
         }
 
         public Sygnal DivideSignals() {
 
-            Sygnal signal = new Sygnal();
-            signal.signalName = "Dzielenie sygnałów";
+            CalculatedSignal = new Sygnal();
+            CalculatedSignal.signalName = "Dzielenie sygnałów";
 
             int xNumber = Signal1.axisX.Count;
 
             for (int i = 0; i < xNumber; ++i) {
                 if(Signal2.axisY[i] != 0) {
-                    signal.axisX.Add(Signal1.axisX[i]);
-                    signal.axisY.Add(Signal1.axisY[i] / Signal2.axisY[i]);
+                    CalculatedSignal.axisX.Add(Signal1.axisX[i]);
+                    CalculatedSignal.axisY.Add(Signal1.axisY[i] / Signal2.axisY[i]);
                 }
             }
 
-            return signal;
+            CalculatedSignal.d = CalculatedSignal.axisX.Last() - CalculatedSignal.axisX.First();
+            CalculatedSignal.T = 1;
+
+            if (Signal1.IsDiscreteSignal && Signal2.IsDiscreteSignal) {
+                CalculatedSignal.IsDiscreteSignal = true;
+            }
+
+            return CalculatedSignal;
         }
 
         public Sygnal CalculateHistogram(Sygnal lastAffectedSignal, int histValue) {
