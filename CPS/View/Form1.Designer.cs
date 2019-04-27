@@ -82,6 +82,8 @@
             this.label18 = new System.Windows.Forms.Label();
             this.btnPrintHistogram = new System.Windows.Forms.Button();
             this.btnSaveCalculatedSignal = new System.Windows.Forms.Button();
+            this.btnAC = new System.Windows.Forms.Button();
+            this.btnCA = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -607,11 +609,31 @@
             this.btnSaveCalculatedSignal.UseVisualStyleBackColor = true;
             this.btnSaveCalculatedSignal.Click += new System.EventHandler(this.btnSaveCalculatedSignal_Click);
             // 
+            // btnAC
+            // 
+            this.btnAC.Location = new System.Drawing.Point(1053, 422);
+            this.btnAC.Name = "btnAC";
+            this.btnAC.Size = new System.Drawing.Size(75, 23);
+            this.btnAC.TabIndex = 68;
+            this.btnAC.Text = "AC";
+            this.btnAC.UseVisualStyleBackColor = true;
+            // 
+            // btnCA
+            // 
+            this.btnCA.Location = new System.Drawing.Point(1053, 455);
+            this.btnCA.Name = "btnCA";
+            this.btnCA.Size = new System.Drawing.Size(75, 23);
+            this.btnCA.TabIndex = 69;
+            this.btnCA.Text = "CA";
+            this.btnCA.UseVisualStyleBackColor = true;
+            // 
             // btnDoubleSingals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1148, 612);
+            this.Controls.Add(this.btnCA);
+            this.Controls.Add(this.btnAC);
             this.Controls.Add(this.btnSaveCalculatedSignal);
             this.Controls.Add(this.btnPrintHistogram);
             this.Controls.Add(this.label18);
@@ -720,6 +742,8 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button btnPrintHistogram;
         private System.Windows.Forms.Button btnSaveCalculatedSignal;
+        private System.Windows.Forms.Button btnAC;
+        private System.Windows.Forms.Button btnCA;
     }
 }
 
