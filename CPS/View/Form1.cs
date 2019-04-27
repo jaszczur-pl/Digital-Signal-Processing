@@ -105,75 +105,14 @@ namespace CPS
 
         private void btnAddSignal1_Click(object sender, EventArgs e) {
 
-            Sygnal signal;
-
-            switch (comboBoxSignal.SelectedIndex) {
-                case 0:
-                    signal = new SzumJednostajny(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxt1.Text), Convert.ToDouble(textBoxd.Text));
-                    break;
-                case 1:
-                    signal = new SzumGaussowski(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxt1.Text), Convert.ToDouble(textBoxd.Text));
-                    break;
-                case 2:
-                    signal = new SygnalSin(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxT.Text), Convert.ToDouble(textBoxt1.Text), 
-                        Convert.ToDouble(textBoxd.Text));
-                    break;
-                case 3:
-                    signal = new SygnalSinWyprostowanyJednoPolowkowo(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxT.Text), Convert.ToDouble(textBoxt1.Text),
-                        Convert.ToDouble(textBoxd.Text));
-                    break;
-                case 4:
-                    signal = new SygnalSinWyprostowanyDwuPolowkowo(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxT.Text), Convert.ToDouble(textBoxt1.Text),
-                        Convert.ToDouble(textBoxd.Text));
-                    break;
-                case 5:
-                    signal = new SygnalProstokatny(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxT.Text), Convert.ToDouble(textBoxkw.Text),
-                        Convert.ToDouble(textBoxd.Text), Convert.ToDouble(textBoxt1.Text));
-                    break;
-                case 6:
-                    signal = new SygnalProstokatnySymetryczny(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxT.Text), Convert.ToDouble(textBoxkw.Text),
-                        Convert.ToDouble(textBoxt1.Text), Convert.ToDouble(textBoxd.Text));
-                    break;
-                case 7:
-                    signal = new SygnalTrojkatny(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxT.Text), Convert.ToDouble(textBoxkw.Text),
-                        Convert.ToDouble(textBoxd.Text), Convert.ToDouble(textBoxt1.Text));
-                    break;
-                case 8:
-                    signal = new SkokJednostkowy(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxt1.Text), Convert.ToDouble(textBoxd.Text),
-                        Convert.ToDouble(textBoxts.Text));
-                    break;
-                case 9:
-                    signal = new ImpulsJednostkowy(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxn1.Text), Convert.ToDouble(textBoxns.Text),
-                        Convert.ToDouble(textBoxd.Text), Convert.ToDouble(textBoxf.Text));
-                    chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-                    break;
-                case 10:
-                    signal = new ImpulsJednostkowy(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxt1.Text), Convert.ToDouble(textBoxd.Text),
-                        Convert.ToDouble(textBoxf.Text), Convert.ToDouble(textBoxp.Text));
-                    chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-                    break;
-                default:
-                    signal = new SzumJednostajny(Convert.ToDouble(textBoxA.Text), Convert.ToDouble(textBoxt1.Text), Convert.ToDouble(textBoxd.Text));
-                    break;
-            }
-
-            operat.Signal1 = signal;
-            signal.CalculateXYPoints();
-            signal.AverageValue = operat.CalculateAverageValue(signal);
-            signal.AbsAverageValue = operat.CalculateAbsAverage(signal);
-            signal.AveragePower = operat.CalculateAveragePower(signal);
-            signal.Variance = operat.CalculateVariance(signal);
-            signal.RMS = operat.CalculateRMS(signal);
-
-            PrintStats(signal);
-            PrintPlot(signal);
-            lastAffectedSignal = signal;
-
-            checkBox1.Checked = true;
-            btnSaveFile1.Enabled = true;
+            GenerateSignal(sender);
         }
 
         private void btnAddSignal2_Click(object sender, EventArgs e) {
+            GenerateSignal(sender);
+        }
+
+        private void GenerateSignal(object sender) {
             Sygnal signal;
 
             switch (comboBoxSignal.SelectedIndex) {
@@ -226,7 +165,16 @@ namespace CPS
                     break;
             }
 
-            operat.Signal2 = signal;
+            if (sender.Equals(btnAddSignal1)) {
+                operat.Signal1 = signal;
+                checkBox1.Checked = true;
+                btnSaveFile1.Enabled = true;
+            } else if (sender.Equals(btnAddSignal2)) {
+                operat.Signal2 = signal;
+                checkBox2.Checked = true;
+                btnSaveFile2.Enabled = true;
+            }
+
             signal.CalculateXYPoints();
             signal.AverageValue = operat.CalculateAverageValue(signal);
             signal.AbsAverageValue = operat.CalculateAbsAverage(signal);
@@ -238,23 +186,8 @@ namespace CPS
             PrintPlot(signal);
             lastAffectedSignal = signal;
 
-            checkBox2.Checked = true;
-            btnSaveFile2.Enabled = true;
-        }
-
-        private void btnDoubleSingals_Load(object sender, EventArgs e) {
-
-        }
-
-        private void btnPrintSingleSignal_Click(object sender, EventArgs e) {
-
-            string chartName;
-            
-
-            if (comboBoxSignal.SelectedIndex == 0) {
-                chartName = "Szum Jednostajny";
-
-            }
+            CheckBtnPrintDoubleSignals();
+            CheckBtnPrintHistogram();
         }
 
         private void PrintPlot(Sygnal signal) {
@@ -327,21 +260,14 @@ namespace CPS
         }
 
         private void btnSaveFile1_Click(object sender, EventArgs e) {
-
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.InitialDirectory = @"e:\";
-            sfd.Filter = "bin files (*.bin)|*.bin";
-            sfd.RestoreDirectory = true;
-
-            if (sfd.ShowDialog() == DialogResult.OK) {
-                FileHandler fileHandler = new FileHandler();
-                fileHandler.Serialize(operat.Signal1, sfd.FileName);
-                MessageBox.Show("Sygnał został zapisany!", "OK");
-            }
+            SaveFile(sender);
         }
 
         private void btnSaveFile2_Click(object sender, EventArgs e) {
+            SaveFile(sender);
+        }
 
+        private void SaveFile(object sender) {
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.InitialDirectory = @"e:\";
             sfd.Filter = "bin files (*.bin)|*.bin";
@@ -349,34 +275,26 @@ namespace CPS
 
             if (sfd.ShowDialog() == DialogResult.OK) {
                 FileHandler fileHandler = new FileHandler();
-                fileHandler.Serialize(operat.Signal2, sfd.FileName);
+
+                if (sender.Equals(btnSaveFile1)) {
+                    fileHandler.Serialize(operat.Signal1, sfd.FileName);
+                } else if (sender.Equals(btnSaveFile2)) {
+                    fileHandler.Serialize(operat.Signal2, sfd.FileName);
+                }
+                
                 MessageBox.Show("Sygnał został zapisany!", "OK");
             }
         }
 
         private void btnLoadFile1_Click(object sender, EventArgs e) {
-
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.InitialDirectory = @"e:\";
-            ofd.Filter = "bin files (*.bin)|*.bin";
-            ofd.RestoreDirectory = true;
-
-            if (ofd.ShowDialog() == DialogResult.OK) {
-
-                FileHandler fileHandler = new FileHandler();
-                Sygnal signal = fileHandler.Deserialize(ofd.FileName);
-
-                operat.Signal1 = signal;
-                PrintStats(signal);
-                PrintPlot(signal);
-                lastAffectedSignal = signal;
-
-                checkBox1.Checked = true;
-                btnSaveFile1.Enabled = true;
-            }
+            LoadFile(sender);
         }
 
         private void btnLoadFile2_Click(object sender, EventArgs e) {
+            LoadFile(sender);
+        }
+
+        private void LoadFile(object sender) {
 
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.InitialDirectory = @"e:\";
@@ -388,14 +306,42 @@ namespace CPS
                 FileHandler fileHandler = new FileHandler();
                 Sygnal signal = fileHandler.Deserialize(ofd.FileName);
 
-                operat.Signal2 = signal;
+                if (sender.Equals(btnLoadFile1)) {
+                    operat.Signal1 = signal;
+                    checkBox1.Checked = true;
+                    btnSaveFile1.Enabled = true;
+                } else if (sender.Equals(btnLoadFile2)) {
+                    operat.Signal2 = signal;
+                    checkBox2.Checked = true;
+                    btnSaveFile2.Enabled = true;
+                }
+
                 PrintStats(signal);
                 PrintPlot(signal);
                 lastAffectedSignal = signal;
 
-                checkBox1.Checked = true;
-                btnSaveFile1.Enabled = true;
+                CheckBtnPrintDoubleSignals();
             }
+        }
+
+        private void CheckBtnPrintDoubleSignals() {
+            if (checkBox1.Checked && checkBox2.Checked && comboBoxMathOperation.SelectedIndex > -1) {
+                btnPrintDoubleSingals.Enabled = true;
+            }
+        }
+
+        private void CheckBtnPrintHistogram() {
+            if ((checkBox1.Checked || checkBox2.Checked) && !string.IsNullOrWhiteSpace(textBoxHistogram.Text)) {
+                btnPrintHistogram.Enabled = true;
+            }
+        }
+
+        private void comboBoxMathOperation_SelectedIndexChanged(object sender, EventArgs e) {
+            CheckBtnPrintDoubleSignals();
+        }
+
+        private void textBoxHistogram_TextChanged(object sender, EventArgs e) {
+            CheckBtnPrintHistogram();
         }
     }
 }
