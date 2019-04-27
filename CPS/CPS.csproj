@@ -49,6 +49,18 @@
   <ItemGroup>
     <Compile Include="FileHandler.cs" />
     <Compile Include="Operator.cs" />
+    <Compile Include="View\ACPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ACPopup.Designer.cs">
+      <DependentUpon>ACPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\CAPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CAPopup.Designer.cs">
+      <DependentUpon>CAPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
