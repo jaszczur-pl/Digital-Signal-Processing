@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="FileHandler.cs" />
     <Compile Include="Operator.cs" />
+    <Compile Include="SignalConverter.cs" />
     <Compile Include="View\ACPopup.cs">
       <SubType>Form</SubType>
     </Compile>
