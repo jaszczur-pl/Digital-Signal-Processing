@@ -27,8 +27,8 @@
         private void InitializeComponent() {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxfs = new System.Windows.Forms.TextBox();
+            this.textBoxb = new System.Windows.Forms.TextBox();
             this.btnOK = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -37,32 +37,32 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(32, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 13);
+            this.label1.Size = new System.Drawing.Size(193, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Częstotliwość próbkowania sygnału";
+            this.label1.Text = "Częstotliwość próbkowania sygnału (fs)";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(32, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 13);
+            this.label2.Size = new System.Drawing.Size(152, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Ilość poziomów kwantyzacji";
+            this.label2.Text = "Ilość poziomów kwantyzacji (b)\r\n";
             // 
-            // textBox1
+            // textBoxfs
             // 
-            this.textBox1.Location = new System.Drawing.Point(214, 10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.textBoxfs.Location = new System.Drawing.Point(232, 10);
+            this.textBoxfs.Name = "textBoxfs";
+            this.textBoxfs.Size = new System.Drawing.Size(100, 20);
+            this.textBoxfs.TabIndex = 2;
             // 
-            // textBox2
+            // textBoxb
             // 
-            this.textBox2.Location = new System.Drawing.Point(214, 53);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.textBoxb.Location = new System.Drawing.Point(232, 53);
+            this.textBoxb.Name = "textBoxb";
+            this.textBoxb.Size = new System.Drawing.Size(100, 20);
+            this.textBoxb.TabIndex = 3;
             // 
             // btnOK
             // 
@@ -80,8 +80,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 141);
             this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxb);
+            this.Controls.Add(this.textBoxfs);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ACPopup";
@@ -95,8 +95,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxfs;
+        private System.Windows.Forms.TextBox textBoxb;
         private System.Windows.Forms.Button btnOK;
     }
 }

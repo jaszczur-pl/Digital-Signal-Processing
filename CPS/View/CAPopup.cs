@@ -12,12 +12,15 @@ namespace CPS.View
 {
     public partial class CAPopup : Form
     {
+        public bool Status { get; set; } = false;
+
         public CAPopup() {
             InitializeComponent();
         }
 
         private void btnOK_Click(object sender, EventArgs e) {
 
+            Status = true;
         }
     }
 }
