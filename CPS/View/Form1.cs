@@ -415,12 +415,22 @@ namespace CPS
             }
         }
 
-        private void btnAC_Click(object sender, EventArgs e) {
+        private void stripMenuItemS1_Click(object sender, EventArgs e) {
             Form acPopup = new ACPopup();
             acPopup.Show();
         }
 
-        private void btnCA_Click(object sender, EventArgs e) {
+        private void stripMenuItemQ1_Click(object sender, EventArgs e) {
+            Form acPopup = new ACPopup();
+            acPopup.Show();
+        }
+
+        private void stripMenuItemR1_Click(object sender, EventArgs e) {
+            Form caPopup = new CAPopup();
+            caPopup.Show();
+        }
+
+        private void stripMenuItemR3_Click(object sender, EventArgs e) {
             Form caPopup = new CAPopup();
             caPopup.Show();
         }

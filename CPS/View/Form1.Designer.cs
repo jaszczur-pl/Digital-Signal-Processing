@@ -25,12 +25,12 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.comboBoxSignal = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSaveFile1 = new System.Windows.Forms.Button();
@@ -82,12 +82,18 @@
             this.label18 = new System.Windows.Forms.Label();
             this.btnPrintHistogram = new System.Windows.Forms.Button();
             this.btnSaveCalculatedSignal = new System.Windows.Forms.Button();
-            this.btnAC = new System.Windows.Forms.Button();
-            this.btnCA = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.konwersjaACToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stripMenuItemS1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.stripMenuItemQ1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.konwersjaCAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stripMenuItemR1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.stripMenuItemR3 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboBoxSignal
@@ -105,7 +111,7 @@
             "skok jednostkowy",
             "impuls jednostkowy",
             "szum impulsowy"});
-            this.comboBoxSignal.Location = new System.Drawing.Point(5, 25);
+            this.comboBoxSignal.Location = new System.Drawing.Point(11, 69);
             this.comboBoxSignal.Name = "comboBoxSignal";
             this.comboBoxSignal.Size = new System.Drawing.Size(253, 21);
             this.comboBoxSignal.TabIndex = 0;
@@ -115,7 +121,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(136, 9);
+            this.label1.Location = new System.Drawing.Point(142, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 13);
             this.label1.TabIndex = 1;
@@ -145,7 +151,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(2, 74);
+            this.label4.Location = new System.Drawing.Point(8, 118);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 13);
             this.label4.TabIndex = 11;
@@ -154,7 +160,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(2, 107);
+            this.label5.Location = new System.Drawing.Point(8, 151);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(114, 13);
             this.label5.TabIndex = 13;
@@ -163,7 +169,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(2, 143);
+            this.label6.Location = new System.Drawing.Point(8, 187);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(123, 13);
             this.label6.TabIndex = 15;
@@ -172,7 +178,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(2, 179);
+            this.label7.Location = new System.Drawing.Point(8, 223);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(113, 13);
             this.label7.TabIndex = 17;
@@ -181,7 +187,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(0, 211);
+            this.label8.Location = new System.Drawing.Point(6, 255);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(158, 13);
             this.label8.TabIndex = 19;
@@ -190,7 +196,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(0, 246);
+            this.label3.Location = new System.Drawing.Point(6, 290);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(137, 13);
             this.label3.TabIndex = 20;
@@ -199,7 +205,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(2, 282);
+            this.label9.Location = new System.Drawing.Point(8, 326);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(122, 13);
             this.label9.TabIndex = 29;
@@ -208,7 +214,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(0, 393);
+            this.label10.Location = new System.Drawing.Point(6, 437);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(124, 13);
             this.label10.TabIndex = 28;
@@ -217,7 +223,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(2, 355);
+            this.label11.Location = new System.Drawing.Point(8, 399);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(147, 13);
             this.label11.TabIndex = 27;
@@ -226,7 +232,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(2, 320);
+            this.label12.Location = new System.Drawing.Point(8, 364);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(79, 13);
             this.label12.TabIndex = 26;
@@ -234,55 +240,55 @@
             // 
             // chart1
             // 
-            chartArea5.AxisX.Title = "Czas trwania sygnału";
-            chartArea5.AxisY.Title = "Amplituda";
-            chartArea5.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea5);
+            chartArea11.AxisX.Title = "Czas trwania sygnału";
+            chartArea11.AxisY.Title = "Amplituda";
+            chartArea11.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea11);
             this.chart1.Cursor = System.Windows.Forms.Cursors.No;
-            legend5.Name = "Legend1";
-            this.chart1.Legends.Add(legend5);
-            this.chart1.Location = new System.Drawing.Point(348, 25);
+            legend11.Name = "Legend1";
+            this.chart1.Legends.Add(legend11);
+            this.chart1.Location = new System.Drawing.Point(354, 69);
             this.chart1.Margin = new System.Windows.Forms.Padding(0);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series5.EmptyPointStyle.MarkerSize = 200;
-            series5.IsVisibleInLegend = false;
-            series5.Legend = "Legend1";
-            series5.Name = "signal";
-            series5.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series5.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            this.chart1.Series.Add(series5);
+            series11.ChartArea = "ChartArea1";
+            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series11.EmptyPointStyle.MarkerSize = 200;
+            series11.IsVisibleInLegend = false;
+            series11.Legend = "Legend1";
+            series11.Name = "signal";
+            series11.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series11.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            this.chart1.Series.Add(series11);
             this.chart1.Size = new System.Drawing.Size(363, 380);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
             // chart2
             // 
-            chartArea6.AxisX.Title = "Wartość bezwględna sygnału";
-            chartArea6.AxisY.Title = "Liczba próbek";
-            chartArea6.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chart2.Legends.Add(legend6);
-            this.chart2.Location = new System.Drawing.Point(765, 26);
+            chartArea12.AxisX.Title = "Wartość bezwględna sygnału";
+            chartArea12.AxisY.Title = "Liczba próbek";
+            chartArea12.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea12);
+            legend12.Name = "Legend1";
+            this.chart2.Legends.Add(legend12);
+            this.chart2.Location = new System.Drawing.Point(771, 70);
             this.chart2.Name = "chart2";
             this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series6.ChartArea = "ChartArea1";
-            series6.IsVisibleInLegend = false;
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            series6.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            series6.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            this.chart2.Series.Add(series6);
+            series12.ChartArea = "ChartArea1";
+            series12.IsVisibleInLegend = false;
+            series12.Legend = "Legend1";
+            series12.Name = "Series1";
+            series12.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            series12.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            this.chart2.Series.Add(series12);
             this.chart2.Size = new System.Drawing.Size(363, 380);
             this.chart2.TabIndex = 31;
             this.chart2.Text = "chart2";
             // 
             // textBoxA
             // 
-            this.textBoxA.Location = new System.Drawing.Point(187, 71);
+            this.textBoxA.Location = new System.Drawing.Point(193, 115);
             this.textBoxA.Name = "textBoxA";
             this.textBoxA.ReadOnly = true;
             this.textBoxA.Size = new System.Drawing.Size(71, 20);
@@ -290,7 +296,7 @@
             // 
             // textBoxt1
             // 
-            this.textBoxt1.Location = new System.Drawing.Point(187, 104);
+            this.textBoxt1.Location = new System.Drawing.Point(193, 148);
             this.textBoxt1.Name = "textBoxt1";
             this.textBoxt1.ReadOnly = true;
             this.textBoxt1.Size = new System.Drawing.Size(71, 20);
@@ -298,7 +304,7 @@
             // 
             // textBoxT
             // 
-            this.textBoxT.Location = new System.Drawing.Point(187, 173);
+            this.textBoxT.Location = new System.Drawing.Point(193, 217);
             this.textBoxT.Name = "textBoxT";
             this.textBoxT.ReadOnly = true;
             this.textBoxT.Size = new System.Drawing.Size(71, 20);
@@ -306,7 +312,7 @@
             // 
             // textBoxd
             // 
-            this.textBoxd.Location = new System.Drawing.Point(187, 140);
+            this.textBoxd.Location = new System.Drawing.Point(193, 184);
             this.textBoxd.Name = "textBoxd";
             this.textBoxd.ReadOnly = true;
             this.textBoxd.Size = new System.Drawing.Size(71, 20);
@@ -314,7 +320,7 @@
             // 
             // textBoxn1
             // 
-            this.textBoxn1.Location = new System.Drawing.Point(187, 241);
+            this.textBoxn1.Location = new System.Drawing.Point(193, 285);
             this.textBoxn1.Name = "textBoxn1";
             this.textBoxn1.ReadOnly = true;
             this.textBoxn1.Size = new System.Drawing.Size(71, 20);
@@ -323,7 +329,7 @@
             // textBoxkw
             // 
             this.textBoxkw.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBoxkw.Location = new System.Drawing.Point(187, 208);
+            this.textBoxkw.Location = new System.Drawing.Point(193, 252);
             this.textBoxkw.Name = "textBoxkw";
             this.textBoxkw.ReadOnly = true;
             this.textBoxkw.Size = new System.Drawing.Size(71, 20);
@@ -331,7 +337,7 @@
             // 
             // textBoxts
             // 
-            this.textBoxts.Location = new System.Drawing.Point(187, 312);
+            this.textBoxts.Location = new System.Drawing.Point(193, 356);
             this.textBoxts.Name = "textBoxts";
             this.textBoxts.ReadOnly = true;
             this.textBoxts.Size = new System.Drawing.Size(71, 20);
@@ -339,7 +345,7 @@
             // 
             // textBoxns
             // 
-            this.textBoxns.Location = new System.Drawing.Point(187, 279);
+            this.textBoxns.Location = new System.Drawing.Point(193, 323);
             this.textBoxns.Name = "textBoxns";
             this.textBoxns.ReadOnly = true;
             this.textBoxns.Size = new System.Drawing.Size(71, 20);
@@ -347,7 +353,7 @@
             // 
             // textBoxp
             // 
-            this.textBoxp.Location = new System.Drawing.Point(187, 385);
+            this.textBoxp.Location = new System.Drawing.Point(193, 429);
             this.textBoxp.Name = "textBoxp";
             this.textBoxp.ReadOnly = true;
             this.textBoxp.Size = new System.Drawing.Size(71, 20);
@@ -355,7 +361,7 @@
             // 
             // textBoxf
             // 
-            this.textBoxf.Location = new System.Drawing.Point(187, 352);
+            this.textBoxf.Location = new System.Drawing.Point(193, 396);
             this.textBoxf.Name = "textBoxf";
             this.textBoxf.ReadOnly = true;
             this.textBoxf.Size = new System.Drawing.Size(71, 20);
@@ -379,7 +385,7 @@
             "Odejmowanie",
             "Mnożenie",
             "Dzielenie"});
-            this.comboBoxMathOperation.Location = new System.Drawing.Point(396, 440);
+            this.comboBoxMathOperation.Location = new System.Drawing.Point(402, 484);
             this.comboBoxMathOperation.Name = "comboBoxMathOperation";
             this.comboBoxMathOperation.Size = new System.Drawing.Size(133, 21);
             this.comboBoxMathOperation.TabIndex = 43;
@@ -388,7 +394,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(396, 424);
+            this.label2.Location = new System.Drawing.Point(402, 468);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(121, 13);
             this.label2.TabIndex = 44;
@@ -396,7 +402,7 @@
             // 
             // textBoxAvgPow
             // 
-            this.textBoxAvgPow.Location = new System.Drawing.Point(947, 567);
+            this.textBoxAvgPow.Location = new System.Drawing.Point(953, 611);
             this.textBoxAvgPow.Name = "textBoxAvgPow";
             this.textBoxAvgPow.ReadOnly = true;
             this.textBoxAvgPow.Size = new System.Drawing.Size(71, 20);
@@ -404,7 +410,7 @@
             // 
             // textBoxVar
             // 
-            this.textBoxVar.Location = new System.Drawing.Point(947, 529);
+            this.textBoxVar.Location = new System.Drawing.Point(953, 573);
             this.textBoxVar.Name = "textBoxVar";
             this.textBoxVar.ReadOnly = true;
             this.textBoxVar.Size = new System.Drawing.Size(71, 20);
@@ -412,7 +418,7 @@
             // 
             // textBoxRMS
             // 
-            this.textBoxRMS.Location = new System.Drawing.Point(947, 493);
+            this.textBoxRMS.Location = new System.Drawing.Point(953, 537);
             this.textBoxRMS.Name = "textBoxRMS";
             this.textBoxRMS.ReadOnly = true;
             this.textBoxRMS.Size = new System.Drawing.Size(71, 20);
@@ -420,7 +426,7 @@
             // 
             // textBoxAbsAvg
             // 
-            this.textBoxAbsAvg.Location = new System.Drawing.Point(947, 457);
+            this.textBoxAbsAvg.Location = new System.Drawing.Point(953, 501);
             this.textBoxAbsAvg.Name = "textBoxAbsAvg";
             this.textBoxAbsAvg.ReadOnly = true;
             this.textBoxAbsAvg.Size = new System.Drawing.Size(71, 20);
@@ -428,7 +434,7 @@
             // 
             // textBoxAvg
             // 
-            this.textBoxAvg.Location = new System.Drawing.Point(947, 424);
+            this.textBoxAvg.Location = new System.Drawing.Point(953, 468);
             this.textBoxAvg.Name = "textBoxAvg";
             this.textBoxAvg.ReadOnly = true;
             this.textBoxAvg.Size = new System.Drawing.Size(71, 20);
@@ -437,7 +443,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(762, 496);
+            this.label13.Location = new System.Drawing.Point(768, 540);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(99, 13);
             this.label13.TabIndex = 49;
@@ -446,7 +452,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(762, 532);
+            this.label14.Location = new System.Drawing.Point(768, 576);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(55, 13);
             this.label14.TabIndex = 48;
@@ -455,7 +461,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(762, 570);
+            this.label15.Location = new System.Drawing.Point(768, 614);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(65, 13);
             this.label15.TabIndex = 47;
@@ -464,7 +470,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(762, 460);
+            this.label16.Location = new System.Drawing.Point(768, 504);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(149, 13);
             this.label16.TabIndex = 46;
@@ -473,7 +479,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(762, 427);
+            this.label17.Location = new System.Drawing.Point(768, 471);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(84, 13);
             this.label17.TabIndex = 45;
@@ -514,7 +520,7 @@
             // btnPrintDoubleSingals
             // 
             this.btnPrintDoubleSingals.Enabled = false;
-            this.btnPrintDoubleSingals.Location = new System.Drawing.Point(396, 482);
+            this.btnPrintDoubleSingals.Location = new System.Drawing.Point(402, 526);
             this.btnPrintDoubleSingals.Name = "btnPrintDoubleSingals";
             this.btnPrintDoubleSingals.Size = new System.Drawing.Size(133, 23);
             this.btnPrintDoubleSingals.TabIndex = 59;
@@ -549,7 +555,7 @@
             this.groupBox1.Controls.Add(this.btnSaveFile1);
             this.groupBox1.Controls.Add(this.btnLoadFile1);
             this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 424);
+            this.groupBox1.Location = new System.Drawing.Point(18, 468);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(158, 176);
             this.groupBox1.TabIndex = 62;
@@ -562,7 +568,7 @@
             this.groupBox2.Controls.Add(this.checkBox2);
             this.groupBox2.Controls.Add(this.btnLoadFile2);
             this.groupBox2.Controls.Add(this.btnSaveFile2);
-            this.groupBox2.Location = new System.Drawing.Point(187, 424);
+            this.groupBox2.Location = new System.Drawing.Point(193, 468);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(162, 176);
             this.groupBox2.TabIndex = 63;
@@ -571,7 +577,7 @@
             // 
             // textBoxHistogram
             // 
-            this.textBoxHistogram.Location = new System.Drawing.Point(570, 440);
+            this.textBoxHistogram.Location = new System.Drawing.Point(576, 484);
             this.textBoxHistogram.Name = "textBoxHistogram";
             this.textBoxHistogram.Size = new System.Drawing.Size(121, 20);
             this.textBoxHistogram.TabIndex = 64;
@@ -581,7 +587,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(567, 424);
+            this.label18.Location = new System.Drawing.Point(573, 468);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(110, 13);
             this.label18.TabIndex = 65;
@@ -590,7 +596,7 @@
             // btnPrintHistogram
             // 
             this.btnPrintHistogram.Enabled = false;
-            this.btnPrintHistogram.Location = new System.Drawing.Point(570, 482);
+            this.btnPrintHistogram.Location = new System.Drawing.Point(576, 526);
             this.btnPrintHistogram.Name = "btnPrintHistogram";
             this.btnPrintHistogram.Size = new System.Drawing.Size(121, 23);
             this.btnPrintHistogram.TabIndex = 66;
@@ -601,7 +607,7 @@
             // btnSaveCalculatedSignal
             // 
             this.btnSaveCalculatedSignal.Enabled = false;
-            this.btnSaveCalculatedSignal.Location = new System.Drawing.Point(396, 524);
+            this.btnSaveCalculatedSignal.Location = new System.Drawing.Point(402, 568);
             this.btnSaveCalculatedSignal.Name = "btnSaveCalculatedSignal";
             this.btnSaveCalculatedSignal.Size = new System.Drawing.Size(133, 23);
             this.btnSaveCalculatedSignal.TabIndex = 67;
@@ -609,33 +615,69 @@
             this.btnSaveCalculatedSignal.UseVisualStyleBackColor = true;
             this.btnSaveCalculatedSignal.Click += new System.EventHandler(this.btnSaveCalculatedSignal_Click);
             // 
-            // btnAC
+            // menuStrip1
             // 
-            this.btnAC.Location = new System.Drawing.Point(1053, 422);
-            this.btnAC.Name = "btnAC";
-            this.btnAC.Size = new System.Drawing.Size(75, 23);
-            this.btnAC.TabIndex = 68;
-            this.btnAC.Text = "AC";
-            this.btnAC.UseVisualStyleBackColor = true;
-            this.btnAC.Click += new System.EventHandler(this.btnAC_Click);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.konwersjaACToolStripMenuItem,
+            this.konwersjaCAToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1148, 24);
+            this.menuStrip1.TabIndex = 70;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // btnCA
+            // konwersjaACToolStripMenuItem
             // 
-            this.btnCA.Location = new System.Drawing.Point(1053, 455);
-            this.btnCA.Name = "btnCA";
-            this.btnCA.Size = new System.Drawing.Size(75, 23);
-            this.btnCA.TabIndex = 69;
-            this.btnCA.Text = "CA";
-            this.btnCA.UseVisualStyleBackColor = true;
-            this.btnCA.Click += new System.EventHandler(this.btnCA_Click);
+            this.konwersjaACToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stripMenuItemS1,
+            this.stripMenuItemQ1});
+            this.konwersjaACToolStripMenuItem.Name = "konwersjaACToolStripMenuItem";
+            this.konwersjaACToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.konwersjaACToolStripMenuItem.Text = "Konwersja A/C";
+            // 
+            // stripMenuItemS1
+            // 
+            this.stripMenuItemS1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.stripMenuItemS1.Name = "stripMenuItemS1";
+            this.stripMenuItemS1.Size = new System.Drawing.Size(305, 22);
+            this.stripMenuItemS1.Text = "(S1) Próbkowanie równomierne";
+            this.stripMenuItemS1.Click += new System.EventHandler(this.stripMenuItemS1_Click);
+            // 
+            // stripMenuItemQ1
+            // 
+            this.stripMenuItemQ1.Name = "stripMenuItemQ1";
+            this.stripMenuItemQ1.Size = new System.Drawing.Size(305, 22);
+            this.stripMenuItemQ1.Text = "(Q1) Kwantyzacja równomierna z obcięciem";
+            this.stripMenuItemQ1.Click += new System.EventHandler(this.stripMenuItemQ1_Click);
+            // 
+            // konwersjaCAToolStripMenuItem
+            // 
+            this.konwersjaCAToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stripMenuItemR1,
+            this.stripMenuItemR3});
+            this.konwersjaCAToolStripMenuItem.Name = "konwersjaCAToolStripMenuItem";
+            this.konwersjaCAToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.konwersjaCAToolStripMenuItem.Text = "Konwersja C/A";
+            // 
+            // stripMenuItemR1
+            // 
+            this.stripMenuItemR1.Name = "stripMenuItemR1";
+            this.stripMenuItemR1.Size = new System.Drawing.Size(303, 22);
+            this.stripMenuItemR1.Text = "(R1) Ekstrapolacja zerowego rzędu";
+            this.stripMenuItemR1.Click += new System.EventHandler(this.stripMenuItemR1_Click);
+            // 
+            // stripMenuItemR3
+            // 
+            this.stripMenuItemR3.Name = "stripMenuItemR3";
+            this.stripMenuItemR3.Size = new System.Drawing.Size(303, 22);
+            this.stripMenuItemR3.Text = "(R3) Rekonstrukcja w oparciu o funkcję sinc";
+            this.stripMenuItemR3.Click += new System.EventHandler(this.stripMenuItemR3_Click);
             // 
             // btnDoubleSingals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1148, 612);
-            this.Controls.Add(this.btnCA);
-            this.Controls.Add(this.btnAC);
+            this.ClientSize = new System.Drawing.Size(1148, 745);
             this.Controls.Add(this.btnSaveCalculatedSignal);
             this.Controls.Add(this.btnPrintHistogram);
             this.Controls.Add(this.label18);
@@ -679,6 +721,8 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxSignal);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "btnDoubleSingals";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
@@ -687,6 +731,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -744,8 +790,13 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button btnPrintHistogram;
         private System.Windows.Forms.Button btnSaveCalculatedSignal;
-        private System.Windows.Forms.Button btnAC;
-        private System.Windows.Forms.Button btnCA;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem konwersjaACToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stripMenuItemS1;
+        private System.Windows.Forms.ToolStripMenuItem stripMenuItemQ1;
+        private System.Windows.Forms.ToolStripMenuItem konwersjaCAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stripMenuItemR1;
+        private System.Windows.Forms.ToolStripMenuItem stripMenuItemR3;
     }
 }
 
