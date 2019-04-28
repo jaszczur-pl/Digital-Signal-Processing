@@ -25,12 +25,12 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.comboBoxSignal = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSaveFile1 = new System.Windows.Forms.Button();
@@ -89,6 +89,14 @@
             this.konwersjaCAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stripMenuItemR1 = new System.Windows.Forms.ToolStripMenuItem();
             this.stripMenuItemR3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBoxMD = new System.Windows.Forms.TextBox();
+            this.textBoxPSNR = new System.Windows.Forms.TextBox();
+            this.textBoxSNR = new System.Windows.Forms.TextBox();
+            this.textBoxMSE = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -240,48 +248,48 @@
             // 
             // chart1
             // 
-            chartArea11.AxisX.Title = "Czas trwania sygnału";
-            chartArea11.AxisY.Title = "Amplituda";
-            chartArea11.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea11);
+            chartArea1.AxisX.Title = "Czas trwania sygnału";
+            chartArea1.AxisY.Title = "Amplituda";
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Cursor = System.Windows.Forms.Cursors.No;
-            legend11.Name = "Legend1";
-            this.chart1.Legends.Add(legend11);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(354, 69);
             this.chart1.Margin = new System.Windows.Forms.Padding(0);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series11.ChartArea = "ChartArea1";
-            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series11.EmptyPointStyle.MarkerSize = 200;
-            series11.IsVisibleInLegend = false;
-            series11.Legend = "Legend1";
-            series11.Name = "signal";
-            series11.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series11.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            this.chart1.Series.Add(series11);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.EmptyPointStyle.MarkerSize = 200;
+            series1.IsVisibleInLegend = false;
+            series1.Legend = "Legend1";
+            series1.Name = "signal";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(363, 380);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
             // chart2
             // 
-            chartArea12.AxisX.Title = "Wartość bezwględna sygnału";
-            chartArea12.AxisY.Title = "Liczba próbek";
-            chartArea12.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea12);
-            legend12.Name = "Legend1";
-            this.chart2.Legends.Add(legend12);
+            chartArea2.AxisX.Title = "Wartość bezwględna sygnału";
+            chartArea2.AxisY.Title = "Liczba próbek";
+            chartArea2.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart2.Legends.Add(legend2);
             this.chart2.Location = new System.Drawing.Point(771, 70);
             this.chart2.Name = "chart2";
             this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series12.ChartArea = "ChartArea1";
-            series12.IsVisibleInLegend = false;
-            series12.Legend = "Legend1";
-            series12.Name = "Series1";
-            series12.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            series12.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            this.chart2.Series.Add(series12);
+            series2.ChartArea = "ChartArea1";
+            series2.IsVisibleInLegend = false;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            this.chart2.Series.Add(series2);
             this.chart2.Size = new System.Drawing.Size(363, 380);
             this.chart2.TabIndex = 31;
             this.chart2.Text = "chart2";
@@ -402,7 +410,7 @@
             // 
             // textBoxAvgPow
             // 
-            this.textBoxAvgPow.Location = new System.Drawing.Point(953, 611);
+            this.textBoxAvgPow.Location = new System.Drawing.Point(925, 611);
             this.textBoxAvgPow.Name = "textBoxAvgPow";
             this.textBoxAvgPow.ReadOnly = true;
             this.textBoxAvgPow.Size = new System.Drawing.Size(71, 20);
@@ -410,7 +418,7 @@
             // 
             // textBoxVar
             // 
-            this.textBoxVar.Location = new System.Drawing.Point(953, 573);
+            this.textBoxVar.Location = new System.Drawing.Point(925, 573);
             this.textBoxVar.Name = "textBoxVar";
             this.textBoxVar.ReadOnly = true;
             this.textBoxVar.Size = new System.Drawing.Size(71, 20);
@@ -418,7 +426,7 @@
             // 
             // textBoxRMS
             // 
-            this.textBoxRMS.Location = new System.Drawing.Point(953, 537);
+            this.textBoxRMS.Location = new System.Drawing.Point(925, 537);
             this.textBoxRMS.Name = "textBoxRMS";
             this.textBoxRMS.ReadOnly = true;
             this.textBoxRMS.Size = new System.Drawing.Size(71, 20);
@@ -426,7 +434,7 @@
             // 
             // textBoxAbsAvg
             // 
-            this.textBoxAbsAvg.Location = new System.Drawing.Point(953, 501);
+            this.textBoxAbsAvg.Location = new System.Drawing.Point(925, 501);
             this.textBoxAbsAvg.Name = "textBoxAbsAvg";
             this.textBoxAbsAvg.ReadOnly = true;
             this.textBoxAbsAvg.Size = new System.Drawing.Size(71, 20);
@@ -434,7 +442,7 @@
             // 
             // textBoxAvg
             // 
-            this.textBoxAvg.Location = new System.Drawing.Point(953, 468);
+            this.textBoxAvg.Location = new System.Drawing.Point(925, 468);
             this.textBoxAvg.Name = "textBoxAvg";
             this.textBoxAvg.ReadOnly = true;
             this.textBoxAvg.Size = new System.Drawing.Size(71, 20);
@@ -622,7 +630,7 @@
             this.konwersjaCAToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1148, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1280, 24);
             this.menuStrip1.TabIndex = 70;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -673,11 +681,87 @@
             this.stripMenuItemR3.Text = "(R3) Rekonstrukcja w oparciu o funkcję sinc";
             this.stripMenuItemR3.Click += new System.EventHandler(this.stripMenuItemR3_Click);
             // 
+            // textBoxMD
+            // 
+            this.textBoxMD.Location = new System.Drawing.Point(1186, 573);
+            this.textBoxMD.Name = "textBoxMD";
+            this.textBoxMD.ReadOnly = true;
+            this.textBoxMD.Size = new System.Drawing.Size(71, 20);
+            this.textBoxMD.TabIndex = 78;
+            // 
+            // textBoxPSNR
+            // 
+            this.textBoxPSNR.Location = new System.Drawing.Point(1186, 537);
+            this.textBoxPSNR.Name = "textBoxPSNR";
+            this.textBoxPSNR.ReadOnly = true;
+            this.textBoxPSNR.Size = new System.Drawing.Size(71, 20);
+            this.textBoxPSNR.TabIndex = 77;
+            // 
+            // textBoxSNR
+            // 
+            this.textBoxSNR.Location = new System.Drawing.Point(1186, 501);
+            this.textBoxSNR.Name = "textBoxSNR";
+            this.textBoxSNR.ReadOnly = true;
+            this.textBoxSNR.Size = new System.Drawing.Size(71, 20);
+            this.textBoxSNR.TabIndex = 76;
+            // 
+            // textBoxMSE
+            // 
+            this.textBoxMSE.Location = new System.Drawing.Point(1186, 468);
+            this.textBoxMSE.Name = "textBoxMSE";
+            this.textBoxMSE.ReadOnly = true;
+            this.textBoxMSE.Size = new System.Drawing.Size(71, 20);
+            this.textBoxMSE.TabIndex = 75;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(1024, 540);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(122, 13);
+            this.label19.TabIndex = 74;
+            this.label19.Text = "Szczytowy SNR (PSNR)";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(1024, 576);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(129, 13);
+            this.label20.TabIndex = 73;
+            this.label20.Text = "Maksymalna różnica (MD)";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(1024, 504);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(147, 13);
+            this.label21.TabIndex = 72;
+            this.label21.Text = "Stosunek sygnał-suma (SNR)";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(1024, 471);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(156, 13);
+            this.label22.TabIndex = 71;
+            this.label22.Text = "Bład średniokwadratowy (MSE)";
+            // 
             // btnDoubleSingals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1148, 745);
+            this.ClientSize = new System.Drawing.Size(1280, 745);
+            this.Controls.Add(this.textBoxMD);
+            this.Controls.Add(this.textBoxPSNR);
+            this.Controls.Add(this.textBoxSNR);
+            this.Controls.Add(this.textBoxMSE);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.label22);
             this.Controls.Add(this.btnSaveCalculatedSignal);
             this.Controls.Add(this.btnPrintHistogram);
             this.Controls.Add(this.label18);
@@ -797,6 +881,14 @@
         private System.Windows.Forms.ToolStripMenuItem konwersjaCAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stripMenuItemR1;
         private System.Windows.Forms.ToolStripMenuItem stripMenuItemR3;
+        private System.Windows.Forms.TextBox textBoxMD;
+        private System.Windows.Forms.TextBox textBoxPSNR;
+        private System.Windows.Forms.TextBox textBoxSNR;
+        private System.Windows.Forms.TextBox textBoxMSE;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
     }
 }
 
