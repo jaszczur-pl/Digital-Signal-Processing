@@ -81,6 +81,12 @@
     <Compile Include="Signals\SzumGaussowski.cs" />
     <Compile Include="Signals\SzumImpulsowy.cs" />
     <Compile Include="Signals\SzumJednostajny.cs" />
+    <EmbeddedResource Include="View\ACPopup.resx">
+      <DependentUpon>ACPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CAPopup.resx">
+      <DependentUpon>CAPopup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
