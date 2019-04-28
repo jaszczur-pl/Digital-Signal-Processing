@@ -15,5 +15,9 @@ namespace CPS.View
         public CAPopup() {
             InitializeComponent();
         }
+
+        private void btnOK_Click(object sender, EventArgs e) {
+
+        }
     }
 }
