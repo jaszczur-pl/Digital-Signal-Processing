@@ -19,8 +19,12 @@ namespace CPS.View
         }
 
         private void btnOK_Click(object sender, EventArgs e) {
-
-            Status = true;
+            if (string.IsNullOrWhiteSpace(textBoxfs.Text) || string.IsNullOrWhiteSpace(textBoxb.Text)) {
+                MessageBox.Show("Parametry 'fs' i 'b' nie moga być puste!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            } else {
+                Status = true;
+                this.Close();
+            }
         }
     }
 }

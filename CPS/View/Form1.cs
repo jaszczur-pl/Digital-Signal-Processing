@@ -419,7 +419,6 @@ namespace CPS
             Form acPopup = new ACPopup();
             acPopup.Show();
 
-            if (acPopup.O)
         }
 
         private void stripMenuItemQ1_Click(object sender, EventArgs e) {
