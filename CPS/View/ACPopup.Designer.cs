@@ -88,7 +88,6 @@
             this.Text = "ACPopup";
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
@@ -98,5 +97,7 @@
         private System.Windows.Forms.TextBox textBoxfs;
         private System.Windows.Forms.TextBox textBoxb;
         private System.Windows.Forms.Button btnOK;
+
+        public void sth() { }
     }
 }

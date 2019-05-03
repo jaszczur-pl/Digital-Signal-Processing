@@ -12,7 +12,8 @@ namespace CPS.View
 {
     public partial class CAPopup : Form
     {
-        public bool Status { get; set; } = false;
+        public string Fs { get; set; }
+        public string Fk { get; set; }
 
         public CAPopup() {
             InitializeComponent();
@@ -23,7 +24,10 @@ namespace CPS.View
                 MessageBox.Show("Parametry 'fs' i 'fk' nie moga być puste!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else {
-                Status = true;
+                Fs = textBoxfs.Text;
+                Fk = textBoxfk.Text;
+
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
         }

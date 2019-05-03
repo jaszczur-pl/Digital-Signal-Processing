@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CPS;
 
 namespace CPS
 {
@@ -416,24 +417,40 @@ namespace CPS
         }
 
         private void stripMenuItemS1_Click(object sender, EventArgs e) {
-            Form acPopup = new ACPopup();
-            acPopup.Show();
 
+            ACPopup acPopup = new ACPopup();
+            acPopup.ShowDialog();
+                
+            if (acPopup.DialogResult == DialogResult.OK) {
+                
+            }
         }
 
         private void stripMenuItemQ1_Click(object sender, EventArgs e) {
-            Form acPopup = new ACPopup();
+            ACPopup acPopup = new ACPopup();
             acPopup.Show();
+
+            if (acPopup.DialogResult == DialogResult.OK) {
+
+            }
         }
 
         private void stripMenuItemR1_Click(object sender, EventArgs e) {
-            Form caPopup = new CAPopup();
+            CAPopup caPopup = new CAPopup();
             caPopup.Show();
+
+            if (caPopup.DialogResult == DialogResult.OK) {
+
+            }
         }
 
         private void stripMenuItemR3_Click(object sender, EventArgs e) {
-            Form caPopup = new CAPopup();
+            CAPopup caPopup = new CAPopup();
             caPopup.Show();
+
+            if (caPopup.DialogResult == DialogResult.OK) {
+
+            }
         }
     }
 }
