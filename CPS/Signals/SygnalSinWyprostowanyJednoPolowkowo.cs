@@ -20,6 +20,8 @@ namespace CPS
         }
 
         public override void CalculateXYPoints() {
+            axisX.Clear();
+            axisY.Clear();
 
             for (double i = t1; i < (d + t1); i = i + (1 / f)) {
                 axisX.Add(i);

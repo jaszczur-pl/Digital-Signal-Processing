@@ -21,6 +21,8 @@ namespace CPS
         }
 
         public override void CalculateXYPoints() {
+            axisX.Clear();
+            axisY.Clear();
 
             int z = 0;
             double tempStartTime = t1;

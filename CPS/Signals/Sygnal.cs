@@ -34,7 +34,7 @@ namespace CPS
         public double Variance { get; set; }
         public double AveragePower { get; set; }
 
-        protected const int numberOfSamples = 10000;
+        //protected const int numberOfSamples = 10000;
         
         public virtual void CalculateXYPoints() { }
     }

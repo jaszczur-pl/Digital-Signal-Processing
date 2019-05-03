@@ -10,17 +10,15 @@ namespace CPS
     {
         public Sygnal EvenSampling(Sygnal signal, double frequency) {
 
-            Sygnal quantizedSingal = new Sygnal();
-            quantizedSingal.f = frequency;
+            Sygnal quantizedSignal = new Sygnal();
+            quantizedSignal = signal;
+            quantizedSignal.f = frequency;
 
-            for (double i = signal.ts; i <= signal.ts + signal.d; i += 1 / frequency) {
-                quantizedSingal.axisX.Add(i);
+            quantizedSignal.CalculateXYPoints();
+            quantizedSignal.signalName = signal.signalName + ", skwantyzowany";
 
-                
-                //quantizedSingal.axisY.Add();
-            }
 
-            return quantizedSingal;
+            return quantizedSignal;
         }
     }
 }

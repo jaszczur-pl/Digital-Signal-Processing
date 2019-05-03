@@ -12,8 +12,8 @@ namespace CPS.View
 {
     public partial class ACPopup : Form
     {
-        public string Fs { get; set; }
-        public string B { get; set; }
+        public double Fs { get; set; }
+        public int B { get; set; }
 
         public ACPopup() {
             InitializeComponent();
@@ -23,8 +23,8 @@ namespace CPS.View
             if (string.IsNullOrWhiteSpace(textBoxfs.Text) || string.IsNullOrWhiteSpace(textBoxb.Text)) {
                 MessageBox.Show("Parametry 'fs' i 'b' nie moga być puste!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             } else {
-                Fs = textBoxfs.Text;
-                B = textBoxb.Text;
+                Fs = Convert.ToDouble(textBoxfs.Text);
+                B = Convert.ToInt32(textBoxb.Text);
 
                 this.DialogResult = DialogResult.OK;
                 this.Close();

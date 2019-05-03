@@ -226,14 +226,14 @@ namespace CPS
         private void PrintPlot(Sygnal signal, int seriesNumber) {
             
             chart1.ChartAreas[0].AxisX.IsMarginVisible = false;
-            chart1.Series[0].Points.Clear();
+            chart1.Series[seriesNumber].Points.Clear();
             chart1.Titles.Clear();
 
             chart1.Titles.Add(signal.signalName);
             chart1.ChartAreas[0].AxisY.Minimum = signal.axisY.Min();
             chart1.ChartAreas[0].AxisY.Maximum = signal.axisY.Max();
-            chart1.Series[0].Points.DataBindXY(signal.axisX, signal.axisY);
-            chart1.Series[0].MarkerSize = 3;
+            chart1.Series[seriesNumber].Points.DataBindXY(signal.axisX, signal.axisY);
+            chart1.Series[seriesNumber].MarkerSize = 3;
         }
 
         private void PrintHistogram(Sygnal signal) {
@@ -425,7 +425,7 @@ namespace CPS
                 Sygnal quantizedSignal = new Sygnal();
                 SignalConverter converter = new SignalConverter();
 
-
+                quantizedSignal = converter.EvenSampling(lastAffectedSignal, acPopup.Fs);
 
                 PrintPlot(quantizedSignal, 1);
             }
