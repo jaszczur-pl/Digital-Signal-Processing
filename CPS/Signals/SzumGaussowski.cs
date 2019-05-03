@@ -21,7 +21,7 @@ namespace CPS
         public override void CalculateXYPoints() {
             Random randomValue = new Random();
 
-            for (double i = t1; i < (d + t1); i = i + (d / (numberOfSamples / 100))) {
+            for (double i = t1; i < (d + t1); i = i + (1 / f)) {
 
                 axisX.Add(i);
 

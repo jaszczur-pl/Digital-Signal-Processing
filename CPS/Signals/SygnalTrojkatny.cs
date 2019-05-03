@@ -24,7 +24,7 @@ namespace CPS
             int z = 0;
             double tempStartTime = t1;
 
-            for (double i = t1; i < (d + t1); i = i + (d / numberOfSamples)) {
+            for (double i = t1; i < (d + t1); i = i + (1 / f)) {
                 if (i >= tempStartTime + T) {
                     z++;
                     tempStartTime = i;

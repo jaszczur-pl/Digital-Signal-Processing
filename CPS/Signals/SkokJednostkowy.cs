@@ -21,7 +21,7 @@ namespace CPS
 
         public override void CalculateXYPoints() {
 
-            for (double i = t1; i < (d + t1); i = i + (d / numberOfSamples)) {
+            for (double i = t1; i < (d + t1); i = i + (d / f)) {
                 axisX.Add(i);
 
                 if (i > ts) {

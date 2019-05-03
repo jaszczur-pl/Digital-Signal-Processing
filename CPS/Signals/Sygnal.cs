@@ -14,9 +14,13 @@ namespace CPS
         public double ts { get; set; } = 0;
         public double n1 { get; set; } = 0;
         public double ns { get; set; } = 0;
-        public double f { get; set; } = 0;
+        public double f { get; set; } = 100;
         public double p { get; set; } = 0;
         public int iloscPrzedzialowHistogramu { get; set; }
+
+        public int samplingFrequency { get; set; }
+        public int numberOfQuantizationLevels { get; set; }
+        public int conversionFrequency { get; set; }
 
         public string signalName { get; set; }
         public bool IsDiscreteSignal { get; set; } = false;

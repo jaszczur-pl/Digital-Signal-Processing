@@ -216,14 +216,14 @@ namespace CPS
             signal.RMS = operat.CalculateRMS(signal);
 
             PrintStats(signal);
-            PrintPlot(signal);
+            PrintPlot(signal, 0);
             lastAffectedSignal = signal;
 
             CheckBtnPrintDoubleSignals();
             CheckBtnPrintHistogram();
         }
 
-        private void PrintPlot(Sygnal signal) {
+        private void PrintPlot(Sygnal signal, int seriesNumber) {
             
             chart1.ChartAreas[0].AxisX.IsMarginVisible = false;
             chart1.Series[0].Points.Clear();
@@ -264,19 +264,19 @@ namespace CPS
 
             if (comboBoxMathOperation.SelectedIndex == 0) {
                 signal = operat.AddSignals();
-                PrintPlot(signal);
+                PrintPlot(signal, 0);
             }
             else if (comboBoxMathOperation.SelectedIndex == 1) {
                 signal = operat.SubtractSignals();
-                PrintPlot(signal);
+                PrintPlot(signal, 0);
             }
             else if (comboBoxMathOperation.SelectedIndex == 2) {
                 signal = operat.MultiplySignals();
-                PrintPlot(signal);
+                PrintPlot(signal, 0);
             }
             else if (comboBoxMathOperation.SelectedIndex == 3) {
                 signal = operat.DivideSignals();
-                PrintPlot(signal);
+                PrintPlot(signal, 0);
             }
 
             signal.AverageValue = operat.CalculateAverageValue(signal);
@@ -372,7 +372,7 @@ namespace CPS
                 }
 
                 PrintStats(signal);
-                PrintPlot(signal);
+                PrintPlot(signal, 0);
                 lastAffectedSignal = signal;
 
                 CheckBtnPrintDoubleSignals();
@@ -422,7 +422,12 @@ namespace CPS
             acPopup.ShowDialog();
                 
             if (acPopup.DialogResult == DialogResult.OK) {
-                
+                Sygnal quantizedSignal = new Sygnal();
+                SignalConverter converter = new SignalConverter();
+
+
+
+                PrintPlot(quantizedSignal, 1);
             }
         }
 
