@@ -21,7 +21,7 @@ namespace CPS
             quantizedSignal.ts = signal.ts;
 
             quantizedSignal.CalculateXYPoints();
-            quantizedSignal.signalName = signal.signalName + ", skwantyzowany";
+            //quantizedSignal.signalName = signal.signalName + ", skwantyzowany";
 
             return quantizedSignal;
         }
@@ -93,6 +93,43 @@ namespace CPS
             quantizedSignal.axisY = tempAxisY;
 
             return quantizedSignal;
+        }
+
+        public Sygnal ReconstructionBasedOnSincFunction(Sygnal signal, double frequency, double conversionFrequency) {
+            Sygnal quantizedSignal = new Sygnal();
+            List<double> tempAxisX = new List<double>();
+            List<double> tempAxisY = new List<double>();
+
+            quantizedSignal = EvenSampling(signal, frequency);
+
+            double baseSignalStep = quantizedSignal.axisX.ElementAt(1) - quantizedSignal.axisX.ElementAt(0);
+
+            double numberOfProbes = (quantizedSignal.axisX[quantizedSignal.axisX.Count - 1] + (1.0 / (1.5 * conversionFrequency)));
+
+            for (double t = quantizedSignal.axisX[0]; t <= numberOfProbes; t += (1 / conversionFrequency)) {
+                double sum = 0;
+
+                for (int i = 0; i < quantizedSignal.axisY.Count; i++) {
+                    double arg = t / baseSignalStep - i;
+                    sum += quantizedSignal.axisY[i] * SincFunction(arg);
+                }
+
+                tempAxisX.Add(t);
+                tempAxisY.Add(sum);
+            }
+
+            quantizedSignal.axisX = tempAxisX;
+            quantizedSignal.axisY = tempAxisY;
+
+            return quantizedSignal;
+        }
+
+        private static double SincFunction(double t) {
+            if (t == 0) {
+                return 1;
+            } else {
+                return Math.Sin(Math.PI * t) / (Math.PI * t);
+            }
         }
 
     }

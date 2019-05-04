@@ -432,6 +432,7 @@ namespace CPS
                 quantizedSignal = converter.EvenSampling(lastAffectedSignal, acPopup.Fs);
 
                 chart1.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+                quantizedSignal.signalName = lastAffectedSignal.signalName + ", próbkowany";
 
                 PrintPlot(quantizedSignal, 1);
             }
@@ -448,6 +449,7 @@ namespace CPS
                 quantizedSignal = converter.UniformQuantization(lastAffectedSignal, acPopup.Fs , acPopup.B);
 
                 chart1.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+                quantizedSignal.signalName = lastAffectedSignal.signalName + ", skwantyzowany";
 
                 PrintPlot(quantizedSignal, 1);
             }
@@ -462,6 +464,7 @@ namespace CPS
                 SignalConverter converter = new SignalConverter();
 
                 quantizedSignal = converter.ExtrapolationOfZeroOrder(lastAffectedSignal, caPopup.Fs, caPopup.Fk);
+                quantizedSignal.signalName = lastAffectedSignal.signalName + ", zrekonstruowany";
 
                 chart1.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
 
@@ -474,7 +477,15 @@ namespace CPS
             caPopup.ShowDialog();
 
             if (caPopup.DialogResult == DialogResult.OK) {
+                Sygnal quantizedSignal = new Sygnal();
+                SignalConverter converter = new SignalConverter();
 
+                quantizedSignal = converter.ReconstructionBasedOnSincFunction(lastAffectedSignal, caPopup.Fs, caPopup.Fk);
+                quantizedSignal.signalName = lastAffectedSignal.signalName + ", zrekonstruowany";
+
+                chart1.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+
+                PrintPlot(quantizedSignal, 1);
             }
         }
     }
