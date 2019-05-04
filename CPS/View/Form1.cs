@@ -471,7 +471,7 @@ namespace CPS
                 chart1.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
 
                 PrintPlot(quantizedSignal, 1);
-                CalculateQuantizationMeasures(lastAffectedSignal, quantizedSignal);
+                CalculateQuantizationMeasures(quantizedSignal);
             }
         }
 
@@ -489,7 +489,7 @@ namespace CPS
                 chart1.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
 
                 PrintPlot(quantizedSignal, 1);
-                CalculateQuantizationMeasures(lastAffectedSignal, quantizedSignal);
+                CalculateQuantizationMeasures(quantizedSignal);
             }
         }
 
@@ -497,6 +497,9 @@ namespace CPS
             SignalConverter converter = new SignalConverter();
 
             textBoxMSE.Text = converter.CalculateMeanSquaredErrorPowerValue(quantizedSignal).ToString();
+            textBoxSNR.Text = converter.CalculateSignalToNoiseRatioValue(quantizedSignal).ToString();
+            textBoxPSNR.Text = converter.CalculatePeakSignalToNoiseRatioValue(quantizedSignal).ToString();
+            textBoxMD.Text = converter.CalculateMaxDifferenceValue(quantizedSignal).ToString();
         }
     }
 }

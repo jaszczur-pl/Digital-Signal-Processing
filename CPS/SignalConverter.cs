@@ -169,5 +169,36 @@ namespace CPS
             return 10.0 * Math.Log10(nominator / denominator);
         }
 
+        public double CalculatePeakSignalToNoiseRatioValue(Sygnal quantizedSignal) {
+            List<double> comparable = MakeSignalsComparable(quantizedSignal);
+            double max = comparable[0];
+            int numberOfPoints = quantizedSignal.axisX.Count;
+
+            for (int i = 1; i < numberOfPoints -1; i++) {
+
+                if (comparable[i] > max) {
+                    max = comparable[i];
+                }
+            }
+
+            return 10.0 * Math.Log10(max / CalculateMeanSquaredErrorPowerValue(quantizedSignal));
+        }
+
+        public double CalculateMaxDifferenceValue(Sygnal quantizedSignal) {
+            List<double> comparable = MakeSignalsComparable(quantizedSignal);
+            double max = Math.Abs(comparable[0] - quantizedSignal.axisY[0]);
+            int numberOfPoints = quantizedSignal.axisX.Count;
+
+            for (int i = 1; i < numberOfPoints - 1; i++) {
+                double absValue = Math.Abs(comparable[i] - quantizedSignal.axisY[i]);
+
+                if (absValue > max) {
+                    max = absValue;
+                }
+            }
+
+            return max;
+        }
+
     }
 }
