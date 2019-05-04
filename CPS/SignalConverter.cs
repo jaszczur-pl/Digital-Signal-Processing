@@ -21,7 +21,6 @@ namespace CPS
             quantizedSignal.ts = signal.ts;
 
             quantizedSignal.CalculateXYPoints();
-            //quantizedSignal.signalName = signal.signalName + ", skwantyzowany";
 
             return quantizedSignal;
         }
@@ -130,6 +129,26 @@ namespace CPS
             } else {
                 return Math.Sin(Math.PI * t) / (Math.PI * t);
             }
+        }
+
+        private static List<double> MakeItComparable(Sygnal signal, Sygnal quantizedSignal) {
+
+            Sygnal tempSignal = signal.GetNewSignal();
+            tempSignal.f = 1000;
+            tempSignal.A = signal.A;
+            tempSignal.d = signal.d;
+            tempSignal.T = signal.T;
+            tempSignal.t1 = signal.t1;
+            tempSignal.p = signal.p;
+            tempSignal.kw = signal.kw;
+            tempSignal.ts = signal.ts;
+
+
+
+        }
+
+        public double CalculateMeanSquaredErrorPowerValue(Sygnal signal, Sygnal quantizedSignal) {
+
         }
 
     }

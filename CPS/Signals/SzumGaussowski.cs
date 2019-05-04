@@ -39,6 +39,23 @@ namespace CPS
             }
         }
 
+        public override List<double> CalculateYPoints(List<double> axisX) {
+
+            List<double> rAxisY = new List<double>();
+            Random randomValue = new Random();
+
+            foreach (var point in axisX) {
+                double temp = A / 3;
+                double u1 = 1.0 - randomValue.NextDouble();
+                double u2 = 1.0 - randomValue.NextDouble();
+                double function = Math.Sqrt(-2.0 * Math.Log(u1)) * Math.Sin(2.0 * Math.PI * u2);
+
+                rAxisY.Add(function * temp);
+            }
+
+            return rAxisY;
+        }
+
         public override Sygnal GetNewSignal() {
             return new SzumGaussowski();
         }

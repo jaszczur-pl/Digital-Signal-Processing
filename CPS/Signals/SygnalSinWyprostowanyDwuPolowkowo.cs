@@ -31,6 +31,17 @@ namespace CPS
             }
         }
 
+        public override List<double> CalculateYPoints(List<double> axisX) {
+
+            List<double> rAxisY = new List<double>();
+
+            foreach (var point in axisX) {
+                rAxisY.Add(A * Math.Abs(Math.Sin(((2 * Math.PI) / T) * (point - t1))));
+            }
+
+            return rAxisY;
+        }
+
         public override Sygnal GetNewSignal() {
             return new SygnalSinWyprostowanyDwuPolowkowo();
         }

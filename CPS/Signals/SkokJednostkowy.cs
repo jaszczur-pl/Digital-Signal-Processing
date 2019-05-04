@@ -40,6 +40,26 @@ namespace CPS
             }
         }
 
+        public override List<double> CalculateYPoints(List<double> axisX) {
+
+            List<double> rAxisY = new List<double>();
+
+            foreach(var point in axisX) {
+
+                    if (point > ts) {
+                        rAxisY.Add(A);
+                    }
+                    else if (point == ts) {
+                        rAxisY.Add(A / 2);
+                    }
+                    else if (point < ts) {
+                        rAxisY.Add(0);
+                    }
+            }
+
+            return rAxisY;
+        }
+
         public override Sygnal GetNewSignal() {
             return new SkokJednostkowy();
         }

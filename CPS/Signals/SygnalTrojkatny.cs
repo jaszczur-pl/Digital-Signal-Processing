@@ -47,6 +47,32 @@ namespace CPS
             }
         }
 
+        public override List<double> CalculateYPoints(List<double> axisX) {
+
+            List<double> rAxisY = new List<double>();
+            int z = 0;
+            double tempStartTime = t1;
+
+            foreach (var point in axisX) {
+
+                if (point >= tempStartTime + T) {
+                    z++;
+                    tempStartTime = point;
+                }
+
+                if (point >= (z * T + t1) && point < (kw * T + z * T + t1)) {
+                    double temp2 = (A / (kw * T)) * (point - z * T - t1);
+                    rAxisY.Add(temp2);
+                }
+                else {
+                    double temp2 = (-A * (point - z * T - t1)) / (T * (1 - kw)) + A / (1 - kw);
+                    rAxisY.Add(temp2);
+                }
+            }
+
+            return rAxisY;
+        }
+
         public override Sygnal GetNewSignal() {
             return new SygnalTrojkatny();
         }

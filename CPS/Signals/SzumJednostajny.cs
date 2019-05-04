@@ -36,6 +36,19 @@ namespace CPS
             }
         }
 
+        public override List<double> CalculateYPoints(List<double> axisX) {
+
+            List<double> rAxisY = new List<double>();
+            Random r = new Random();
+
+            foreach (var point in axisX) {
+                double rand = r.NextDouble() * (A + A) - A;
+                rAxisY.Add(rand);
+            }
+
+            return rAxisY;
+        }
+
         public override Sygnal GetNewSignal() {
             return new SzumJednostajny();
         }

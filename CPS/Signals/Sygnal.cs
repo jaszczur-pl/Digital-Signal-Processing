@@ -38,6 +38,8 @@ namespace CPS
         
         public virtual void CalculateXYPoints() { }
 
+        public virtual List<double> CalculateYPoints(List<double> axisX) { return new List<double>(); }
+
         public virtual Sygnal GetNewSignal() {
             return new Sygnal();
         }
