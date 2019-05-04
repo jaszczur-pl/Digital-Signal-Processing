@@ -431,6 +431,8 @@ namespace CPS
 
                 quantizedSignal = converter.EvenSampling(lastAffectedSignal, acPopup.Fs);
 
+                chart1.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+
                 PrintPlot(quantizedSignal, 1);
             }
         }
@@ -445,6 +447,8 @@ namespace CPS
 
                 quantizedSignal = converter.UniformQuantization(lastAffectedSignal, acPopup.Fs , acPopup.B);
 
+                chart1.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+
                 PrintPlot(quantizedSignal, 1);
             }
         }
@@ -454,7 +458,14 @@ namespace CPS
             caPopup.ShowDialog();
 
             if (caPopup.DialogResult == DialogResult.OK) {
+                Sygnal quantizedSignal = new Sygnal();
+                SignalConverter converter = new SignalConverter();
 
+                quantizedSignal = converter.ExtrapolationOfZeroOrder(lastAffectedSignal, caPopup.Fs, caPopup.Fk);
+
+                chart1.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+
+                PrintPlot(quantizedSignal, 1);
             }
         }
 

@@ -30,7 +30,6 @@ namespace CPS
 
             Sygnal quantizedSignal = new Sygnal();
             List<double> tempAxisY = new List<double>();
-            List<double> tempAxisX = new List<double>();
 
             quantizedSignal = EvenSampling(signal, frequency);
 
@@ -62,6 +61,35 @@ namespace CPS
                 tempAxisY.Add(tempY);
             }
 
+            quantizedSignal.axisY = tempAxisY;
+
+            return quantizedSignal;
+        }
+
+        public Sygnal ExtrapolationOfZeroOrder(Sygnal signal, double frequency, double conversionFrequency) {
+
+            Sygnal quantizedSignal = new Sygnal();
+            List<double> tempAxisX = new List<double>();
+            List<double> tempAxisY = new List<double>();
+
+            quantizedSignal = EvenSampling(signal, frequency);
+
+            double step = 1 / conversionFrequency;
+
+            double baseSignalStep = quantizedSignal.axisX.ElementAt(1) - quantizedSignal.axisX.ElementAt(0);
+            int k = 0;
+
+            foreach(double pointX in quantizedSignal.axisX) {
+
+                for (double i = pointX; i < pointX + baseSignalStep; i += step) {
+                    tempAxisX.Add(i);
+                    tempAxisY.Add(quantizedSignal.axisY[k]);
+                }
+
+                k++;
+            }
+
+            quantizedSignal.axisX = tempAxisX;
             quantizedSignal.axisY = tempAxisY;
 
             return quantizedSignal;
