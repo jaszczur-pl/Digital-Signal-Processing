@@ -131,24 +131,42 @@ namespace CPS
             }
         }
 
-        private static List<double> MakeItComparable(Sygnal signal, Sygnal quantizedSignal) {
+        private static List<double> MakeSignalsComparable(Sygnal quantizedSignal) {
 
-            Sygnal tempSignal = signal.GetNewSignal();
-            tempSignal.f = 1000;
-            tempSignal.A = signal.A;
-            tempSignal.d = signal.d;
-            tempSignal.T = signal.T;
-            tempSignal.t1 = signal.t1;
-            tempSignal.p = signal.p;
-            tempSignal.kw = signal.kw;
-            tempSignal.ts = signal.ts;
-
-
-
+            return quantizedSignal.CalculateYPoints(quantizedSignal.axisX);
         }
 
-        public double CalculateMeanSquaredErrorPowerValue(Sygnal signal, Sygnal quantizedSignal) {
+        public double CalculateMeanSquaredErrorPowerValue(Sygnal quantizedSignal) {
 
+            List<double> comparable = MakeSignalsComparable(quantizedSignal);
+
+            double mseSum = 0;
+
+            int numberOfPoints = quantizedSignal.axisX.Count;
+
+            for (int i = 0; i < numberOfPoints; i++) {
+                mseSum += Math.Pow((comparable[i] - quantizedSignal.axisY[i]), 2);
+            }
+
+            return Math.Round(mseSum / numberOfPoints, 4);
+        }
+
+        public double CalculateSignalToNoiseRatioValue(Sygnal quantizedSignal) {
+
+            List<double> comparable = MakeSignalsComparable(quantizedSignal);
+            double nominator = 0;
+            double denominator = 0;
+
+            int numberOfPoints = quantizedSignal.axisX.Count;
+
+            for (int i =0; i < numberOfPoints -1; i++) {
+                denominator += Math.Pow((comparable[i] - quantizedSignal.axisY[i]), 2);
+            }
+            for (int i = 0; i < numberOfPoints - 1; i++) {
+                nominator += Math.Pow(comparable[i], 2);
+            }
+
+            return 10.0 * Math.Log10(nominator / denominator);
         }
 
     }

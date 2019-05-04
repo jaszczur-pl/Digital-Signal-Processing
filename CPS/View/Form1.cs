@@ -435,6 +435,7 @@ namespace CPS
                 quantizedSignal.signalName = lastAffectedSignal.signalName + ", próbkowany";
 
                 PrintPlot(quantizedSignal, 1);
+                CalculateQuantizationMeasures(quantizedSignal);
             }
         }
 
@@ -452,6 +453,7 @@ namespace CPS
                 quantizedSignal.signalName = lastAffectedSignal.signalName + ", skwantyzowany";
 
                 PrintPlot(quantizedSignal, 1);
+                CalculateQuantizationMeasures(quantizedSignal);
             }
         }
 
@@ -469,6 +471,7 @@ namespace CPS
                 chart1.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
 
                 PrintPlot(quantizedSignal, 1);
+                CalculateQuantizationMeasures(lastAffectedSignal, quantizedSignal);
             }
         }
 
@@ -486,7 +489,14 @@ namespace CPS
                 chart1.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
 
                 PrintPlot(quantizedSignal, 1);
+                CalculateQuantizationMeasures(lastAffectedSignal, quantizedSignal);
             }
+        }
+
+        private void CalculateQuantizationMeasures(Sygnal quantizedSignal) {
+            SignalConverter converter = new SignalConverter();
+
+            textBoxMSE.Text = converter.CalculateMeanSquaredErrorPowerValue(quantizedSignal).ToString();
         }
     }
 }
