@@ -19,6 +19,8 @@ namespace CPS
             IsDiscreteSignal = false;
         }
 
+        public SzumJednostajny() { }
+
         public override void CalculateXYPoints() {
             axisX.Clear();
             axisY.Clear();
@@ -32,6 +34,10 @@ namespace CPS
                 axisY.Add(rand);
 
             }
+        }
+
+        public override Sygnal GetNewSignal() {
+            return new SzumJednostajny();
         }
     }
 }

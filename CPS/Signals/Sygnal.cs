@@ -37,5 +37,9 @@ namespace CPS
         //protected const int numberOfSamples = 10000;
         
         public virtual void CalculateXYPoints() { }
+
+        public virtual Sygnal GetNewSignal() {
+            return new Sygnal();
+        }
     }
 }

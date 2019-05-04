@@ -19,6 +19,8 @@ namespace CPS
             IsDiscreteSignal = false;
         }
 
+        public SygnalSinWyprostowanyJednoPolowkowo() { }
+
         public override void CalculateXYPoints() {
             axisX.Clear();
             axisY.Clear();
@@ -27,6 +29,10 @@ namespace CPS
                 axisX.Add(i);
                 axisY.Add(0.5 * A * (Math.Sin(((2 * Math.PI) / T) * (i - t1)) + Math.Abs(Math.Sin(((2 * Math.PI) / T) * (i - t1)))));
             }
+        }
+
+        public override Sygnal GetNewSignal() {
+            return new SygnalSinWyprostowanyJednoPolowkowo();
         }
     }
 }

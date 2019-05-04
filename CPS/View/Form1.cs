@@ -107,6 +107,7 @@ namespace CPS
 
         private void btnAddSignal1_Click(object sender, EventArgs e) {
             try {
+                chart1.Series[1].Points.Clear();
                 GenerateSignal(sender);
             } catch(ArgumentOutOfRangeException) {
                 MessageBox.Show("Niepoprawne dane, musza być spełnione warunki: \n f >= ns \n ns >= n1", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -116,6 +117,7 @@ namespace CPS
 
         private void btnAddSignal2_Click(object sender, EventArgs e) {
             try {
+                chart1.Series[1].Points.Clear();
                 GenerateSignal(sender);
             }
             catch (ArgumentOutOfRangeException) {
@@ -342,10 +344,12 @@ namespace CPS
         }
 
         private void btnLoadFile1_Click(object sender, EventArgs e) {
+            chart1.Series[1].Points.Clear();
             LoadFile(sender);
         }
 
         private void btnLoadFile2_Click(object sender, EventArgs e) {
+            chart1.Series[1].Points.Clear();
             LoadFile(sender);
         }
 
@@ -433,16 +437,21 @@ namespace CPS
 
         private void stripMenuItemQ1_Click(object sender, EventArgs e) {
             ACPopup acPopup = new ACPopup();
-            acPopup.Show();
+            acPopup.ShowDialog();
 
             if (acPopup.DialogResult == DialogResult.OK) {
+                Sygnal quantizedSignal = new Sygnal();
+                SignalConverter converter = new SignalConverter();
 
+                quantizedSignal = converter.UniformQuantization(lastAffectedSignal, acPopup.Fs , acPopup.B);
+
+                PrintPlot(quantizedSignal, 1);
             }
         }
 
         private void stripMenuItemR1_Click(object sender, EventArgs e) {
             CAPopup caPopup = new CAPopup();
-            caPopup.Show();
+            caPopup.ShowDialog();
 
             if (caPopup.DialogResult == DialogResult.OK) {
 
@@ -451,7 +460,7 @@ namespace CPS
 
         private void stripMenuItemR3_Click(object sender, EventArgs e) {
             CAPopup caPopup = new CAPopup();
-            caPopup.Show();
+            caPopup.ShowDialog();
 
             if (caPopup.DialogResult == DialogResult.OK) {
 

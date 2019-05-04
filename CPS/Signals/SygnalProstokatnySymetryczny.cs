@@ -20,6 +20,8 @@ namespace CPS
             IsDiscreteSignal = false;
         }
 
+        public SygnalProstokatnySymetryczny() { }
+
         public override void CalculateXYPoints() {
             axisX.Clear();
             axisY.Clear();
@@ -40,6 +42,10 @@ namespace CPS
                     axisY.Add(-1 * A);
                 }
             }
+        }
+
+        public override Sygnal GetNewSignal() {
+            return new SygnalProstokatnySymetryczny();
         }
     }
 }

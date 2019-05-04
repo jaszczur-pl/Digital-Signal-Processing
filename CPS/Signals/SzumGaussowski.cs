@@ -18,6 +18,8 @@ namespace CPS
             IsDiscreteSignal = false;
         }
 
+        public SzumGaussowski() { }
+
         public override void CalculateXYPoints() {
             axisX.Clear();
             axisY.Clear();
@@ -35,6 +37,10 @@ namespace CPS
 
                 axisY.Add(function * temp);
             }
+        }
+
+        public override Sygnal GetNewSignal() {
+            return new SzumGaussowski();
         }
     }
 }

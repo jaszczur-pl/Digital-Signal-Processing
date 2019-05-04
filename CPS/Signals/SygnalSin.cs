@@ -19,6 +19,8 @@ namespace CPS
             IsDiscreteSignal = false;
         }
 
+        public SygnalSin() { }
+
         public override void CalculateXYPoints() {
             axisX.Clear();
             axisY.Clear();
@@ -27,6 +29,10 @@ namespace CPS
                 axisX.Add(i);
                 axisY.Add(A * Math.Sin(((2 * Math.PI) / T) * (i - t1)));
             }
+        }
+
+        public override Sygnal GetNewSignal() {
+            return new SygnalSin();
         }
     }
 }

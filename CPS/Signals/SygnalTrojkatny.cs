@@ -20,6 +20,8 @@ namespace CPS
             IsDiscreteSignal = false;
         }
 
+        public SygnalTrojkatny() { }
+
         public override void CalculateXYPoints() {
             axisX.Clear();
             axisY.Clear();
@@ -43,6 +45,10 @@ namespace CPS
                     axisY.Add(temp2);
                 }
             }
+        }
+
+        public override Sygnal GetNewSignal() {
+            return new SygnalTrojkatny();
         }
     }
 }
