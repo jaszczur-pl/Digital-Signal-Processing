@@ -224,6 +224,7 @@ namespace CPS
             CheckBtnPrintDoubleSignals();
             CheckBtnPrintHistogram();
             CheckConversionStripMenuItems();
+            CleanUpQuantizationMeasures();
         }
 
         private void PrintPlot(Sygnal signal, int seriesNumber) {
@@ -292,6 +293,8 @@ namespace CPS
 
             lastAffectedSignal = signal;
             btnSaveCalculatedSignal.Enabled = true;
+            CheckConversionStripMenuItems();
+            CleanUpQuantizationMeasures();
         }
 
         private void btnPrintHistogram_Click(object sender, EventArgs e) {
@@ -381,6 +384,8 @@ namespace CPS
                 lastAffectedSignal = signal;
 
                 CheckBtnPrintDoubleSignals();
+                CheckConversionStripMenuItems();
+                CleanUpQuantizationMeasures();
             }
         }
 
@@ -397,7 +402,9 @@ namespace CPS
         }
 
         private void CheckConversionStripMenuItems() {
-            if ((!lastAffectedSignal.IsDiscreteSignal && !(lastAffectedSignal is SzumGaussowski) && !(lastAffectedSignal is SzumJednostajny))){
+            if ((lastAffectedSignal is SkokJednostkowy) || (lastAffectedSignal is SygnalProstokatny) || (lastAffectedSignal is SygnalProstokatnySymetryczny)
+                || (lastAffectedSignal is SygnalSin) || (lastAffectedSignal is SygnalSinWyprostowanyDwuPolowkowo) || (lastAffectedSignal is SygnalSinWyprostowanyJednoPolowkowo)
+                || (lastAffectedSignal is SygnalTrojkatny)){
                 stripMenuItemQ1.Enabled = true;
                 stripMenuItemS1.Enabled = true;
                 stripMenuItemR1.Enabled = true;
@@ -515,6 +522,13 @@ namespace CPS
             textBoxSNR.Text = converter.CalculateSignalToNoiseRatioValue(quantizedSignal).ToString();
             textBoxPSNR.Text = converter.CalculatePeakSignalToNoiseRatioValue(quantizedSignal).ToString();
             textBoxMD.Text = converter.CalculateMaxDifferenceValue(quantizedSignal).ToString();
+        }
+
+        private void CleanUpQuantizationMeasures() {
+            textBoxMSE.Text = "";
+            textBoxSNR.Text = "";
+            textBoxPSNR.Text = "";
+            textBoxMD.Text = "";
         }
     }
 }
