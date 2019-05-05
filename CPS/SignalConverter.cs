@@ -166,7 +166,7 @@ namespace CPS
                 nominator += Math.Pow(comparable[i], 2);
             }
 
-            return 10.0 * Math.Log10(nominator / denominator);
+            return Math.Round(10.0 * Math.Log10(nominator / denominator), 4);
         }
 
         public double CalculatePeakSignalToNoiseRatioValue(Sygnal quantizedSignal) {
@@ -181,7 +181,7 @@ namespace CPS
                 }
             }
 
-            return 10.0 * Math.Log10(max / CalculateMeanSquaredErrorPowerValue(quantizedSignal));
+            return Math.Round(10.0 * Math.Log10(max / CalculateMeanSquaredErrorPowerValue(quantizedSignal)), 4);
         }
 
         public double CalculateMaxDifferenceValue(Sygnal quantizedSignal) {
@@ -197,7 +197,7 @@ namespace CPS
                 }
             }
 
-            return max;
+            return Math.Round(max, 4);
         }
 
     }

@@ -223,6 +223,7 @@ namespace CPS
 
             CheckBtnPrintDoubleSignals();
             CheckBtnPrintHistogram();
+            CheckConversionStripMenuItems();
         }
 
         private void PrintPlot(Sygnal signal, int seriesNumber) {
@@ -392,6 +393,20 @@ namespace CPS
         private void CheckBtnPrintHistogram() {
             if ((checkBox1.Checked || checkBox2.Checked) && !string.IsNullOrWhiteSpace(textBoxHistogram.Text)) {
                 btnPrintHistogram.Enabled = true;
+            }
+        }
+
+        private void CheckConversionStripMenuItems() {
+            if ((!lastAffectedSignal.IsDiscreteSignal && !(lastAffectedSignal is SzumGaussowski) && !(lastAffectedSignal is SzumJednostajny))){
+                stripMenuItemQ1.Enabled = true;
+                stripMenuItemS1.Enabled = true;
+                stripMenuItemR1.Enabled = true;
+                stripMenuItemR3.Enabled = true;
+            } else {
+                stripMenuItemQ1.Enabled = false;
+                stripMenuItemS1.Enabled = false;
+                stripMenuItemR1.Enabled = false;
+                stripMenuItemR3.Enabled = false;
             }
         }
 

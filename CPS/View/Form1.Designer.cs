@@ -655,6 +655,7 @@
             // stripMenuItemS1
             // 
             this.stripMenuItemS1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.stripMenuItemS1.Enabled = false;
             this.stripMenuItemS1.Name = "stripMenuItemS1";
             this.stripMenuItemS1.Size = new System.Drawing.Size(305, 22);
             this.stripMenuItemS1.Text = "(S1) Próbkowanie równomierne";
@@ -662,6 +663,7 @@
             // 
             // stripMenuItemQ1
             // 
+            this.stripMenuItemQ1.Enabled = false;
             this.stripMenuItemQ1.Name = "stripMenuItemQ1";
             this.stripMenuItemQ1.Size = new System.Drawing.Size(305, 22);
             this.stripMenuItemQ1.Text = "(Q1) Kwantyzacja równomierna z obcięciem";
@@ -678,6 +680,7 @@
             // 
             // stripMenuItemR1
             // 
+            this.stripMenuItemR1.Enabled = false;
             this.stripMenuItemR1.Name = "stripMenuItemR1";
             this.stripMenuItemR1.Size = new System.Drawing.Size(303, 22);
             this.stripMenuItemR1.Text = "(R1) Ekstrapolacja zerowego rzędu";
@@ -685,6 +688,7 @@
             // 
             // stripMenuItemR3
             // 
+            this.stripMenuItemR3.Enabled = false;
             this.stripMenuItemR3.Name = "stripMenuItemR3";
             this.stripMenuItemR3.Size = new System.Drawing.Size(303, 22);
             this.stripMenuItemR3.Text = "(R3) Rekonstrukcja w oparciu o funkcję sinc";
