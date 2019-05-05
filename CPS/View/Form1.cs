@@ -237,7 +237,7 @@ namespace CPS
             chart1.ChartAreas[0].AxisY.Minimum = signal.axisY.Min();
             chart1.ChartAreas[0].AxisY.Maximum = signal.axisY.Max();
             chart1.Series[seriesNumber].Points.DataBindXY(signal.axisX, signal.axisY);
-            chart1.Series[seriesNumber].MarkerSize = 3;
+            chart1.Series[seriesNumber].MarkerSize = 7;
         }
 
         private void PrintHistogram(Sygnal signal) {
@@ -529,6 +529,26 @@ namespace CPS
             textBoxSNR.Text = "";
             textBoxPSNR.Text = "";
             textBoxMD.Text = "";
+        }
+
+        private void CleanUpSignalMeasures() {
+            textBoxAvg.Text = "";
+            textBoxAbsAvg.Text = "";
+            textBoxAvgPow.Text = "";
+            textBoxRMS.Text = "";
+            textBoxVar.Text = "";
+        }
+
+        private void operacjaSplotuToolStripMenuItem_Click(object sender, EventArgs e) {
+
+            SignalFilter filter = new SignalFilter();
+            Sygnal signal = filter.MakeConvolution(operat.Signal1, operat.Signal2);
+            signal.signalName = "Splot sygnałów";
+            chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            CleanUpQuantizationMeasures();
+            CleanUpSignalMeasures();
+
+            PrintPlot(signal, 0);
         }
     }
 }

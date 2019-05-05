@@ -22,31 +22,6 @@ namespace CPS
 
         public SygnalTrojkatny() { }
 
-        //public override void CalculateXYPoints() {
-        //    axisX.Clear();
-        //    axisY.Clear();
-
-        //    int z = 0;
-        //    double tempStartTime = t1;
-
-        //    for (double i = t1; i < (d + t1); i = i + (1 / f)) {
-        //        if (i >= tempStartTime + T) {
-        //            z++;
-        //            tempStartTime = i;
-        //        }
-        //        axisX.Add(i);
-
-        //        if (i >= (z * T + t1) && i < (kw * T + z * T + t1)) {
-        //            double temp2 = (A / (kw * T)) * (i - z * T - t1);
-        //            axisY.Add(temp2);
-        //        }
-        //        else {
-        //            double temp2 = (-A * (i - z * T - t1)) / (T * (1 - kw)) + A / (1 - kw);
-        //            axisY.Add(temp2);
-        //        }
-        //    }
-        //}
-
         public override void CalculateXYPoints() {
             axisX.Clear();
             axisY.Clear();

@@ -98,6 +98,8 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.operacjaSplotuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.korelacjaSygnałówToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -636,7 +638,9 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.konwersjaACToolStripMenuItem,
-            this.konwersjaCAToolStripMenuItem});
+            this.konwersjaCAToolStripMenuItem,
+            this.operacjaSplotuToolStripMenuItem,
+            this.korelacjaSygnałówToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1280, 24);
@@ -761,6 +765,19 @@
             this.label22.Size = new System.Drawing.Size(156, 13);
             this.label22.TabIndex = 71;
             this.label22.Text = "Bład średniokwadratowy (MSE)";
+            // 
+            // operacjaSplotuToolStripMenuItem
+            // 
+            this.operacjaSplotuToolStripMenuItem.Name = "operacjaSplotuToolStripMenuItem";
+            this.operacjaSplotuToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
+            this.operacjaSplotuToolStripMenuItem.Text = "Operacja splotu";
+            this.operacjaSplotuToolStripMenuItem.Click += new System.EventHandler(this.operacjaSplotuToolStripMenuItem_Click);
+            // 
+            // korelacjaSygnałówToolStripMenuItem
+            // 
+            this.korelacjaSygnałówToolStripMenuItem.Name = "korelacjaSygnałówToolStripMenuItem";
+            this.korelacjaSygnałówToolStripMenuItem.Size = new System.Drawing.Size(120, 20);
+            this.korelacjaSygnałówToolStripMenuItem.Text = "Korelacja sygnałów";
             // 
             // btnDoubleSingals
             // 
@@ -902,6 +919,8 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.ToolStripMenuItem operacjaSplotuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem korelacjaSygnałówToolStripMenuItem;
     }
 }
 
