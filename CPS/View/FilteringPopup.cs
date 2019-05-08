@@ -14,6 +14,7 @@ namespace CPS.View
     {
 
         public int FilteringLevel { get; set; }
+        public int CutFrequency { get; set; }
         public string FilterType { get; set; }
         public string WindowType { get; set; }
 
@@ -23,11 +24,12 @@ namespace CPS.View
 
         private void btnOK_Click(object sender, EventArgs e) {
             if (string.IsNullOrWhiteSpace(textBoxFilterLevel.Text) || (comboBoxFilterType.SelectedItem) == null
-                || comboBoxWindowType.SelectedItem == null)  {
+                || comboBoxWindowType.SelectedItem == null || string.IsNullOrWhiteSpace(textBoxCutFrequency.Text))  {
                 MessageBox.Show("Proszę wypełnić wszystkie parametry!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else {
                 FilteringLevel = Convert.ToInt32(textBoxFilterLevel.Text);
+                CutFrequency = Convert.ToInt32(textBoxCutFrequency.Text);
                 FilterType = comboBoxFilterType.SelectedText;
                 WindowType = comboBoxWindowType.SelectedText;
 

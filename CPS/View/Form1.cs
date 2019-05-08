@@ -580,7 +580,7 @@ namespace CPS
             if (filteringPopup.DialogResult == DialogResult.OK) {
                 SignalFilter filter = new SignalFilter();
                 Sygnal signal = filter.MakeSignalFiltration(lastAffectedSignal, filteringPopup.FilteringLevel, 
-                    filteringPopup.FilterType, filteringPopup.WindowType);
+                    filteringPopup.CutFrequency, filteringPopup.FilterType, filteringPopup.WindowType);
 
                 signal.signalName = "Filtracja sygnału";
 
