@@ -572,5 +572,21 @@ namespace CPS
 
             PrintPlot(signal, 0);
         }
+
+        private void filtracjaToolStripMenuItem_Click(object sender, EventArgs e) {
+            FilteringPopup filteringPopup = new FilteringPopup();
+            filteringPopup.ShowDialog();
+
+            if (filteringPopup.DialogResult == DialogResult.OK) {
+                SignalFilter filter = new SignalFilter();
+                Sygnal signal = filter.MakeSignalFiltration(lastAffectedSignal);
+                signal.signalName = "Filtracja sygnału";
+
+                CleanUpQuantizationMeasures();
+                CleanUpSignalMeasures();
+
+                PrintPlot(signal, 0);
+            }
+        }
     }
 }
