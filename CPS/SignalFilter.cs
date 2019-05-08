@@ -18,7 +18,7 @@ namespace CPS
             for (int i=0; i < numberOfElements; i++) {
                 double sum = 0;
 
-                for (int k=0; k < signal1.axisX.Count - 1; k++) {
+                for (int k=0; k < signal1.axisX.Count; k++) {
 
                     if (i - k >= 0 && i - k < signal2.axisX.Count) {
                         sum += signal1.axisY[k] * signal2.axisY[i - k];
@@ -31,6 +31,20 @@ namespace CPS
             }
 
             return convolutedSignal;
+        }
+
+        public Sygnal MakeSignalsCorrelation(Sygnal signal1, Sygnal signal2) {
+            Sygnal correlatedSignal = signal2.GetNewSignal();
+            
+            for (int i=0; i < signal2.axisX.Count; i++) {
+                correlatedSignal.axisX.Add(signal2.axisX[i]);
+                correlatedSignal.axisY.Add(signal2.axisY[i]);
+            }
+
+            correlatedSignal.axisY.Reverse();
+            correlatedSignal = MakeConvolution(signal1, correlatedSignal);
+
+            return correlatedSignal;
         }
     }
 }

@@ -550,5 +550,27 @@ namespace CPS
 
             PrintPlot(signal, 0);
         }
+
+        private void bezpośredniaToolStripMenuItem_Click(object sender, EventArgs e) {
+            SignalFilter filter = new SignalFilter();
+            Sygnal signal = filter.MakeSignalsCorrelation(operat.Signal1, operat.Signal2);
+            signal.signalName = "Korelacja sygnałów";
+            chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            CleanUpQuantizationMeasures();
+            CleanUpSignalMeasures();
+
+            PrintPlot(signal, 0);
+        }
+
+        private void zUżyciemSplotuToolStripMenuItem_Click(object sender, EventArgs e) {
+            SignalFilter filter = new SignalFilter();
+            Sygnal signal = filter.MakeSignalsCorrelation(operat.Signal1, operat.Signal2);
+            signal.signalName = "Korelacja sygnałów";
+            chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            CleanUpQuantizationMeasures();
+            CleanUpSignalMeasures();
+
+            PrintPlot(signal, 0);
+        }
     }
 }

@@ -25,13 +25,13 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.comboBoxSignal = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSaveFile1 = new System.Windows.Forms.Button();
@@ -90,6 +90,8 @@
             this.konwersjaCAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stripMenuItemR1 = new System.Windows.Forms.ToolStripMenuItem();
             this.stripMenuItemR3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.operacjaSplotuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.korelacjaSygnałówToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBoxMD = new System.Windows.Forms.TextBox();
             this.textBoxPSNR = new System.Windows.Forms.TextBox();
             this.textBoxSNR = new System.Windows.Forms.TextBox();
@@ -98,8 +100,8 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.operacjaSplotuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.korelacjaSygnałówToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bezpośredniaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zUżyciemSplotuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -251,56 +253,56 @@
             // 
             // chart1
             // 
-            chartArea1.AxisX.Title = "Czas trwania sygnału";
-            chartArea1.AxisY.Title = "Amplituda";
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            chartArea5.AxisX.Title = "Czas trwania sygnału";
+            chartArea5.AxisY.Title = "Amplituda";
+            chartArea5.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea5);
             this.chart1.Cursor = System.Windows.Forms.Cursors.No;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            legend5.Name = "Legend1";
+            this.chart1.Legends.Add(legend5);
             this.chart1.Location = new System.Drawing.Point(354, 69);
             this.chart1.Margin = new System.Windows.Forms.Padding(0);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.EmptyPointStyle.MarkerSize = 200;
-            series1.IsVisibleInLegend = false;
-            series1.Legend = "Legend1";
-            series1.Name = "signal";
-            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series2.IsVisibleInLegend = false;
-            series2.Legend = "Legend1";
-            series2.Name = "quantSignal";
-            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            this.chart1.Series.Add(series1);
-            this.chart1.Series.Add(series2);
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series7.EmptyPointStyle.MarkerSize = 200;
+            series7.IsVisibleInLegend = false;
+            series7.Legend = "Legend1";
+            series7.Name = "signal";
+            series7.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series7.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series8.IsVisibleInLegend = false;
+            series8.Legend = "Legend1";
+            series8.Name = "quantSignal";
+            series8.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series8.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            this.chart1.Series.Add(series7);
+            this.chart1.Series.Add(series8);
             this.chart1.Size = new System.Drawing.Size(424, 380);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
             // chart2
             // 
-            chartArea2.AxisX.Title = "Wartość bezwględna sygnału";
-            chartArea2.AxisY.Title = "Liczba próbek";
-            chartArea2.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart2.Legends.Add(legend2);
+            chartArea6.AxisX.Title = "Wartość bezwględna sygnału";
+            chartArea6.AxisY.Title = "Liczba próbek";
+            chartArea6.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chart2.Legends.Add(legend6);
             this.chart2.Location = new System.Drawing.Point(821, 70);
             this.chart2.Name = "chart2";
             this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series3.ChartArea = "ChartArea1";
-            series3.IsVisibleInLegend = false;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            this.chart2.Series.Add(series3);
+            series9.ChartArea = "ChartArea1";
+            series9.IsVisibleInLegend = false;
+            series9.Legend = "Legend1";
+            series9.Name = "Series1";
+            series9.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            series9.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            this.chart2.Series.Add(series9);
             this.chart2.Size = new System.Drawing.Size(436, 380);
             this.chart2.TabIndex = 31;
             this.chart2.Text = "chart2";
@@ -698,6 +700,22 @@
             this.stripMenuItemR3.Text = "(R3) Rekonstrukcja w oparciu o funkcję sinc";
             this.stripMenuItemR3.Click += new System.EventHandler(this.stripMenuItemR3_Click);
             // 
+            // operacjaSplotuToolStripMenuItem
+            // 
+            this.operacjaSplotuToolStripMenuItem.Name = "operacjaSplotuToolStripMenuItem";
+            this.operacjaSplotuToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
+            this.operacjaSplotuToolStripMenuItem.Text = "Operacja splotu";
+            this.operacjaSplotuToolStripMenuItem.Click += new System.EventHandler(this.operacjaSplotuToolStripMenuItem_Click);
+            // 
+            // korelacjaSygnałówToolStripMenuItem
+            // 
+            this.korelacjaSygnałówToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bezpośredniaToolStripMenuItem,
+            this.zUżyciemSplotuToolStripMenuItem});
+            this.korelacjaSygnałówToolStripMenuItem.Name = "korelacjaSygnałówToolStripMenuItem";
+            this.korelacjaSygnałówToolStripMenuItem.Size = new System.Drawing.Size(120, 20);
+            this.korelacjaSygnałówToolStripMenuItem.Text = "Korelacja sygnałów";
+            // 
             // textBoxMD
             // 
             this.textBoxMD.Location = new System.Drawing.Point(1186, 573);
@@ -766,18 +784,19 @@
             this.label22.TabIndex = 71;
             this.label22.Text = "Bład średniokwadratowy (MSE)";
             // 
-            // operacjaSplotuToolStripMenuItem
+            // bezpośredniaToolStripMenuItem
             // 
-            this.operacjaSplotuToolStripMenuItem.Name = "operacjaSplotuToolStripMenuItem";
-            this.operacjaSplotuToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
-            this.operacjaSplotuToolStripMenuItem.Text = "Operacja splotu";
-            this.operacjaSplotuToolStripMenuItem.Click += new System.EventHandler(this.operacjaSplotuToolStripMenuItem_Click);
+            this.bezpośredniaToolStripMenuItem.Name = "bezpośredniaToolStripMenuItem";
+            this.bezpośredniaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bezpośredniaToolStripMenuItem.Text = "Bezpośrednia";
+            this.bezpośredniaToolStripMenuItem.Click += new System.EventHandler(this.bezpośredniaToolStripMenuItem_Click);
             // 
-            // korelacjaSygnałówToolStripMenuItem
+            // zUżyciemSplotuToolStripMenuItem
             // 
-            this.korelacjaSygnałówToolStripMenuItem.Name = "korelacjaSygnałówToolStripMenuItem";
-            this.korelacjaSygnałówToolStripMenuItem.Size = new System.Drawing.Size(120, 20);
-            this.korelacjaSygnałówToolStripMenuItem.Text = "Korelacja sygnałów";
+            this.zUżyciemSplotuToolStripMenuItem.Name = "zUżyciemSplotuToolStripMenuItem";
+            this.zUżyciemSplotuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.zUżyciemSplotuToolStripMenuItem.Text = "Z użyciem splotu";
+            this.zUżyciemSplotuToolStripMenuItem.Click += new System.EventHandler(this.zUżyciemSplotuToolStripMenuItem_Click);
             // 
             // btnDoubleSingals
             // 
@@ -921,6 +940,8 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.ToolStripMenuItem operacjaSplotuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem korelacjaSygnałówToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bezpośredniaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zUżyciemSplotuToolStripMenuItem;
     }
 }
 
