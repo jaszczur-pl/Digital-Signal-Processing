@@ -25,13 +25,13 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.comboBoxSignal = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSaveFile1 = new System.Windows.Forms.Button();
@@ -92,6 +92,8 @@
             this.stripMenuItemR3 = new System.Windows.Forms.ToolStripMenuItem();
             this.operacjaSplotuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.korelacjaSygnałówToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bezpośredniaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zUżyciemSplotuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBoxMD = new System.Windows.Forms.TextBox();
             this.textBoxPSNR = new System.Windows.Forms.TextBox();
             this.textBoxSNR = new System.Windows.Forms.TextBox();
@@ -100,8 +102,13 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.bezpośredniaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zUżyciemSplotuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.filtracjaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dolnoprzepustowaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.górnoprzepustowaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ątnymToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.oknoHanningaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ąToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.oknoHanningaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -253,56 +260,56 @@
             // 
             // chart1
             // 
-            chartArea5.AxisX.Title = "Czas trwania sygnału";
-            chartArea5.AxisY.Title = "Amplituda";
-            chartArea5.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea5);
+            chartArea1.AxisX.Title = "Czas trwania sygnału";
+            chartArea1.AxisY.Title = "Amplituda";
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Cursor = System.Windows.Forms.Cursors.No;
-            legend5.Name = "Legend1";
-            this.chart1.Legends.Add(legend5);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(354, 69);
             this.chart1.Margin = new System.Windows.Forms.Padding(0);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series7.EmptyPointStyle.MarkerSize = 200;
-            series7.IsVisibleInLegend = false;
-            series7.Legend = "Legend1";
-            series7.Name = "signal";
-            series7.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series7.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series8.IsVisibleInLegend = false;
-            series8.Legend = "Legend1";
-            series8.Name = "quantSignal";
-            series8.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series8.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            this.chart1.Series.Add(series7);
-            this.chart1.Series.Add(series8);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.EmptyPointStyle.MarkerSize = 200;
+            series1.IsVisibleInLegend = false;
+            series1.Legend = "Legend1";
+            series1.Name = "signal";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series2.IsVisibleInLegend = false;
+            series2.Legend = "Legend1";
+            series2.Name = "quantSignal";
+            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(424, 380);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
             // chart2
             // 
-            chartArea6.AxisX.Title = "Wartość bezwględna sygnału";
-            chartArea6.AxisY.Title = "Liczba próbek";
-            chartArea6.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chart2.Legends.Add(legend6);
+            chartArea2.AxisX.Title = "Wartość bezwględna sygnału";
+            chartArea2.AxisY.Title = "Liczba próbek";
+            chartArea2.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart2.Legends.Add(legend2);
             this.chart2.Location = new System.Drawing.Point(821, 70);
             this.chart2.Name = "chart2";
             this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series9.ChartArea = "ChartArea1";
-            series9.IsVisibleInLegend = false;
-            series9.Legend = "Legend1";
-            series9.Name = "Series1";
-            series9.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            series9.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            this.chart2.Series.Add(series9);
+            series3.ChartArea = "ChartArea1";
+            series3.IsVisibleInLegend = false;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            this.chart2.Series.Add(series3);
             this.chart2.Size = new System.Drawing.Size(436, 380);
             this.chart2.TabIndex = 31;
             this.chart2.Text = "chart2";
@@ -642,7 +649,8 @@
             this.konwersjaACToolStripMenuItem,
             this.konwersjaCAToolStripMenuItem,
             this.operacjaSplotuToolStripMenuItem,
-            this.korelacjaSygnałówToolStripMenuItem});
+            this.korelacjaSygnałówToolStripMenuItem,
+            this.filtracjaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1280, 24);
@@ -716,6 +724,20 @@
             this.korelacjaSygnałówToolStripMenuItem.Size = new System.Drawing.Size(120, 20);
             this.korelacjaSygnałówToolStripMenuItem.Text = "Korelacja sygnałów";
             // 
+            // bezpośredniaToolStripMenuItem
+            // 
+            this.bezpośredniaToolStripMenuItem.Name = "bezpośredniaToolStripMenuItem";
+            this.bezpośredniaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bezpośredniaToolStripMenuItem.Text = "Bezpośrednia";
+            this.bezpośredniaToolStripMenuItem.Click += new System.EventHandler(this.bezpośredniaToolStripMenuItem_Click);
+            // 
+            // zUżyciemSplotuToolStripMenuItem
+            // 
+            this.zUżyciemSplotuToolStripMenuItem.Name = "zUżyciemSplotuToolStripMenuItem";
+            this.zUżyciemSplotuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.zUżyciemSplotuToolStripMenuItem.Text = "Z użyciem splotu";
+            this.zUżyciemSplotuToolStripMenuItem.Click += new System.EventHandler(this.zUżyciemSplotuToolStripMenuItem_Click);
+            // 
             // textBoxMD
             // 
             this.textBoxMD.Location = new System.Drawing.Point(1186, 573);
@@ -784,19 +806,56 @@
             this.label22.TabIndex = 71;
             this.label22.Text = "Bład średniokwadratowy (MSE)";
             // 
-            // bezpośredniaToolStripMenuItem
+            // filtracjaToolStripMenuItem
             // 
-            this.bezpośredniaToolStripMenuItem.Name = "bezpośredniaToolStripMenuItem";
-            this.bezpośredniaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.bezpośredniaToolStripMenuItem.Text = "Bezpośrednia";
-            this.bezpośredniaToolStripMenuItem.Click += new System.EventHandler(this.bezpośredniaToolStripMenuItem_Click);
+            this.filtracjaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dolnoprzepustowaToolStripMenuItem,
+            this.górnoprzepustowaToolStripMenuItem});
+            this.filtracjaToolStripMenuItem.Name = "filtracjaToolStripMenuItem";
+            this.filtracjaToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.filtracjaToolStripMenuItem.Text = "Filtracja";
             // 
-            // zUżyciemSplotuToolStripMenuItem
+            // dolnoprzepustowaToolStripMenuItem
             // 
-            this.zUżyciemSplotuToolStripMenuItem.Name = "zUżyciemSplotuToolStripMenuItem";
-            this.zUżyciemSplotuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.zUżyciemSplotuToolStripMenuItem.Text = "Z użyciem splotu";
-            this.zUżyciemSplotuToolStripMenuItem.Click += new System.EventHandler(this.zUżyciemSplotuToolStripMenuItem_Click);
+            this.dolnoprzepustowaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ątnymToolStripMenuItem,
+            this.oknoHanningaToolStripMenuItem});
+            this.dolnoprzepustowaToolStripMenuItem.Name = "dolnoprzepustowaToolStripMenuItem";
+            this.dolnoprzepustowaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dolnoprzepustowaToolStripMenuItem.Text = "Dolnoprzepustowa";
+            // 
+            // górnoprzepustowaToolStripMenuItem
+            // 
+            this.górnoprzepustowaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ąToolStripMenuItem,
+            this.oknoHanningaToolStripMenuItem1});
+            this.górnoprzepustowaToolStripMenuItem.Name = "górnoprzepustowaToolStripMenuItem";
+            this.górnoprzepustowaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.górnoprzepustowaToolStripMenuItem.Text = "Górnoprzepustowa";
+            // 
+            // ątnymToolStripMenuItem
+            // 
+            this.ątnymToolStripMenuItem.Name = "ątnymToolStripMenuItem";
+            this.ątnymToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ątnymToolStripMenuItem.Text = "Okno prostokątne";
+            // 
+            // oknoHanningaToolStripMenuItem
+            // 
+            this.oknoHanningaToolStripMenuItem.Name = "oknoHanningaToolStripMenuItem";
+            this.oknoHanningaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.oknoHanningaToolStripMenuItem.Text = "Okno Hanninga";
+            // 
+            // ąToolStripMenuItem
+            // 
+            this.ąToolStripMenuItem.Name = "ąToolStripMenuItem";
+            this.ąToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ąToolStripMenuItem.Text = "Okno prostokątne";
+            // 
+            // oknoHanningaToolStripMenuItem1
+            // 
+            this.oknoHanningaToolStripMenuItem1.Name = "oknoHanningaToolStripMenuItem1";
+            this.oknoHanningaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.oknoHanningaToolStripMenuItem1.Text = "Okno Hanninga";
             // 
             // btnDoubleSingals
             // 
@@ -942,6 +1001,13 @@
         private System.Windows.Forms.ToolStripMenuItem korelacjaSygnałówToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bezpośredniaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zUżyciemSplotuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem filtracjaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dolnoprzepustowaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ątnymToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem oknoHanningaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem górnoprzepustowaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ąToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem oknoHanningaToolStripMenuItem1;
     }
 }
 

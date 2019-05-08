@@ -63,6 +63,12 @@
     <Compile Include="View\CAPopup.Designer.cs">
       <DependentUpon>CAPopup.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FilteringPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FilteringPopup.Designer.cs">
+      <DependentUpon>FilteringPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\CAPopup.resx">
       <DependentUpon>CAPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FilteringPopup.resx">
+      <DependentUpon>FilteringPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

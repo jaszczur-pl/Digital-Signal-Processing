@@ -46,5 +46,9 @@ namespace CPS
 
             return correlatedSignal;
         }
+
+        private double CalculateHanningWindow(int n, double M) {
+            return 0.5 - 0.5 * Math.Cos(2 * Math.PI * (double)n / M);
+        }
     }
 }
