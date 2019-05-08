@@ -51,7 +51,8 @@ namespace CPS
             return 0.5 - 0.5 * Math.Cos(2 * Math.PI * (double)n / M);
         }
 
-        public Sygnal MakeSignalFiltration(Sygnal signal) {
+        public Sygnal MakeSignalFiltration(Sygnal signal, int filteringLevel, string filterType,
+            string windowType) {
             return new Sygnal();
         }
     }
