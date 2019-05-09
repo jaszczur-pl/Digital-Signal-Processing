@@ -8,8 +8,8 @@ namespace CPS
 {
     class Operator
     {
-        public Sygnal Signal1 { get; set; }
-        public Sygnal Signal2 { get; set; }
+        public Sygnal Signal1 { get; set; } = new Sygnal();
+        public Sygnal Signal2 { get; set; } = new Sygnal();
         public Sygnal CalculatedSignal { get; set; }
         public double partOfRange { get; set; }
 

@@ -223,7 +223,8 @@ namespace CPS
 
             CheckBtnPrintDoubleSignals();
             CheckBtnPrintHistogram();
-            CheckConversionStripMenuItems();
+            CheckConversionAndFilteringStripMenuItems();
+            CheckSplotAndCorelationStripMenuItem();
             CleanUpQuantizationMeasures();
         }
 
@@ -293,7 +294,7 @@ namespace CPS
 
             lastAffectedSignal = signal;
             btnSaveCalculatedSignal.Enabled = true;
-            CheckConversionStripMenuItems();
+            CheckConversionAndFilteringStripMenuItems();
             CleanUpQuantizationMeasures();
         }
 
@@ -384,8 +385,10 @@ namespace CPS
                 lastAffectedSignal = signal;
 
                 CheckBtnPrintDoubleSignals();
-                CheckConversionStripMenuItems();
+                CheckSplotAndCorelationStripMenuItem();
+                CheckConversionAndFilteringStripMenuItems();
                 CleanUpQuantizationMeasures();
+                CheckBtnPrintHistogram();
             }
         }
 
@@ -401,7 +404,7 @@ namespace CPS
             }
         }
 
-        private void CheckConversionStripMenuItems() {
+        private void CheckConversionAndFilteringStripMenuItems() {
             if ((lastAffectedSignal is SkokJednostkowy) || (lastAffectedSignal is SygnalProstokatny) || (lastAffectedSignal is SygnalProstokatnySymetryczny)
                 || (lastAffectedSignal is SygnalSin) || (lastAffectedSignal is SygnalSinWyprostowanyDwuPolowkowo) || (lastAffectedSignal is SygnalSinWyprostowanyJednoPolowkowo)
                 || (lastAffectedSignal is SygnalTrojkatny)){
@@ -409,11 +412,23 @@ namespace CPS
                 stripMenuItemS1.Enabled = true;
                 stripMenuItemR1.Enabled = true;
                 stripMenuItemR3.Enabled = true;
+                filtracjaToolStripMenuItem.Enabled = true;
             } else {
                 stripMenuItemQ1.Enabled = false;
                 stripMenuItemS1.Enabled = false;
                 stripMenuItemR1.Enabled = false;
                 stripMenuItemR3.Enabled = false;
+                filtracjaToolStripMenuItem.Enabled = false;
+            }
+        }
+
+        private void CheckSplotAndCorelationStripMenuItem() {
+            if(operat.Signal1.IsDiscreteSignal && operat.Signal2.IsDiscreteSignal) {
+                operacjaSplotuToolStripMenuItem.Enabled = true;
+                korelacjaSygnałówToolStripMenuItem.Enabled = true;
+            } else {
+                operacjaSplotuToolStripMenuItem.Enabled = false;
+                korelacjaSygnałówToolStripMenuItem.Enabled = false;
             }
         }
 
@@ -583,7 +598,7 @@ namespace CPS
                     filteringPopup.CutFrequency, filteringPopup.FilterType, filteringPopup.WindowType);
 
                 signal.signalName = "Filtracja sygnału";
-                chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+                chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
 
                 CleanUpQuantizationMeasures();
                 CleanUpSignalMeasures();
