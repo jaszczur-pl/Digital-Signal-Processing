@@ -95,7 +95,7 @@
             // 
             this.comboBoxWindowType.FormattingEnabled = true;
             this.comboBoxWindowType.Items.AddRange(new object[] {
-            "Prostokątne",
+            "Prostokątny",
             "Hanninga"});
             this.comboBoxWindowType.Location = new System.Drawing.Point(144, 120);
             this.comboBoxWindowType.Name = "comboBoxWindowType";

@@ -30,8 +30,8 @@ namespace CPS.View
             else {
                 FilteringLevel = Convert.ToInt32(textBoxFilterLevel.Text);
                 CutFrequency = Convert.ToInt32(textBoxCutFrequency.Text);
-                FilterType = comboBoxFilterType.SelectedText;
-                WindowType = comboBoxWindowType.SelectedText;
+                FilterType = comboBoxFilterType.Text;
+                WindowType = comboBoxWindowType.Text;
 
                 this.DialogResult = DialogResult.OK;
                 this.Close();

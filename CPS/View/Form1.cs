@@ -583,6 +583,7 @@ namespace CPS
                     filteringPopup.CutFrequency, filteringPopup.FilterType, filteringPopup.WindowType);
 
                 signal.signalName = "Filtracja sygnału";
+                chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
 
                 CleanUpQuantizationMeasures();
                 CleanUpSignalMeasures();

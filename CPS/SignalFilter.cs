@@ -47,15 +47,94 @@ namespace CPS
             return correlatedSignal;
         }
 
-        private double CalculateHanningWindow(int n, double M) {
+        public Sygnal MakeSignalFiltration(Sygnal signal, int filteringLevel, int cutFrequency,
+            string filterType, string windowType) {
+
+            Sygnal filteredSignal = new Sygnal();
+            List<double> tempList = new List<double>();
+
+            for (int i = 0; i < signal.axisY.Count; i++) {
+                filteredSignal.axisY.Add(signal.axisY[i]);
+            }
+
+            double K = signal.f / cutFrequency;
+
+            if (filterType == "Dolnoprzepstowy" || windowType == "Prostokątny") {
+                tempList = ImpulseAnswerBottomRec(filteringLevel, K);
+            } else if (filterType == "Dolnoprzepustowy" || windowType == "Hanninga") {
+                tempList = ImpulseAnswerBottomHan(filteringLevel, K);
+            } else if (filterType == "Górnoprzepustowy" || windowType == "Prostokątny") {
+                tempList = ImpulseAnswerTop(ImpulseAnswerBottomRec(filteringLevel, K));
+            } else if (filterType == "Górnoprzepustowy" || windowType == "Hanninga") {
+                tempList = ImpulseAnswerTop(ImpulseAnswerBottomHan(filteringLevel, K));
+            }
+
+            filteredSignal = SpliceOfSignals(tempList, filteredSignal.axisY, signal.d);
+
+            return filteredSignal;
+        }
+
+        private static List<double> ImpulseAnswerTop(List<double> bottom) {
+            List<double> points = new List<double>();
+
+            for (int n = 0; n < bottom.Count; n++) {
+                points.Add(bottom[n] * Math.Pow(-1, n));
+            }
+
+            return points;
+        }
+
+        private static List<double> ImpulseAnswerBottomHan(int M, Double K) {
+
+            List<Double> points = new List<double>();
+            for (int n = 0; n < M; n++) {
+                if (n == (M - 1.0) / 2.0) {
+                    points.Add(2 / K * CalculateHanningWindow(n, M));
+                }
+                else {
+                    points.Add(Math.Sin(2.0 * Math.PI * ((double)n - (M - 1.0) / 2.0) / K) / (Math.PI * ((double)n - (M - 1.0) / 2.0)) * CalculateHanningWindow(n, M));
+                }
+
+            }
+            return points;
+        }
+
+        public static List<double> ImpulseAnswerBottomRec(int M, double K) {
+
+            List<double> points = new List<double>();
+            for (int n = 0; n < M; ++n) {
+                if (n == (M - 1.0) / 2.0) {
+                    points.Add(2 / K);
+                }
+                else {
+                    points.Add(Math.Sin(2.0 * Math.PI * ((double)n - (M - 1.0) / 2.0) / K) / (Math.PI * ((double)n - (M - 1.0) / 2.0)));
+                }
+            }
+            return points;
+        }
+
+        private static double CalculateHanningWindow(int n, double M) {
             return 0.5 - 0.5 * Math.Cos(2 * Math.PI * (double)n / M);
         }
 
-        public Sygnal MakeSignalFiltration(Sygnal signal, int filteringLevel, int cutFrequency, 
-            string filterType, string windowType) {
+        private static Sygnal SpliceOfSignals(List<double> answer, List<double> input, double lastTime) {
+            Sygnal splicedSignal = new Sygnal();
+            int M = answer.Count;
+            int N = input.Count;
 
+            double T = lastTime / (M + N - 1);
+            for (int n = 0; n < M + N - 1; ++n) {
+                double sum = 0.0;
+                for (int k = 0; k < M; ++k) {
+                    if (k < M && (n - k) >= 0 && (n - k) < N) {
+                        sum += answer[k] * input[n - k];
+                    }
+                }
 
-            return new Sygnal();
-        }
+                splicedSignal.axisX.Add((double)n * T);
+                splicedSignal.axisY.Add(sum);
+            }
+            return splicedSignal;
+        } 
     }
 }
