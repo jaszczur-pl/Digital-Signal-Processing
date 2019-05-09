@@ -223,9 +223,10 @@ namespace CPS
 
             CheckBtnPrintDoubleSignals();
             CheckBtnPrintHistogram();
-            CheckConversionAndFilteringStripMenuItems();
+            CheckConversionAndStripMenuItems();
             CheckSplotAndCorelationStripMenuItem();
             CleanUpQuantizationMeasures();
+            CheckFilteringStripMenuItems();
         }
 
         private void PrintPlot(Sygnal signal, int seriesNumber) {
@@ -294,8 +295,9 @@ namespace CPS
 
             lastAffectedSignal = signal;
             btnSaveCalculatedSignal.Enabled = true;
-            CheckConversionAndFilteringStripMenuItems();
+            CheckConversionAndStripMenuItems();
             CleanUpQuantizationMeasures();
+            CheckFilteringStripMenuItems();
         }
 
         private void btnPrintHistogram_Click(object sender, EventArgs e) {
@@ -386,9 +388,10 @@ namespace CPS
 
                 CheckBtnPrintDoubleSignals();
                 CheckSplotAndCorelationStripMenuItem();
-                CheckConversionAndFilteringStripMenuItems();
+                CheckConversionAndStripMenuItems();
                 CleanUpQuantizationMeasures();
                 CheckBtnPrintHistogram();
+                CheckFilteringStripMenuItems();
             }
         }
 
@@ -404,7 +407,7 @@ namespace CPS
             }
         }
 
-        private void CheckConversionAndFilteringStripMenuItems() {
+        private void CheckConversionAndStripMenuItems() {
             if ((lastAffectedSignal is SkokJednostkowy) || (lastAffectedSignal is SygnalProstokatny) || (lastAffectedSignal is SygnalProstokatnySymetryczny)
                 || (lastAffectedSignal is SygnalSin) || (lastAffectedSignal is SygnalSinWyprostowanyDwuPolowkowo) || (lastAffectedSignal is SygnalSinWyprostowanyJednoPolowkowo)
                 || (lastAffectedSignal is SygnalTrojkatny)){
@@ -412,12 +415,20 @@ namespace CPS
                 stripMenuItemS1.Enabled = true;
                 stripMenuItemR1.Enabled = true;
                 stripMenuItemR3.Enabled = true;
-                filtracjaToolStripMenuItem.Enabled = true;
             } else {
                 stripMenuItemQ1.Enabled = false;
                 stripMenuItemS1.Enabled = false;
                 stripMenuItemR1.Enabled = false;
                 stripMenuItemR3.Enabled = false;
+            }
+        }
+
+        private void CheckFilteringStripMenuItems() {
+            if ((lastAffectedSignal is SkokJednostkowy) || (lastAffectedSignal is SygnalProstokatny) || (lastAffectedSignal is SygnalProstokatnySymetryczny)
+                || (lastAffectedSignal is SygnalSin) || (lastAffectedSignal is SygnalSinWyprostowanyDwuPolowkowo) || (lastAffectedSignal is SygnalSinWyprostowanyJednoPolowkowo)
+                || (lastAffectedSignal is SygnalTrojkatny || (lastAffectedSignal is SzumGaussowski) || (lastAffectedSignal is SzumJednostajny))) {
+                filtracjaToolStripMenuItem.Enabled = true;
+            } else {
                 filtracjaToolStripMenuItem.Enabled = false;
             }
         }
